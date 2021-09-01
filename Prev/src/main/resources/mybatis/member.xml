@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member">
+
+	<!-- <select id="list" resultType="Post">
+		SELECT post.*, category.cname FROM post JOIN category ON post.cid = category.cid
+	</select> -->
+	
+	<insert id="add">
+		INSERT INTO member VALUES (#{id}, #{pw}, #{name}, #{nickname}, #{email})
+	</insert>
+	
+	<select id="item" resultType="Member">
+		SELECT * FROM member WHERE id=#{id}
+	</select>
+	
+	<select id="checkId" resultType="Integer">
+		SELECT count(*) FROM member WHERE id=#{id}
+	</select>
+</mapper>

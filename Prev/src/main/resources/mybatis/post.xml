@@ -4,6 +4,12 @@
 
 <mapper namespace="post">
 
+	<select id="utdList" resultType="Post">
+	<![CDATA[
+		SELECT * FROM post WHERE ROWNUM <=3 ORDER BY regdate desc
+	]]>
+	</select>
+
 	<select id="list" resultType="Post">
 		SELECT post.*, percategory.pcname pcname FROM post JOIN percategory ON post.pcid = percategory.pcid 
 		WHERE post.id=#{id} AND percategory.id=#{id}

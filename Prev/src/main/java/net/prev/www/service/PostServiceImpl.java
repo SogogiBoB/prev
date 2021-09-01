@@ -40,4 +40,9 @@ public class PostServiceImpl implements PostService {
 		dao.postsUpdate(item);
 	}
 
+	@Override
+	public List<Post> utdList() {
+		return dao.utdList();
+	}
+
 }

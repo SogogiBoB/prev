@@ -39,4 +39,9 @@ public class PostDaoImpl implements PostDao {
 	public void postsUpdate(Post item) {
 		sql.update("post.postsUpdate", item);
 	}
+
+	@Override
+	public List<Post> utdList() {
+		return sql.selectList("post.utdList");
+	}
 }

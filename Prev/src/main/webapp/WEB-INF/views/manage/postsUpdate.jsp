@@ -6,6 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<style>
+a {
+text-decoration : none;
+color: black;
+}
+</style>
 </head>
 <body>
 	<div>

@@ -16,4 +16,6 @@ public interface PostDao {
 
 	void postsUpdate(Post item);
 
+	List<Post> utdList();
+
 }

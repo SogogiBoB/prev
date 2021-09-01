@@ -6,6 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<style>
+a {
+text-decoration : none;
+color: black;
+}
+</style>
 <title></title>
 </head>
 <body>

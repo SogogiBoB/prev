@@ -16,4 +16,6 @@ public interface PostService {
 
 	void postsUpdate(Post item);
 
+	List<Post> utdList();
+
 }

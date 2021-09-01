@@ -6,6 +6,12 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<style>
+a {
+text-decoration : none;
+color: black;
+}
+</style>
 </head>
 <body>
 	<h2>prev</h2>
@@ -14,8 +20,12 @@
 		<p>${sessionScope.member.nickname}님의 블로그 입니다.</p>
 		<a href="logout">로그아웃</a>
 	</c:if>
+	<div>
 	<a href="../../post/${sessionScope.id}/add">글쓰기</a>
+	</div>
+	<div>
 	<a href="../../${sessionScope.id}/manage/">관리</a>
+	</div>
 	<a href="../../">메인화면으로</a>
 </body>
 </html>

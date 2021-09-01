@@ -60,7 +60,7 @@ public class PostController {
 
 		service.add(item);
 		
-		return "redirect:my/";
+		return "redirect:../../";
 	}
 	
 }

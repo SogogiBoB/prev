@@ -18,4 +18,12 @@ public interface PostDao {
 
 	List<Post> utdList();
 
+	void plusCount(Post item);
+
+	Post searchCount(int pid);
+
+	Post updateItem(int pid);
+	
+	
+
 }

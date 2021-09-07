@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import net.prev.www.dao.PostDao;
 import net.prev.www.model.Post;
@@ -30,8 +31,19 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
-	public Post postsItem(int pid) {
-	
+	@Transactional
+	public Post postsItem(int pid) {		
+		Post item = new Post();
+		
+		item = dao.searchCount(pid);
+		
+		int count = item.getViewcount();
+		
+		item.setPid(pid);
+		item.setViewcount(count+1);
+		
+		dao.plusCount(item);
+		
 		return dao.postsItem(pid);
 	}
 
@@ -44,5 +56,11 @@ public class PostServiceImpl implements PostService {
 	public List<Post> utdList() {
 		return dao.utdList();
 	}
+
+	@Override
+	public Post updateItem(int pid) {
+		return dao.updateItem(pid);
+	}
+
 
 }

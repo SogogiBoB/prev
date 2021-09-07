@@ -18,4 +18,6 @@ public interface PostService {
 
 	List<Post> utdList();
 
+	Post updateItem(int pid);
+
 }

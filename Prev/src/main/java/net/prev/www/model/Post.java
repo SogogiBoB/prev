@@ -3,7 +3,7 @@ package net.prev.www.model;
 import java.util.Date;
 
 public class Post {
-	
+
 	private int pid;
 	private String title;
 	private String content;
@@ -12,7 +12,15 @@ public class Post {
 	private int cid;
 	private int pcid;
 	private String pcname;
-	
+	private int viewcount;
+
+	public int getViewcount() {
+		return viewcount;
+	}
+
+	public void setViewcount(int viewcount) {
+		this.viewcount = viewcount;
+	}
 
 	public String getPcname() {
 		return pcname;
@@ -21,7 +29,7 @@ public class Post {
 	public void setPcname(String pcname) {
 		this.pcname = pcname;
 	}
-	
+
 	public int getPid() {
 		return pid;
 	}
@@ -61,7 +69,6 @@ public class Post {
 	public void setId(String id) {
 		this.id = id;
 	}
-	
 
 	public int getPcid() {
 		return pcid;
@@ -70,6 +77,7 @@ public class Post {
 	public void setPcid(int pcid) {
 		this.pcid = pcid;
 	}
+
 	public int getCid() {
 		return cid;
 	}

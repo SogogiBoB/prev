@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -46,6 +47,15 @@ public class ManageController {
 		return path + "postsList";
 	}
 	
+	@RequestMapping("/posts/showDetail")
+	public String showDetail(int pid, Model model, Post post) {		
+		post = postService.postsItem(pid);
+		
+		model.addAttribute("item", post);
+		
+		return path+"showDetail";
+	}
+	
 	@GetMapping("/posts/add")
 	public String postsAdd(Model model,@PathVariable String id) {
 		List<perCategory> categoryList = perCateService.list(id);
@@ -67,7 +77,7 @@ public class ManageController {
 	@GetMapping("/posts/update")
 	public String postsUpdate(Model model, @PathVariable String id, int pid) {
 		List<perCategory> list = perCateService.list(id);
-		Post item = postService.postsItem(pid);
+		Post item = postService.updateItem(pid);
 		
 		model.addAttribute("pcateList", list);
 		model.addAttribute("item", item);

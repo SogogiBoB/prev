@@ -44,4 +44,23 @@ public class PostDaoImpl implements PostDao {
 	public List<Post> utdList() {
 		return sql.selectList("post.utdList");
 	}
+
+	@Override
+	public void plusCount(Post item) {
+		sql.update("post.plusCount", item);
+	}
+
+	@Override
+	public Post searchCount(int pid) {
+		return sql.selectOne("post.searchCount", pid);
+	}
+
+	@Override
+	public Post updateItem(int pid) {
+		return sql.selectOne("post.updateItem", pid);
+	}
+
+	
+
+	
 }

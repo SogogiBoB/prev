@@ -37,19 +37,23 @@ color: black;
 		<table>
 			<thead>
 				<tr>
+					<td>글번호</td>
 					<td>제목</td>
 					<td>내용</td>
 					<td>작성일</td>
 					<td>작성자</td>
+					<td>조회수</td>
 				</tr>
 			</thead>
 			<tbody>
-			<c:forEach var="list" items="${list}">
+			<c:forEach var="item" items="${list}">
 				<tr>
-					<td>${list.title}</td>
-					<td>${list.content}</td>
-					<td><fmt:formatDate value="${list.regdate}" pattern="yyyy.MM.dd."></fmt:formatDate></td>
-					<td>${list.id}</td>
+					<td>${item.pid}</td>
+					<td><a href="">${item.title}</a></td>
+					<td>${item.content}</td>
+					<td><fmt:formatDate value="${item.regdate}" pattern="yyyy.MM.dd."></fmt:formatDate></td>
+					<td>${item.id}</td>
+					<td>${item.viewcount}</td>
 				</tr>
 			</c:forEach>
 			</tbody>

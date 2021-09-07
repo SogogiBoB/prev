@@ -17,8 +17,6 @@ import net.prev.www.model.Post;
 import net.prev.www.service.MemberService;
 import net.prev.www.service.PostService;
 
-
-
 @Controller
 public class RootController {
 	
@@ -27,6 +25,7 @@ public class RootController {
 	
 	@Autowired
 	PostService postService;
+
 
 	@RequestMapping("/")
 	public String index(Model model) {

@@ -28,6 +28,7 @@ color: black;
 						<th>작성일</th>
 						<th>id</th>
 						<th>카테고리명</th>
+						<th>조회수</th>
 						<th>관리</th>
 					</tr>
 				</thead>
@@ -45,6 +46,7 @@ color: black;
 							<td><fmt:formatDate value="${item.regdate}" pattern="yyyy년 MM월 dd일 HH:mm"/></td>
 							<td>${item.id}</td>
 							<td>${item.cname}</td>
+							<td>${item.viewcount}</td>
 							<td><a href="delete?cid=${item.cid}" class="btn btn-outline-danger btn-sm">삭제</a> <a href="update?cid=${item.cid}" class="btn btn-outline-danger btn-sm">변경</a></td>
 						</tr>
 					</c:forEach>

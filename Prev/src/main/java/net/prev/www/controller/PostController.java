@@ -34,6 +34,7 @@ public class PostController {
 	@Autowired
 	perCategoryService pcateService;
 	
+	
 	@RequestMapping({"/", "/list"})
 	public String list(Model model, HttpSession session) {
 		String id = (String)session.getAttribute("id");
@@ -62,5 +63,6 @@ public class PostController {
 		
 		return "redirect:../../";
 	}
+	
 	
 }

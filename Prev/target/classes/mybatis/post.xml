@@ -33,5 +33,21 @@
 		SET title=#{title}, content=#{content}, regdate=default, id=#{id}, pcid=#{pcid}
 		WHERE pid=#{pid}
 	</update>
+	
+	<select id="updateItem" resultType="Post">
+		SELECT * FROM post
+		WHERE pid=#{pid}
+	</select>
+	
+	<select id="searchCount" resultType="Post">
+		SELECT viewcount FROM post
+		WHERE pid=#{pid}
+	</select>
+	
+	<update id="plusCount">
+		UPDATE post 
+		SET viewcount = #{viewcount}
+		WHERE pid=#{pid}
+	</update>
 
 </mapper>

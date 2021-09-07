@@ -39,7 +39,7 @@ color: black;
 					<c:forEach var="item" items="${list}">
 						<tr>
 							<td>${item.pid}</td>
-							<td>${item.title}</td>
+							<td><a href="posts/showDetail?pid=${item.pid}">${item.title}</a></td>
 							<td>${item.content}</td>
 							<td><fmt:formatDate value="${item.regdate}" pattern="yyyy년 MM월 dd일 HH:mm"/></td>
 							<td>${item.id}</td>

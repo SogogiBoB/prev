@@ -15,7 +15,7 @@ color: black;
 </head>
 <body>
 	<h2>prev</h2>
-	<p>관리 메인 화면입니다.</p>
+	<p>관리 메인 화면입니다. 여기서부터는 부트스트랩 영역입니다.</p>
 	<div>
 		<a href="posts">글 관리</a>
 	</div>

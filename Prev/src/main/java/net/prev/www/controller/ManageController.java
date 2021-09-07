@@ -20,7 +20,7 @@ import net.prev.www.service.PostService;
 import net.prev.www.service.perCategoryService;
 
 @Controller
-@RequestMapping("{id}/manage/")
+@RequestMapping("/manage/{id}")
 public class ManageController {
 	final String path = "manage/";
 	
@@ -44,7 +44,7 @@ public class ManageController {
 		
 		model.addAttribute("list", list);
 		
-		return path + "postsList";
+		return path + "posts/postsList";
 	}
 	
 	@RequestMapping("/posts/showDetail")
@@ -53,7 +53,7 @@ public class ManageController {
 		
 		model.addAttribute("item", post);
 		
-		return path+"showDetail";
+		return path+"posts/showDetail";
 	}
 	
 	@GetMapping("/posts/add")
@@ -62,7 +62,7 @@ public class ManageController {
 		
 		model.addAttribute("postsAdd", categoryList);
 		
-		return path + "postsAdd";
+		return path + "posts/postsAdd";
 	}
 	
 	@PostMapping("/posts/add")
@@ -82,7 +82,7 @@ public class ManageController {
 		model.addAttribute("pcateList", list);
 		model.addAttribute("item", item);
 		
-		return path + "postsUpdate";
+		return path + "posts/postsUpdate";
 	}
 	
 	@PostMapping("/posts/update")
@@ -99,7 +99,7 @@ public class ManageController {
 		
 		model.addAttribute("list", list);
 		
-		return path + "categorysList";
+		return path + "categorys/categorysList";
 	}
 	
 	@GetMapping("/manageCategorys/add")
@@ -108,7 +108,7 @@ public class ManageController {
 		
 		model.addAttribute("list", list);
 		
-		return path + "categorysAdd";
+		return path + "categorys/categorysAdd";
 	}
 	
 	@PostMapping("/manageCategorys/add")
@@ -128,7 +128,7 @@ public class ManageController {
 		model.addAttribute("item", item);
 
 		
-		return path + "categorysUpdate";
+		return path + "categorys/categorysUpdate";
 	}
 	
 	@PostMapping("/manageCategorys/update")

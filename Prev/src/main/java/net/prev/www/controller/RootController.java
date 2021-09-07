@@ -36,6 +36,7 @@ public class RootController {
 		return "index";
 	}
 	
+	
 	@GetMapping("/signup")
 	public String signup() {
 		return "signup";
@@ -85,6 +86,15 @@ public class RootController {
 		session.invalidate();
 		
 		return "redirect:.";
+	}
+	
+	@RequestMapping("/showDetail")
+	public String showDetail(int pid, Model model) {
+		Post item = postService.postsItem(pid);
+		
+		model.addAttribute("item", item);
+		
+		return "showDetail";
 	}
 	
 }

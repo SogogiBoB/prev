@@ -16,11 +16,11 @@
 	</select>
 	
 	<insert id="add">
-		INSERT INTO post VALUES (POST_SEQ.nextval, #{title}, #{content}, default, #{id}, #{pcid})
+		INSERT INTO post VALUES (POST_SEQ.nextval, #{title}, #{content}, default, #{id}, #{pcid}, default)
 	</insert>
 	
 	<insert id="postsAdd">
-		INSERT INTO post VALUES (POST_SEQ.nextval, #{title}, #{content}, default, #{id}, #{pcid})
+		INSERT INTO post VALUES (POST_SEQ.nextval, #{title}, #{content}, default, #{id}, #{pcid}, default)
 	</insert>
 	
 	<select id="postsItem" resultType="Post">

@@ -11,5 +11,6 @@
 	<p>${item.title}</p>
 	<p>${item.regdate}</p>
 	<p>${item.viewcount}</p>
+	<a href="./">이전</a>
 </body>
 </html>

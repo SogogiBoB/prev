@@ -12,6 +12,7 @@
 		<typeAlias type="net.prev.www.model.Category" alias="Category"/>
 		<typeAlias type="net.prev.www.model.Member" alias="Member"/>
 		<typeAlias type="net.prev.www.model.perCategory" alias="perCategory"/>
+		<typeAlias type="net.prev.www.model.Reply" alias="Reply"/>
 	</typeAliases>
 	
 	<mappers>
@@ -19,5 +20,6 @@
 		<mapper resource="mybatis/category.xml"/>
 		<mapper resource="mybatis/pCategory.xml"/>
 		<mapper resource="mybatis/member.xml"/>
+		<mapper resource="mybatis/reply.xml"/>
 	</mappers>
 </configuration>

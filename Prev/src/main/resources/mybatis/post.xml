@@ -6,7 +6,7 @@
 
 	<select id="utdList" resultType="Post">
 	<![CDATA[
-		SELECT * FROM post WHERE ROWNUM <=3 ORDER BY regdate desc
+		SELECT * FROM (SELECT * FROM post ORDER BY regdate desc)WHERE ROWNUM <=3 
 	]]>
 	</select>
 

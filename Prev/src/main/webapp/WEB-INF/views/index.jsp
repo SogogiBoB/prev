@@ -33,6 +33,9 @@ color: black;
 		<a href="category/list">카테고리 관리</a>
 	</div>
 	<div>
+		<a href="reply/add">댓글테스트</a>
+	</div>
+	<div>
 		<h2>최신글</h2>
 		<table>
 			<thead>

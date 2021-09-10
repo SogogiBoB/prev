@@ -45,7 +45,7 @@ color: black;
 							<td>${item.content}</td>
 							<td><fmt:formatDate value="${item.regdate}" pattern="yyyy년 MM월 dd일 HH:mm"/></td>
 							<td>${item.id}</td>
-							<td>${item.cname}</td>
+							<td>${item.pcname}</td>
 							<td>${item.viewcount}</td>
 							<td><a href="delete?cid=${item.cid}" class="btn btn-outline-danger btn-sm">삭제</a> <a href="update?cid=${item.cid}" class="btn btn-outline-danger btn-sm">변경</a></td>
 						</tr>

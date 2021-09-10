@@ -10,7 +10,7 @@
 <style>
 .reply_box {
 	border: 1px solid black;
-	height: 500px;
+	height: auto;
 	width: 700px;
 }
 #reply_list {
@@ -18,7 +18,12 @@
 	height: auto;
 	width: 400px;
 }
+
 </style>
+
+<script>
+	
+</script>
 </head>
 <body>
 	<div>
@@ -31,7 +36,7 @@
 	<div class="reply_box">
 		<p>댓글</p>
 		<div>
-			<form method="post">
+			<form method="post" action="${item.pid}/insert">
 				<label>입력</label>
 				<input type="text" name="content">
 				<button type="submit">댓글등록</button>
@@ -47,6 +52,9 @@
 				<div>
 					<p>${reply.id}</p>
 					<p>${reply.content}</p>
+					<p><fmt:formatDate value="${reply.regdate}" pattern="yyyy-MM-dd HH:mm:ss"/></p>
+					<a href="${item.pid}/update?rid=${reply.rid}">변경</a>
+					<a href="${item.pid}/delete?rid=${reply.rid}">삭제</a>
 				</div>
 			</c:forEach>
 		</div>

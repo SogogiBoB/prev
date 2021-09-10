@@ -24,4 +24,9 @@ public class ReplyDaoImpl implements ReplyDao {
 		return sql.selectList("reply.list");
 	}
 
+	@Override
+	public void delete(int rid) {
+		sql.delete("reply.delete", rid);
+	}
+
 }

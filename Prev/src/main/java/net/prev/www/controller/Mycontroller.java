@@ -44,8 +44,8 @@ public class Mycontroller {
 		return path+"index";
 	}
 	
-	@RequestMapping("/showDetail")
-	public String showDetail(int pid, Model model) {
+	@RequestMapping("/{pid}")
+	public String showDetail(@PathVariable int pid, Model model) {
 		Post item = postService.postsItem(pid);
 		
 		List<Reply> list = replyService.list();
@@ -56,11 +56,24 @@ public class Mycontroller {
 		return path+"showDetail";
 	}
 	
-	@PostMapping("/addReply")
-	public String addReply(Reply item) {
+	@RequestMapping("/{pid}/insert")
+	public String addReply(Reply item, @PathVariable String id, @PathVariable int pid) {
+		item.setPid(pid);
+		item.setId(id);
+		
 		replyService.add(item);
 		
-		return "redirect:showDetail";
+		return "redirect:../{pid}";
+	}
+	
+	@RequestMapping("/{pid}/delete")
+	public String deleteReply(Reply item) {
+		int rid = item.getRid();
+		
+		System.out.println(rid);
+		replyService.delete(rid);
+		
+		return "redirect:../{pid}";
 	}
 	
 	@RequestMapping("/category")

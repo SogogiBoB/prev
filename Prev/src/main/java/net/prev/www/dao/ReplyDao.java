@@ -10,4 +10,6 @@ public interface ReplyDao {
 
 	List<Reply> list();
 
+	void delete(int rid);
+
 }

@@ -16,12 +16,23 @@ public class ReplyServiceImpl implements ReplyService {
 	
 	@Override
 	public void add(Reply item) {
+		System.out.println(item.getContent());
+		System.out.println(item.getId());
+		System.out.println(item.getPid());
+		
 		dao.add(item);
 	}
 
 	@Override
 	public List<Reply> list() {
 		return dao.list();
+	}
+
+	@Override
+	public void delete(int rid) {
+		System.out.println(rid);
+		
+		dao.delete(rid);
 	}
 
 }

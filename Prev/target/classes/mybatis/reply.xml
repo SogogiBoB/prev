@@ -3,10 +3,14 @@
 
 <mapper namespace="reply">
 	<insert id="add">
-		INSERT INTO reply VALUES(REPLY_SEQ.nextval, #{content}, #{pid}, #{id})
+		INSERT INTO reply VALUES(REPLY_SEQ.nextval, #{content}, #{pid}, #{id}, default)
 	</insert>
 	
 	<select id="list" resultType="Reply">
 		SELECT * FROM reply
 	</select>
+	
+	<delete id="delete">
+		DELETE FROM reply where rid=#{rid}
+	</delete>
 </mapper>

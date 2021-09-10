@@ -26,7 +26,6 @@ color: black;
 		<table>
 			<thead>
 				<tr>
-					<td>글번호</td>
 					<td>제목</td>
 					<td>내용</td>
 					<td>작성일</td>
@@ -37,8 +36,7 @@ color: black;
 			<tbody>
 			<c:forEach var="item" items="${list}">
 				<tr>
-					<td>${item.pid}</td>
-					<td><a href="showDetail?pid=${item.pid}">${item.title}</a></td>
+					<td><a href="${item.pid}">${item.title}</a></td>
 					<td>${item.content}</td>
 					<td><fmt:formatDate value="${item.regdate}" pattern="yyyy.MM.dd."></fmt:formatDate></td>
 					<td>${item.id}</td>

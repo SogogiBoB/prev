@@ -1,12 +1,21 @@
 package net.prev.www.model;
 
+import java.util.Date;
+
 public class Reply {
 	
 	private int rid;
 	private String content;
 	private int pid;
 	private String id;
+	private Date regdate;
 	
+	public Date getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
 	public int getRid() {
 		return rid;
 	}

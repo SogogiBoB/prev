@@ -10,4 +10,6 @@ public interface ReplyService {
 
 	List<Reply> list();
 
+	void delete(int rid);
+
 }

@@ -24,7 +24,6 @@ public class ReplyController {
 	
 	@GetMapping("/add")
 	public String add() {
-		
 		return path +"add";
 	}
 	

@@ -5,4 +5,8 @@
 	<insert id="add">
 		INSERT INTO reply VALUES(REPLY_SEQ.nextval, #{content}, #{pid}, #{id})
 	</insert>
+	
+	<select id="list" resultType="Reply">
+		SELECT * FROM reply
+	</select>
 </mapper>

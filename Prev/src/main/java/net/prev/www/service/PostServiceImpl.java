@@ -1,5 +1,6 @@
 package net.prev.www.service;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,11 +34,11 @@ public class PostServiceImpl implements PostService {
 	@Override
 	@Transactional
 	public Post postsItem(int pid) {		
-		Post item = new Post();
-		
-		item = dao.searchCount(pid);
+		Post item = dao.searchCount(pid);
 		
 		int count = item.getViewcount();
+		
+		System.out.println("카운트는" + count);
 		
 		item.setPid(pid);
 		item.setViewcount(count+1);
@@ -49,6 +50,7 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public void postsUpdate(Post item) {
+		
 		dao.postsUpdate(item);
 	}
 

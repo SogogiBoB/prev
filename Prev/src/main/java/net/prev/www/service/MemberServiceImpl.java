@@ -24,7 +24,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public boolean checkId(String id) {
-		if(dao.checkId(id) > 1)
+		if(dao.checkId(id) > 0)
 			return false;
 		else
 			return true;

@@ -53,6 +53,7 @@ public class PostController {
 		model.addAttribute("categoryList", categoryList);
 		
 		return path+"add";
+		
 	}
 	
 	@PostMapping("/add")

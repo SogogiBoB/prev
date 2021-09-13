@@ -20,13 +20,18 @@ public class ReplyDaoImpl implements ReplyDao {
 	}
 
 	@Override
-	public List<Reply> list() {
-		return sql.selectList("reply.list");
+	public List<Reply> list(int pid) {
+		return sql.selectList("reply.list", pid);
 	}
 
 	@Override
 	public void delete(int rid) {
 		sql.delete("reply.delete", rid);
+	}
+
+	@Override
+	public void update(Reply item) {
+		sql.update("reply.update", item);
 	}
 
 }

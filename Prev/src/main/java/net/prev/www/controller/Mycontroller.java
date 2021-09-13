@@ -1,12 +1,15 @@
 package net.prev.www.controller;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.prev.www.model.Post;
@@ -35,6 +38,13 @@ public class Mycontroller {
 	@Autowired
 	ReplyService replyService;
 	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		
+		return "redirect:../../";
+	}
+	
 	@RequestMapping({"/","index"})
 	public String index(@PathVariable String id, Model model) {
 		List<Post> list = postService.list(id);
@@ -45,10 +55,10 @@ public class Mycontroller {
 	}
 	
 	@RequestMapping("/{pid}")
-	public String showDetail(@PathVariable int pid, Model model) {
+	public String showDetail(@PathVariable int pid, Model model, HttpSession session) {
 		Post item = postService.postsItem(pid);
-		
-		List<Reply> list = replyService.list();
+				
+		List<Reply> list = replyService.list(pid);
 		
 		model.addAttribute("item", item);
 		model.addAttribute("replyList", list);

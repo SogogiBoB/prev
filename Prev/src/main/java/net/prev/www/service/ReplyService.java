@@ -8,8 +8,10 @@ public interface ReplyService {
 
 	void add(Reply item);
 
-	List<Reply> list();
+	List<Reply> list(int pid);
 
 	void delete(int rid);
+
+	void update(Reply item);
 
 }

@@ -33,9 +33,6 @@ color: black;
 		<a href="category/list">카테고리 관리</a>
 	</div>
 	<div>
-		<a href="reply/add">댓글테스트</a>
-	</div>
-	<div>
 		<h2>최신글</h2>
 		<table>
 			<thead>
@@ -52,7 +49,7 @@ color: black;
 			<c:forEach var="item" items="${list}">
 				<tr>
 					<td>${item.pid}</td>
-					<td><a href="showDetail?pid=${item.pid}">${item.title}</a></td>
+					<td><a href="${item.pid}">${item.title}</a></td>
 					<td>${item.content}</td>
 					<td><fmt:formatDate value="${item.regdate}" pattern="yyyy.MM.dd."></fmt:formatDate></td>
 					<td>${item.id}</td>

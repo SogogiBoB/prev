@@ -3,14 +3,22 @@
 
 <mapper namespace="reply">
 	<insert id="add">
-		INSERT INTO reply VALUES(REPLY_SEQ.nextval, #{content}, #{pid}, #{id}, default)
+		INSERT INTO reply VALUES (REPLY_SEQ.nextval, #{content}, #{pid}, #{id}, default)
 	</insert>
 	
 	<select id="list" resultType="Reply">
-		SELECT * FROM reply
+		SELECT * FROM reply where pid=#{pid}
 	</select>
 	
 	<delete id="delete">
 		DELETE FROM reply where rid=#{rid}
 	</delete>
+	
+	<update id="update">
+		UPDATE reply SET content=#{content}, regdate=#{regdate} WHERE rid=#{rid} and id=#{id}
+		
+		<selectKey resultType="date" order="AFTER" keyProperty="regdate">
+			SELECT regdate from reply where rid=#{rid}
+		</selectKey>
+	</update>
 </mapper>

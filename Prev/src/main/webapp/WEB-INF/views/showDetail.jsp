@@ -24,6 +24,21 @@
 
 <script>
 	$(function() {	
+		$("div").on("click", ".delete", function(){
+			const rid_= $(this).parent().data("rid");
+			
+			$.ajax("/api/" + rid_, {
+				method:"DELETE",
+				contentType: "application/json",
+				dataType: "json",
+				success: (data_, status_) =>{
+					if(rid_ == data_){
+						$("div[data-rid='"+rid_+"']").remove();
+					};
+				}
+			});
+		});
+		
 		$("div").on("click", ".update", function() {	
 			let item_ = {
 				rid : $(this).parent().data("rid"),
@@ -39,9 +54,9 @@
 			
 			console.log(item_.rid);
 			
-			if(${sessionScope.member.id} == item_.id){
+		
 				$("#updateModal").modal("show");
-			}
+		
 		});
 		
 		$("#updateModal .update").click(function() {
@@ -98,7 +113,7 @@
 					<p class="regdate"><fmt:formatDate value="${reply.regdate}" pattern="yyyy-MM-dd HH:mm:ss"/></p>
 					<c:if test="${sessionScope.member.id==reply.id}">
 						<button class="update">변경</button>
-						<a href="${item.pid}/delete?rid=${reply.rid}">삭제</a>
+						<button class="delete">삭제</button>
 					</c:if>
 				</div>
 			</c:forEach>

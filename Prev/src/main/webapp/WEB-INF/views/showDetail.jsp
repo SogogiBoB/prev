@@ -77,7 +77,7 @@
 					$("div[data-rid='"+data_.rid+"'] .regdate").text(data_.regdate);
 				}
 			});
-			
+			 
 			$("#updateModal").modal("hide");
 		});
 	});

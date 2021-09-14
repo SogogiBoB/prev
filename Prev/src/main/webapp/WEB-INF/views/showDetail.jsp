@@ -39,9 +39,8 @@
 			
 			console.log(item_.rid);
 			
-			if(${sessionScope.member.id} == item_.id){
-				$("#updateModal").modal("show");
-			}
+			$("#updateModal").modal("show");
+
 		});
 		
 		$("#updateModal .update").click(function() {

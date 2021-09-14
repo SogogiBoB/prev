@@ -104,7 +104,7 @@
 			</c:forEach>
 		</div>
 	</div>
-	<a href="./">이전</a>
+	<a href="../">이전</a>
 	
 	<!--변경 모달  -->
 	<div class="modal fade" id="updateModal" tabindex="-1" aria-labelledby="updateModalLabel" aria-hidden="true">

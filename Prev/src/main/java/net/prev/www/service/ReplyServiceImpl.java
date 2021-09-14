@@ -54,12 +54,6 @@ public class ReplyServiceImpl implements ReplyService {
 
 	@Override
 	public void update(Reply item) {
-		if(item.getRegdate() == null) {
-			Date date = new Date();
-			item.setRegdate(date);
-			
-			System.out.println("현재시간은 : "+ date);
-		}
 		
 		dao.update(item);
 	}

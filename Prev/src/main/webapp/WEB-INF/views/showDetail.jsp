@@ -52,16 +52,8 @@
 			$("#updateModal .content").val(item_.content);
 			$("#updateModal .regdate").val(item_.regdate);
 			
-			console.log(item_.rid);
-			
-<<<<<<< HEAD
 			$("#updateModal").modal("show");
 
-=======
-		
-				$("#updateModal").modal("show");
-		
->>>>>>> refs/remotes/origin/main
 		});
 		
 		$("#updateModal .update").click(function() {
@@ -69,7 +61,6 @@
 				rid: $("#updateModal .rid").val(),
 				id: $("#updateModal .id").val(),
 				content: $("#updateModal .content").val(),
-				regdate: ""
 			};
 			
 			$.ajax("/api", {
@@ -78,6 +69,8 @@
 				contentType: "application/json",
 				dataType: "json",
 				success: function(data_) {
+					console.log(data_.regdate);
+					
 					$("div[data-rid='"+data_.rid+"'] .content").text(data_.content);
 					$("div[data-rid='"+data_.rid+"'] .regdate").text(data_.regdate);
 				}

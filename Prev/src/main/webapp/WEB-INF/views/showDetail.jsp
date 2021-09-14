@@ -77,7 +77,7 @@
 		<p>${item.viewcount}</p>
 	</div>
 	<div class="reply_box">
-		<p>댓글</p>
+		<p>댓글 목록</p>
 		<div>
 			<form method="post" action="${item.pid}/insert">
 				<label>입력</label>

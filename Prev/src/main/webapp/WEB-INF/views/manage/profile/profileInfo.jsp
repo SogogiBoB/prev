@@ -4,27 +4,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title></title>
 </head>
 <body>
 	<div>
-		<h2>${sessionScope.member.nickname}님 프로필 정보</h2>
+	<form method="post" enctype="multipart/form-data">
+		<h2>${item.id}님 프로필 정보</h2>
 		<div>
-			<label>프로필 이미지</label>		
-		</div>	
-		<div>
-			<label>닉네임</label>
-			<p>${item.nickname}</p>	
+			<label>프로필 이미지</label>	
+			<img src="/upload/files/${item.profileImg}">
 		</div>
 		<div>
-			<label>이메일</label>
-			<p>${item.email}</p>	
+			<label>닉네임:</label>
+			${item.nickname}
 		</div>
 		<div>
-			<label>자기소개</label>
-			<textarea rows="15" cols="40">${item.pr}</textarea>
+			<label>이메일:</label>
+			${item.email}
+		</div>
+		<div>
+			<label>자기소개:</label>
+			${item.pr}
 		</div>
 		<a href="profile/update?id=${item.id}">변경</a>
+	</form>
+	<div>
+		<a href="../../">처음으로</a>
+	</div>
 	</div>
 </body>
 </html>

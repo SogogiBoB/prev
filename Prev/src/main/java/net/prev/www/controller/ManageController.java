@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import net.prev.www.model.Category;
 import net.prev.www.model.Member;
@@ -19,6 +20,7 @@ import net.prev.www.service.CategoryService;
 import net.prev.www.service.MemberService;
 import net.prev.www.service.PostService;
 import net.prev.www.service.perCategoryService;
+import net.prev.www.util.Uploader;
 
 @Controller
 @RequestMapping("/manage/{id}")
@@ -145,11 +147,33 @@ public class ManageController {
 //	===== 프로필관리 ====================================================================
 	@RequestMapping("/profile")
 	public String profileInfo(Model model, @PathVariable String id) {
-		List<Member> profileInfo = memberService.profileInfo(id);
+		Member profileInfo = memberService.profileInfo(id);
 
 		System.out.println(profileInfo.toString());
 		
 		model.addAttribute("item", profileInfo);
 		return path + "profile/profileInfo";
 	}
+	
+	@GetMapping("/profile/update")
+	public String profileUpdate(Model model, @PathVariable String id) {
+		Member item = memberService.item(id);
+		
+		model.addAttribute("item", item);
+		
+		return path + "profile/profileUpdate";
+	}
+	
+	@PostMapping("/profile/update")
+	public String profileUpdate(Member member) {
+		if(Uploader.upload(member.getFileUpload())) {
+			member.setProfileImg(member.getFileUpload().getOriginalFilename());
+			
+			memberService.profileUpdate(member);
+		}
+	
+		return "redirect:../profile";
+	}
+	
+
 }

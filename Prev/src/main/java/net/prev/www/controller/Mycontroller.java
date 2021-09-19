@@ -94,7 +94,4 @@ public class Mycontroller {
 		
 		return path + "categorylist";
 	}
-	
-	
-	
 }

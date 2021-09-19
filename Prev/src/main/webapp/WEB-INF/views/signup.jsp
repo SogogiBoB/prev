@@ -128,7 +128,7 @@ function goBack() {
 		<div class="d-grid gap-2 col mx-auto">
 			<h3>회원가입</h3>
 			<p>SIGN-UP</p>
-				<form name="signupForm" method="post">
+				<form name="signupForm" method="post" enctype="multipart/form-data">
 					<div class="d-grid gap-2 col-6 mx-auto" class="form-label">
 						<label>아이디</label>
 						<input type="text" name="id" onchange="changeId()" class="form-control mb-1"><div onclick="checkId_Async()" class="btn btn-outline-primary btn-sm mb-4">중복확인</div>
@@ -152,6 +152,10 @@ function goBack() {
 					<div class="d-grid gap-2 col-6 mx-auto" class="form-label">
 						<label>이메일</label>
 						<input type="text" name="email" class="form-control mb-5">
+					</div>
+					<div class="d-grid gap-2 col-6 mx-auto" class="form-label">
+						<label>프로필 이미지</label>
+						<input type="file" name="fileUpload" value="${item.profileImg}">
 					</div>
 				</form>
 			<div class="d-grid gap-2 col-6 mx-auto" class="form-label">

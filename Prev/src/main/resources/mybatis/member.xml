@@ -23,4 +23,9 @@
 	<select id="profileInfo" resultType="Member">
 		SELECT * FROM member WHERE id=#{id}
 	</select>
+	
+	<update id="profileUpdate">
+		UPDATE member SET profileimg=#{profileImg}, pw=#{pw}, nickname=#{nickname}, email=#{email}, pr=#{pr} 
+		WHERE id=#{id}
+	</update>
 </mapper>

@@ -1,5 +1,7 @@
 package net.prev.www.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,6 +30,11 @@ public class MemberServiceImpl implements MemberService {
 			return false;
 		else
 			return true;
+	}
+
+	@Override
+	public List<Member> profileInfo(String id) {
+		return dao.profileInfo(id);
 	}
 
 }

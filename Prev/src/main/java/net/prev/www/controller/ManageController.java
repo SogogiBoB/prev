@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,9 +12,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import net.prev.www.model.Category;
+import net.prev.www.model.Member;
 import net.prev.www.model.Post;
 import net.prev.www.model.perCategory;
 import net.prev.www.service.CategoryService;
+import net.prev.www.service.MemberService;
 import net.prev.www.service.PostService;
 import net.prev.www.service.perCategoryService;
 
@@ -33,11 +34,15 @@ public class ManageController {
 	@Autowired
 	CategoryService	cateService;
 	
+	@Autowired
+	MemberService memberService;
+	
 	@RequestMapping("/")
 	public String index() {
 		return path+ "index";
 	}
 	
+//===== 글관리 ====================================================================
 	@RequestMapping("/posts")
 	public String postsList(Model model, @PathVariable String id) {
 		List<Post> list = postService.list(id);
@@ -92,11 +97,11 @@ public class ManageController {
 		return "redirect:../posts";
 	}
 	
-	
+//	===== 카테고리관리 ====================================================================
 	@RequestMapping("/manageCategorys")
 	public String categorysList(Model model, @PathVariable String id) {
 		List<perCategory> list = perCateService.list(id);
-		
+	
 		model.addAttribute("list", list);
 		
 		return path + "categorys/categorysList";
@@ -124,7 +129,6 @@ public class ManageController {
 	public String catesUpdate(Model model, int pcid) {
 		perCategory item = perCateService.item(pcid);
 		
-		
 		model.addAttribute("item", item);
 
 		
@@ -137,5 +141,15 @@ public class ManageController {
 		
 		return "redirect:../manageCategorys";
 	}
-	
+
+//	===== 프로필관리 ====================================================================
+	@RequestMapping("/profile")
+	public String profileInfo(Model model, @PathVariable String id) {
+		List<Member> profileInfo = memberService.profileInfo(id);
+
+		System.out.println(profileInfo.toString());
+		
+		model.addAttribute("item", profileInfo);
+		return path + "profile/profileInfo";
+	}
 }

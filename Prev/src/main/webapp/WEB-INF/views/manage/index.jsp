@@ -22,6 +22,9 @@ color: black;
 	<div>
 		<a href="manageCategorys">카테고리 관리</a>
 	</div>
+	<div>
+		<a href="profile">프로필 관리</a>
+	</div>
 	<a href="../../">메인 화면으로</a>
 </body>
 </html>

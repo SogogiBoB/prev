@@ -19,4 +19,8 @@
 	<select id="checkId" resultType="Integer">
 		SELECT count(*) FROM member WHERE id=#{id}
 	</select>
+	
+	<select id="profileInfo" resultType="Member">
+		SELECT * FROM member WHERE id=#{id}
+	</select>
 </mapper>

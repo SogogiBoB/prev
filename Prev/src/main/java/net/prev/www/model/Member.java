@@ -19,6 +19,7 @@ public class Member {
 		return pw;
 	}
 
+
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
@@ -46,5 +47,11 @@ public class Member {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	@Override
+	public String toString() {
+		return "Member [id=" + id + ", pw=" + pw + ", name=" + name + ", nickname=" + nickname + ", email=" + email
+				+ "]";
+	}
+
 
 }

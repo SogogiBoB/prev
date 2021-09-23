@@ -60,5 +60,73 @@ color: black;
 		</table>
 	</div>
 	
+	<div>
+		<h2>인기글1</h2>
+		<table>
+			<thead>
+				<tr>
+					<td>글번호</td>
+					<td>제목</td>
+					<td>내용</td>
+					<td>작성일</td>
+					<td>작성자</td>
+					<td>조회수</td>
+					<td>카테고리ID</td>
+					<td>카테고리명</td>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="result" items="${result}">
+					<c:if test="${result.cname=='여행'}">
+						<tr>
+							<td>${result.pid}</td>
+							<td><a href="${result.pid}">${result.title}</a></td>
+							<td>${result.content}</td>
+							<td><fmt:formatDate value="${result.regdate}" pattern="yyyy.MM.dd."></fmt:formatDate></td>
+							<td>${result.id}</td>
+							<td>${result.viewcount}</td>
+							<td>${result.cid}</td>
+							<td>${result.cname}</td>
+						</tr>
+					</c:if>
+				</c:forEach>
+			</tbody>
+		</table>
+		<button>더보기</button>
+	</div>
+	<div>
+		<h2>인기글2</h2>
+		<table>
+			<thead>
+				<tr>
+					<td>글번호</td>
+					<td>제목</td>
+					<td>내용</td>
+					<td>작성일</td>
+					<td>작성자</td>
+					<td>조회수</td>
+					<td>카테고리ID</td>
+					<td>카테고리명</td>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="result" items="${result}">
+					<c:if test="${result.cname=='음악'}">
+						<tr>
+							<td>${result.pid}</td>
+							<td><a href="${result.pid}">${result.title}</a></td>
+							<td>${result.content}</td>
+							<td><fmt:formatDate value="${result.regdate}" pattern="yyyy.MM.dd."></fmt:formatDate></td>
+							<td>${result.id}</td>
+							<td>${result.viewcount}</td>
+							<td>${result.cid}</td>
+							<td>${result.cname}</td>
+						</tr>
+					</c:if>
+				</c:forEach>
+			</tbody>
+		</table>
+		<button>더보기</button>
+	</div>	
 </body>
 </html>

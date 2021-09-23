@@ -18,7 +18,7 @@
 		UPDATE reply SET content=#{content}, regdate=default WHERE rid=#{rid} and id=#{id}
 		
 		<selectKey resultType="Reply" order="AFTER" keyProperty="regdate">
-			SELECT regdate from reply where rid=#{rid}
+			SELECT * from reply where rid=#{rid}
 		</selectKey>
 	</update>
 </mapper>

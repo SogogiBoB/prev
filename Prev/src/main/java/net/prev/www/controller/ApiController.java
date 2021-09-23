@@ -27,6 +27,7 @@ public class ApiController {
 		replyService.update(item);
 		
 		System.out.println(item.getRegdate());
+		System.out.println(item.getContent());
 		
 		return item;
 	}

@@ -4,7 +4,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title></title>
+<style>
+img {width: 250px; height: 150px;}
+</style>
 </head>
 <body>
 	<div>
@@ -34,7 +37,7 @@
 			<button>등록</button>
 		</form>
 		<div>
-		<a href="../../">돌아가기</a>
+		<a href="../">돌아가기</a>
 		</div>
 	</div>
 </body>

@@ -44,7 +44,7 @@ public class ManageController {
 		return path+ "index";
 	}
 	
-//===== 글관리 ====================================================================
+//===== 湲�愿�由� ====================================================================
 	@RequestMapping("/posts")
 	public String postsList(Model model, @PathVariable String id) {
 		List<Post> list = postService.list(id);
@@ -99,7 +99,7 @@ public class ManageController {
 		return "redirect:../posts";
 	}
 	
-//	===== 카테고리관리 ====================================================================
+//	===== 移댄뀒怨좊━愿�由� ====================================================================
 	@RequestMapping("/manageCategorys")
 	public String categorysList(Model model, @PathVariable String id) {
 		List<perCategory> list = perCateService.list(id);
@@ -144,7 +144,7 @@ public class ManageController {
 		return "redirect:../manageCategorys";
 	}
 
-//	===== 프로필관리 ====================================================================
+//	===== �봽濡쒗븘愿�由� ====================================================================
 	@RequestMapping("/profile")
 	public String profileInfo(Model model, @PathVariable String id) {
 		Member profileInfo = memberService.profileInfo(id);
@@ -159,6 +159,8 @@ public class ManageController {
 	public String profileUpdate(Model model, @PathVariable String id) {
 		Member item = memberService.item(id);
 		
+		System.out.println(item.toString());
+		
 		model.addAttribute("item", item);
 		
 		return path + "profile/profileUpdate";
@@ -166,12 +168,17 @@ public class ManageController {
 	
 	@PostMapping("/profile/update")
 	public String profileUpdate(Member member) {
+		Member item = memberService.item(member.getId());
+		
 		if(Uploader.upload(member.getFileUpload())) {
 			member.setProfileImg(member.getFileUpload().getOriginalFilename());
 			
-			memberService.profileUpdate(member);
-		}
-	
+		} else 
+			member.setProfileImg(item.getProfileImg());
+		
+		
+		memberService.profileUpdate(member);
+		
 		return "redirect:../profile";
 	}
 	

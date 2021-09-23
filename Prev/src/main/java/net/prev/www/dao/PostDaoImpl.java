@@ -60,6 +60,11 @@ public class PostDaoImpl implements PostDao {
 		return sql.selectOne("post.updateItem", pid);
 	}
 
+	@Override
+	public List<Post> allList() {
+		return sql.selectList("post.allList");
+	}
+
 	
 
 	

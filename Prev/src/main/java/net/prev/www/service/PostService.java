@@ -20,4 +20,6 @@ public interface PostService {
 
 	Post updateItem(int pid);
 
+	List<Post> allList();
+
 }

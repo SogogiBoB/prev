@@ -36,8 +36,10 @@ public class RootController {
 	@RequestMapping("/")
 	public String index(Model model) {
 		List<Post> list = postService.utdList();
+		List<Post> allList = postService.allList();
 		
 		model.addAttribute("list", list);
+		model.addAttribute("result", allList);
 		
 		return "index";
 	}
@@ -120,5 +122,6 @@ public class RootController {
 		
 		return "redirect:../{pid}";
 	}
+	
 }                          
 

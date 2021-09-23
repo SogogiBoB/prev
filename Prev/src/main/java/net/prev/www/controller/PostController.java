@@ -1,5 +1,6 @@
 package net.prev.www.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -11,13 +12,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.multipart.MultipartFile;
 
-import net.prev.www.model.Category;
 import net.prev.www.model.Post;
+import net.prev.www.model.PostImage;
 import net.prev.www.model.perCategory;
 import net.prev.www.service.CategoryService;
 import net.prev.www.service.PostService;
 import net.prev.www.service.perCategoryService;
+import net.prev.www.util.Uploader;
 
 @Controller
 @RequestMapping("/post/{id}")
@@ -57,9 +60,9 @@ public class PostController {
 	}
 	
 	@PostMapping("/add")
-	public String add(Post item, @PathVariable String id) {
+	public String add(Post item, @PathVariable String id, List<MultipartFile> files) {
+		
 		item.setId(id);
-
 		service.add(item);
 		
 		return "redirect:../../";

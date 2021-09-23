@@ -23,6 +23,8 @@ public interface PostDao {
 	Post searchCount(int pid);
 
 	Post updateItem(int pid);
+
+	List<Post> allList();
 	
 	
 

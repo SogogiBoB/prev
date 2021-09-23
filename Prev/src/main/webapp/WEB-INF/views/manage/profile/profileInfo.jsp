@@ -5,6 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title></title>
+<style>
+#profileImg {
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+</style>
 </head>
 <body>
 	<div>
@@ -12,7 +19,7 @@
 		<h2>${item.id}님 프로필 정보</h2>
 		<div>
 			<label>프로필 이미지</label>	
-			<img src="/upload/files/${item.profileImg}">
+			<img id="profileImg" src="/upload/files/${item.profileImg}">
 		</div>
 		<div>
 			<label>닉네임:</label>

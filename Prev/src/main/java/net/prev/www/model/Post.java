@@ -1,6 +1,9 @@
 package net.prev.www.model;
 
 import java.util.Date;
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 public class Post {
 
@@ -10,9 +13,39 @@ public class Post {
 	private Date regdate;
 	private String id;
 	private int cid;
+	private String cname;
 	private int pcid;
 	private String pcname;
+	
 	private int viewcount;
+	
+	private String thumbnail;
+	private MultipartFile fileUpload;
+	private List<PostImage> postImages;
+
+	public List<PostImage> getPostImages() {
+		return postImages;
+	}
+
+	public void setPostImages(List<PostImage> postImages) {
+		this.postImages = postImages;
+	}
+
+	public String getThumbnail() {
+		return thumbnail;
+	}
+
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+
+	public MultipartFile getFileUpload() {
+		return fileUpload;
+	}
+
+	public void setFileUpload(MultipartFile fileUpload) {
+		this.fileUpload = fileUpload;
+	}
 
 	public int getViewcount() {
 		return viewcount;
@@ -85,5 +118,15 @@ public class Post {
 	public void setCid(int cid) {
 		this.cid = cid;
 	}
+
+	public String getCname() {
+		return cname;
+	}
+
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+	
+	
 
 }

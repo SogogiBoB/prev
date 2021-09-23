@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import net.prev.www.model.PostImage;
 import net.prev.www.service.PostImageService;
 
 @Controller
@@ -17,7 +18,9 @@ public class PostImageController {
 	PostImageService service;
 	
 	@PostMapping("/image")
-	public String imageUpload(@RequestParam("file") MultipartFile file) {
+	public String imageUpload(@RequestParam("file") MultipartFile file, PostImage item) {
+		
+		
 		service.add(file);
 		
 		String filename = file.getOriginalFilename();

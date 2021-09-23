@@ -20,6 +20,8 @@ color: black;
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <script>
 $(function() {
+	let files;
+	
 	$("#summernote").summernote({
 		height: 500,
 		minHeight: null,
@@ -27,30 +29,23 @@ $(function() {
 		focus: true,
 		callbacks : {
 			onImageUpload : function(files, editor, welEditable) {
-				for(let i=0; i<files.legnth; i++){
-					sendFile(files[i], this);
+				showFiles(files[0]);
+				
+				for(let i=0; i<files.legnth-1; i++){
+					files[i];
+			 		showFiles(files[i], this);
 				}
 			}
 		}
 	});
 	
-	function sendFile(file, el) {
-		let form_data = new FormData();
-		form_data.append('file', file);
-		$.ajax({
-			data: form_data,
-			type: "POST",
-			url: '/image',
-			cache: false,
-			contentType: false,
-			enctype: 'multypart/form-data',
-			processData: false,
-			success: function(url) {
-				$(el).summernote('insertImage', url, function($image) {
-					$image.css('width', "25%");
-				});
-			}
-		});
+	function showFiles(files, el) {
+		console.log(files);
+		console.log(files.name);
+		let url = '../post/add.jsp';
+		let filename = files.name;
+		
+		$(el).summernote('insertImage', url, filename);
 	}
 });
 </script>

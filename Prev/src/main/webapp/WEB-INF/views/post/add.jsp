@@ -34,7 +34,7 @@ $(function() {
 </head>
 <body>
 	<div>
-		<form method="post" id="postForm" action="/add">
+		<form method="post">
 			<div>
 				<select name="pcid" >
 					<option value="" selected="selected">카테고리</option>

@@ -19,34 +19,14 @@ color: black;
 <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
 <script>
-$(function() {
-	let files;
+$(function() {	
+	$("#summernote").summernote();
 	
-	$("#summernote").summernote({
-		height: 500,
-		minHeight: null,
-		maxHeight: null,
-		focus: true,
-		callbacks : {
-			onImageUpload : function(files, editor, welEditable) {
-				showFiles(files[0]);
-				
-				for(let i=0; i<files.legnth-1; i++){
-					files[i];
-			 		showFiles(files[i], this);
-				}
-			}
-		}
-	});
-	
-	function showFiles(files, el) {
-		console.log(files);
-		console.log(files.name);
-		let url = '../post/add.jsp';
-		let filename = files.name;
+	$("#submit").click(function() {
+		let item = $(".note-editing-area img").filter(":first").attr("src");
 		
-		$(el).summernote('insertImage', url, filename);
-	}
+		$("#thumbnail input").val(item);
+	});
 });
 </script>
 
@@ -71,8 +51,10 @@ $(function() {
 				<label>내용</label>
 				<textarea id="summernote" class="form-control" rows="15" name="content" cols="80" placeholder="내용을 입력해주세요" ></textarea>
 			</div>
-
-			<button>등록</button>
+			<div id="thumbnail">
+				<input type="hidden" name="thumbnail" value="">
+			</div>
+			<button id="submit">등록</button>
 		</form>
 	</div>
 	<div>

@@ -1,7 +1,6 @@
 package net.prev.www.model;
 
 import java.util.Date;
-import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
@@ -21,15 +20,6 @@ public class Post {
 	
 	private String thumbnail;
 	private MultipartFile fileUpload;
-	private List<PostImage> postImages;
-
-	public List<PostImage> getPostImages() {
-		return postImages;
-	}
-
-	public void setPostImages(List<PostImage> postImages) {
-		this.postImages = postImages;
-	}
 
 	public String getThumbnail() {
 		return thumbnail;

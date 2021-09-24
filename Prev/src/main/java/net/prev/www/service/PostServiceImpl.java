@@ -8,19 +8,14 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import net.prev.www.dao.PostDao;
-import net.prev.www.dao.PostImageDao;
 import net.prev.www.model.Post;
-import net.prev.www.model.PostImage;
 
 @Service
 public class PostServiceImpl implements PostService {
 
 	@Autowired
 	PostDao dao;
-	
-	@Autowired
-	PostImageDao postImageDao;
-	
+
 	@Override
 	public List<Post> list(String id) {
 		return dao.list(id);

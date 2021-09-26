@@ -4,6 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="data:,">
 <title></title>
 <style>
 img {width: 250px; height: 150px;}

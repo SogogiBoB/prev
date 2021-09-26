@@ -29,7 +29,7 @@ $(function() {
 	});
 });
 </script>
-
+<link rel="icon" href="data:,">
 <title></title>
 </head>
 <body>

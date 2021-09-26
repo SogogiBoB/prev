@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="data:,">
 <title></title>
 <style>
 a {

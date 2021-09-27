@@ -12,15 +12,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-<style>
-* {margin: 0; padding: 0;}
-body {margin-top: 40px;}
-#content {width: 600px; border: 1px solid #ccc;}
-.container-fluid h3 {font-family: Oswald; font-size: 3em; text-align: center;  margin-top: 40px;}
-.container-fluid p {font-family: Oswald; font-size: 1.5em; text-align: center;}
-label {font-size:18px;}
-#goback {margin-bottom: 40px;}
-</style>
 <script>
 let check_id = false;
 
@@ -109,34 +100,34 @@ function goBack() {
 </script>
 </head>
 <body>
-   <div class="container-fluid" id="content">
-      <div class="d-grid gap-2 col mx-auto">
+   <div id="content">
+      <div>
          <h3>회원가입</h3>
          <p>SIGN-UP</p>
             <form name="signupForm" method="post">
-               <div class="d-grid gap-2 col-6 mx-auto" class="form-label">
+               <div>
                   <label>아이디</label>
-                  <input type="text" name="id" onchange="changeId()" class="form-control mb-1"><div onclick="checkId_Async()" class="btn btn-outline-primary btn-sm mb-4">중복확인</div>
+                  <input type="text" name="id" onchange="changeId()"><div onclick="checkId_Async()" >중복확인</div>
                </div>
-               <div class="d-grid gap-2 col-6 mx-auto" class="form-label">
+               <div >
                   <label>이름</label>
-                  <input type="text" name="name" class="form-control mb-4">
+                  <input type="text" name="name">
                </div>
-               <div class="d-grid gap-2 col-6 mx-auto" class="form-label">
+               <div>
                   <label>비밀번호</label>
-                  <input type="password" name="pw" class="form-control mb-4">
+                  <input type="password" name="pw">
                </div>
-               <div class="d-grid gap-2 col-6 mx-auto" class="form-label">
+               <div>
                   <label>비밀번호 확인</label>
-                  <input type="password" name="pw_check" class="form-control mb-4">
+                  <input type="password" name="pw_check">
                </div>
-               <div class="d-grid gap-2 col-6 mx-auto" class="form-label">
+               <div>
                   <label>닉네임</label>
-                  <input type="text" name="nickname" class="form-control mb-5">
+                  <input type="text" name="nickname">
                </div>
-               <div class="d-grid gap-2 col-6 mx-auto" class="form-label">
+               <div>
                   <label>이메일</label>
-                  <input type="text" name="email" class="form-control mb-5">
+                  <input type="text" name="email">
                </div>
                <div>
                   <input type="hidden" name="pr" value = "">
@@ -145,9 +136,9 @@ function goBack() {
                   <input type="hidden" name="profileImg" value="">
                </div>
             </form>
-         <div class="d-grid gap-2 col-6 mx-auto" class="form-label">
-            <button onclick="signup()" class="btn btn-secondary mb-2">회원가입</button>
-            <button onclick="goBack()" class="btn btn-outline-primary" id="goback">처음으로</button>
+         <div>
+            <button onclick="signup()" >회원가입</button>
+            <button onclick="goBack()" id="goback">처음으로</button>
          </div>
       </div>
    </div>

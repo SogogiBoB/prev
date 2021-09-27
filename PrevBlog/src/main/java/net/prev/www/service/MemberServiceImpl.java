@@ -37,6 +37,7 @@ public class MemberServiceImpl implements MemberService {
 
 	@Override
 	public void profileUpdate(Member member) {
+		
 		dao.profileUpdate(member);
 	}
 

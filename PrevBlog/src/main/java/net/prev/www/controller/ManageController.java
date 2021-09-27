@@ -44,7 +44,7 @@ public class ManageController {
 		return path+ "index";
 	}
 	
-//===== 湲�愿�由� ====================================================================
+//===== 疫뀐옙�꽴占썹뵳占� ====================================================================
 	@RequestMapping("/posts")
 	public String postsList(Model model, @PathVariable String id) {
 		List<Post> list = postService.list(id);
@@ -99,7 +99,7 @@ public class ManageController {
 		return "redirect:../posts";
 	}
 	
-//	===== 移댄뀒怨좊━愿�由� ====================================================================
+//	===== 燁삳똾�믤�⑥쥓�봺�꽴占썹뵳占� ====================================================================
 	@RequestMapping("/manageCategorys")
 	public String categorysList(Model model, @PathVariable String id) {
 		List<perCategory> list = perCateService.list(id);
@@ -144,7 +144,7 @@ public class ManageController {
 		return "redirect:../manageCategorys";
 	}
 
-//	===== �봽濡쒗븘愿�由� ====================================================================
+//	===== 占쎈늄嚥≪뮉釉섉꽴占썹뵳占� ====================================================================
 	@RequestMapping("/profile")
 	public String profileInfo(Model model, @PathVariable String id) {
 		Member profileInfo = memberService.profileInfo(id);
@@ -171,7 +171,9 @@ public class ManageController {
 		Member item = memberService.item(member.getId());
 		
 		if(Uploader.upload(member.getFileUpload())) {
-			member.setProfileImg(member.getFileUpload().getOriginalFilename());
+			String newName = Uploader.newFileName(member.getFileUpload());
+			
+			member.setProfileImg(newName);
 			
 		} else 
 			member.setProfileImg(item.getProfileImg());

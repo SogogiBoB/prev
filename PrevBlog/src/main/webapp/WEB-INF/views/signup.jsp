@@ -12,6 +12,15 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
 <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+
+<style>
+#content{}
+h3{
+padding-top: 80px;
+text-align: center;
+}
+p{text-align: center;}
+</style>
 <script>
 let check_id = false;
 
@@ -102,43 +111,51 @@ function goBack() {
 <body>
    <div id="content">
       <div>
-         <h3>회원가입</h3>
-         <p>SIGN-UP</p>
+         <h3>PREV</h3>
+         <p>회원가입</p>
             <form name="signupForm" method="post">
-               <div>
-                  <label>아이디</label>
-                  <input type="text" name="id" onchange="changeId()"><div onclick="checkId_Async()" >중복확인</div>
-               </div>
-               <div >
-                  <label>이름</label>
-                  <input type="text" name="name">
-               </div>
-               <div>
-                  <label>비밀번호</label>
-                  <input type="password" name="pw">
-               </div>
-               <div>
-                  <label>비밀번호 확인</label>
-                  <input type="password" name="pw_check">
-               </div>
-               <div>
-                  <label>닉네임</label>
-                  <input type="text" name="nickname">
-               </div>
-               <div>
-                  <label>이메일</label>
-                  <input type="text" name="email">
-               </div>
-               <div>
-                  <input type="hidden" name="pr" value = "">
-               </div>
-               <div>
-                  <input type="hidden" name="profileImg" value="">
+            	<div class="row">
+	            	<div class="col-4"></div>
+	            	<div class="col-4">
+		               <div class="row mb-1">
+		                  <label class="mb-1 text-muted fs-6">아이디</label>
+		                  <input type="text" name="id" onchange="changeId()">
+		               </div>
+		               <div class="mb-3">
+		               		<button onclick="checkId_Async()" class="btn btn-outline-secondary btn-sm">중복확인</button>
+		               </div>
+		               <div class="row mb-3">
+		                  <label class="mb-1 text-muted fs-6">이름</label>
+		                  <input type="text" name="name">
+		               </div>
+		               <div class="row mb-3">
+		                  <label class="mb-1 text-muted fs-6">비밀번호</label>
+		                  <input type="password" name="pw">
+		               </div>
+		               <div class="row mb-3">
+		                  <label class="mb-1 text-muted fs-6 fst-italic">비밀번호 확인</label>
+		                  <input type="password" name="pw_check">
+		               </div>
+		               <div class="row mb-3">
+		                  <label class="mb-1 text-muted fs-6">닉네임</label>
+		                  <input type="text" name="nickname">
+		               </div>
+		               <div class="row mb-3">
+		                  <label class="mb-1 text-muted fs-6">이메일</label>
+		                  <input type="text" name="email">
+		               </div>
+		               <div>
+		                  <input type="hidden" name="pr" value = "">
+		               </div>
+		               <div>
+		                  <input type="hidden" name="profileImg" value="">
+		               </div>
+	               </div>
                </div>
             </form>
-         <div>
-            <button onclick="signup()" >회원가입</button>
-            <button onclick="goBack()" id="goback">처음으로</button>
+         <div class="d-grid gap-2 col-2 mx-auto">
+            <button onclick="signup()"  class="btn btn-primary btn-lg">회원가입</button>
+            <button onclick="goBack()" id="goback" class="btn btn-secondary btn-sm">처음으로</button>
          </div>
       </div>
    </div>

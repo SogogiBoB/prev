@@ -24,7 +24,12 @@ height: 100px;
 	<h2>prev</h2>
 	<p>개인화면 입니다</p>
 	<c:if test="${sessionScope.id != null}">
-		<p>${sessionScope.member.nickname}님의 블로그 입니다.</p>
+		<c:if test="${memberInfo.pr == null}">
+            <p>안녕하세요 ${memberInfo.nickname}의 블로그입니다.</p>
+        </c:if>
+        <c:if test="${memberInfo.pr != null}">
+            <p>${memberInfo.pr}</p>
+        </c:if>
 		<a href="logout">로그아웃</a>
 	</c:if>
 	

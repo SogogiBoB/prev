@@ -26,7 +26,7 @@
             <img id="profileImg" src="/upload/files/${item.profileImg}">
          </c:if>
          <c:if test="${item.profileImg == null}">
-            <img id="profileImg" src="/images/profileImg.png">
+            <img id="profileImg" src="/images/no_profile.png">
          </c:if>
       </div>
       <div>

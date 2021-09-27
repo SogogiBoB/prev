@@ -12,8 +12,8 @@ public class Uploader {
 	public static boolean upload(MultipartFile file) {
 		if(file != null && !file.isEmpty()) {
 			return true;
-		}
-		return false;
+		} else
+			return false;
 	}
 	
 	public static String newFileName(MultipartFile file) {

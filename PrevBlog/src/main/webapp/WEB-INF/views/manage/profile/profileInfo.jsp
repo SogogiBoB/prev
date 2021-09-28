@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="icon" href="data:,">
-<title></title>
+<title>프로필 정보</title>
 
 <style>
 #profileImg {

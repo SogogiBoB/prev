@@ -28,7 +28,8 @@
 </head>
 <body>
 	<div>
-		<p>${item.pid}</p>
+		<p>${item.name}</p>
+		<p>${item.pcname}</p>
 		<p>${item.title}</p>
 		<p>${item.content}</p>
 		<p><fmt:formatDate value="${item.regdate}" pattern="yyyy년 MM월 dd일"/></p>

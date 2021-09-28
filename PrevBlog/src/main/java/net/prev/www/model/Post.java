@@ -16,7 +16,16 @@ public class Post {
 	private int pcid;
 	private String pcname;
 	private String profileImg;
+	private String nickname;
 	
+	public String getNickname() {
+		return nickname;
+	}
+
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+
 	private int viewcount;
 	
 	

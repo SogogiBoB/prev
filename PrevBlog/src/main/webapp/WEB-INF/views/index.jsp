@@ -8,28 +8,155 @@
 <meta charset="UTF-8">
 <link rel="icon" href="data:,">
 <title></title>
-<style>
-a {
-text-decoration : none;
-color: black;
-}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
+<style>
 #thumbnail {
 width: 100px;
 height: 100px;
 }
+* {
+    margin: 0;
+    padding: 0;
+}
+.container-fluid {
+    width: 1920px;
+}
+#header {
+    width: 100%;
+}
+#header #logo {
+    margin-top: 20px;
+    margin-left:  400px;
+}
+#header #button {
+    width: 55px;
+    height: 25px;
+    border: 1px solid #e4e4e4;
+    background: none;
+    font-size: 12px;
+    margin-left: 978px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+#header #button a {
+    text-decoration: none;
+    color: black;
+}
+#header #logo,#button {
+    display: inline-block;
+}
+section {
+    width: 1100px;
+    height: 630px;
+    margin: 0 auto;
+    margin-top: 55px;
+}
+#main_image {
+    width: 1100px;
+    height: 280px;
+    margin-top: 40px;
+    background: cyan;
+}
+.carousel-inner {
+    width: 1100px;
+    height: 280px;
+    background-position: top;
+}
+#slogan {
+}
+#slogan h4 {
+    font-size: 36px;
+}
+#slogan h3 {
+	line-height: 25px;
+    font-size: 46px;
+}
+#login_box {
+	width: 505px;
+	height: 175px;
+	margin-left: 50px;
+	margin-top: 30px;
+	border-right: 2px solid black;
+	background: green;
+}
+
+#upper_content {
+	border-bottom: 1px solid #e4e4e4;
+}
+#memberProfile img{
+	width: 90px;
+	height: 90px;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+#memberProfile, #profileInfo {
+	display: inline-block;
+	background: red;
+}
+#profileInfo {
+	
+}
 </style>
+<script>
+$(function() {
+	$("#button").click(function() {
+		location.href ="/login";
+	});
+});
+</script>
 </head>
 <body>
-	<h2>prev</h2>
+	<div class="container-fluid">
+		<div id="upper_content">
+	        <div id="header">
+	            <div id="logo">
+	                <img src="images/main_logo.gif">
+	            </div>
+	            <c:if test="${sessionScope.id != null}">
+					<p>${sessionScope.member.nickname}님 환영합니다.</p>
+				<a href="logout">로그아웃</a>
+				</c:if>
+				<c:if test="${sessionScope.id == null}">
+					<div id="button">로그인</div>
+				</c:if>
+	        </div>
+	        <section>
+	            <div id="slogan">
+	                <h4>어제의 일상,</h4>
+	                <h3><b>PREV</b>에 담다</h3>
+	            </div>
+	            <div id="main_image" class="carousel slide" data-bs-ride="carousel">
+	                <div class="carousel-inner">
+	                    <div class="carousel-item active" data-bs-interval="4000">
+	                      <img src="images/people_1.gif" class="d-block w-100" alt="...">
+	                    </div>
+	                    <div class="carousel-item" data-bs-interval="4000">
+	                      <img src="images/people_2.gif" class="d-block w-100" alt="...">
+	                    </div>
+	                    <div class="carousel-item" data-bs-interval="4000">
+	                      <img src="images/people_3.gif" class="d-block w-100" alt="...">
+	                    </div>
+	                </div>
+	            </div>
+	            <div id="login_box">
+	            	<div id="memberProfile">
+	            		<img src="/upload/files/${sessionScope.member.profileImg}">
+	            	</div>
+	            	<div id="profileInfo">
+	            		<h3>${sessionScope.member.nickname}</h3>
+	            		<h4>블라블라블라</h4>
+	            	</div>
+	            </div>
+	        </section>
+        </div>
+    </div>
 	<p>블로그 메인 화면입니다.</p>
-	<c:if test="${sessionScope.id != null}">
-		<p>${sessionScope.member.nickname}님 환영합니다.</p>
-		<a href="logout">로그아웃</a>
-	</c:if>
-	<c:if test="${sessionScope.id == null}">
-		<a href="login">로그인</a>
-	</c:if>
+	
 	<div>
 		<a href="post/${sessionScope.id}/add">글쓰기</a></div>
 	<div>

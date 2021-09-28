@@ -73,12 +73,17 @@
 	margin: 0 auto;
 	background-color: fuchsia;
 }
-/*
+
 #reply_list {
-	border: 1px solid black;
-	height: auto;
-	width: 400px;
-} */
+	margin-top: 60px;
+} 
+.reply-button{
+	float: right;
+	margin-top:10px; 
+}
+.id, .regdate, .update, .delete{
+	text-align: right;
+}
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -167,26 +172,33 @@
   						<textarea name="content" class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
   						<label for="floatingTextarea2">댓글을 입력하세요.</label>
 					</div>
-					<button type="submit">댓글등록</button>
+					<button type="submit" class="reply-button btn btn-primary btn-sm">댓글등록</button>
 				</form>
 			</div>
  			 
 		</div>
 					
 					<div id="reply_list">
+					  <a href="#" class="list-group-item list-group-item-action">
+					    <div class="d-flex w-100 justify-content-between">
+					      <h5 class="mb-1">List group item heading</h5>
+					      <small class="text-muted">3 days ago</small>
+					    </div>
+					    <p class="mb-1">Some placeholder content in a paragraph.</p>
+					    <small class="text-muted">And some muted small print.</small>
+					  </a>
 						<c:if test="${replyList.size() < 1}">
 							<div>
 								<p>노댓글</p>
 							</div>
 						</c:if>
 						<c:forEach var="reply" items="${replyList}">
-							<div data-rid="${reply.rid}">
-								<p class="id">${reply.id}</p>
-								<p class="content">${reply.content}</p>
-								<p class="regdate">
-									<fmt:formatDate value="${reply.regdate}"
-										pattern="yyyy-MM-dd HH:mm:ss" />
-								</p>
+							<div data-rid="${reply.rid}" class="list-group-item list-group-item-action">
+								<h5 class="content mb-1">${reply.content}</h5>
+								<small class="id text-muted">${reply.id}</small>
+								<small class="regdate text-muted">
+									<fmt:formatDate value="${reply.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
+								</small>
 								<c:if test="${sessionScope.member.id==reply.id}">
 									<button class="update">변경</button>
 									<button class="delete">삭제</button>

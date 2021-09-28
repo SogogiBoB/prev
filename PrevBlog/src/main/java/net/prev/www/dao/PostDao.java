@@ -25,6 +25,8 @@ public interface PostDao {
 	Post updateItem(int pid);
 
 	List<Post> allList();
+
+	List<Post> EList(String id);
 	
 	
 

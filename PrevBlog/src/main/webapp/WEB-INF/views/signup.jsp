@@ -112,7 +112,7 @@ function goBack() {
    <div id="content">
       <div>
          <h3>PREV</h3>
-         <p>회원가입!!</p>
+         <p>회원가입</p>
             <form name="signupForm" method="post">
             	<div class="row">
 	            	<div class="col-4"></div>

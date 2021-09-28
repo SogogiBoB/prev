@@ -22,4 +22,6 @@ public interface PostService {
 
 	List<Post> allList();
 
+	List<Post> EList(String id);
+
 }

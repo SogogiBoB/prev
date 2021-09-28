@@ -40,7 +40,7 @@ public class PostServiceImpl implements PostService {
 		
 		int count = item.getViewcount();
 		
-		System.out.println("Ä«¿îÆ®´Â" + count);
+		System.out.println("Ä«ï¿½ï¿½Æ®ï¿½ï¿½" + count);
 		
 		item.setPid(pid);
 		item.setViewcount(count+1);
@@ -69,6 +69,11 @@ public class PostServiceImpl implements PostService {
  	@Override
 	public List<Post> allList() { 		
 		return dao.allList();
+	}
+
+	@Override
+	public List<Post> EList(String id) {
+		return dao.EList(id);
 	}
 
 

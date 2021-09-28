@@ -53,7 +53,7 @@ public class Mycontroller {
 	@RequestMapping({"/","index"})
 	public String index(@PathVariable String id, Model model) {
 		Member memberInfo = memberService.item(id);
-		List<Post> list = postService.list(id);
+		List<Post> list = postService.EList(id);
 		
 		model.addAttribute("memberInfo", memberInfo);
 		model.addAttribute("list", list);

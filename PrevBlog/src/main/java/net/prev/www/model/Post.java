@@ -15,9 +15,20 @@ public class Post {
 	private String cname;
 	private int pcid;
 	private String pcname;
+	private String profileImg;
 	
 	private int viewcount;
 	
+	
+	
+	public String getProfileImg() {
+		return profileImg;
+	}
+
+	public void setProfileImg(String profileImg) {
+		this.profileImg = profileImg;
+	}
+
 	private String thumbnail;
 	private MultipartFile fileUpload;
 

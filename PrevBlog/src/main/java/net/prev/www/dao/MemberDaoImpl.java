@@ -1,5 +1,7 @@
 package net.prev.www.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -35,5 +37,10 @@ public class MemberDaoImpl implements MemberDao {
 	@Override
 	public void profileUpdate(Member member) {
 		sql.update("member.profileUpdate", member);
+	}
+
+	@Override
+	public List<Member> list() {
+		return sql.selectList("member.list");
 	}
 }

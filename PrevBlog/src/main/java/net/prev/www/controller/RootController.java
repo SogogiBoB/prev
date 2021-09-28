@@ -31,10 +31,13 @@ public class RootController {
 	
 	@Autowired
 	ReplyService replyService;
-
+	
+	@Autowired
+	MemberService memberService;
 
 	@RequestMapping("/")
 	public String index(Model model) {
+		List<Member> memberList = memberService.list();
 		List<Post> list = postService.utdList();
 		List<Post> allList = postService.allList();
 		

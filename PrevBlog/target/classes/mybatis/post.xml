@@ -6,7 +6,10 @@
 
 	<select id="utdList" resultType="Post">
 	<![CDATA[
-		SELECT * FROM (SELECT * FROM post ORDER BY regdate desc)WHERE ROWNUM <=6
+		select pid, title, sub.id, thumbnail, regdate, member.profile_img from 
+		(select * from post order by regdate desc) sub
+		join member on sub.id=member.id
+		where ROWNUM <= 3
 	]]>
 	</select>
 

@@ -1,5 +1,7 @@
 package net.prev.www.service;
 
+import java.util.List;
+
 import net.prev.www.model.Member;
 
 public interface MemberService {
@@ -13,5 +15,7 @@ public interface MemberService {
 	Member profileInfo(String id);
 
 	void profileUpdate(Member member);
+
+	List<Member> list();
 
 }

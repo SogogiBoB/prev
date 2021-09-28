@@ -3,6 +3,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="member">
+	<select id="list" resultType="Member">
+		SELECT * FROM member
+	</select>
 
 	<!-- <select id="list" resultType="Post">
 		SELECT post.*, category.cname FROM post JOIN category ON post.cid = category.cid

@@ -1,5 +1,7 @@
 package net.prev.www.dao;
 
+import java.util.List;
+
 import net.prev.www.model.Member;
 
 public interface MemberDao {
@@ -13,5 +15,7 @@ public interface MemberDao {
 	Member profileInfo(String id);
 
 	void profileUpdate(Member member);
+
+	List<Member> list();
 
 }

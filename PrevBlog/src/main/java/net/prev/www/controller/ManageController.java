@@ -2,6 +2,8 @@ package net.prev.www.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -167,7 +169,7 @@ public class ManageController {
 	}
 	
 	@PostMapping("/profile/update")
-	public String profileUpdate(Member member) {
+	public String profileUpdate(Member member, HttpSession session) {
 		Member item = memberService.item(member.getId());
 		
 		if(Uploader.upload(member.getFileUpload())) {
@@ -180,6 +182,7 @@ public class ManageController {
 		
 		
 		memberService.profileUpdate(member);
+		session.setAttribute("member", member);
 		
 		return "redirect:../profile";
 	}

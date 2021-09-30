@@ -43,7 +43,7 @@ height: 100px;
 	color: #333333;
     width: 1060px;
     margin-left: 62px;
-    margin-top: 40px;
+    margin-top: 80px;
     margin-bottom: 40px;
 }
 #b-f-hr{
@@ -166,6 +166,7 @@ height: 100px;
 	width: 240px;
 	margin-top: 40px;
 	border: solid 2px #eaeaea;
+	display: inline-block;
 }
 .profile{
 	height: 360px;
@@ -210,13 +211,15 @@ height: 100px;
  	width: 240px;
 	height: 100px;
 	vertical-align: top;
-	margin: 40px auto;
+	margin-top: 40px;
+	margin-left: 25px;
 }
 .newpost{
 	width: 240px;
 	height: auto;
 	margin-top: 40px;
 	vertical-align: top;
+	margin-left: 25px;
 }
 #name{
 	margin-left: 10px; 
@@ -370,57 +373,53 @@ height: 100px;
 			</nav>
 			</div> -->
 			<hr id="b-f-hr">
-			<div class="body-footer row">
-				<div class="col-3">
-					<div class="profile">
-						<div id="profileImg">
-							<img src="/upload/files/${memberInfo.profileImg}">
-						</div>
-						<div>
-							<p id="nickname"><b>${memberInfo.nickname}</b></p>
-							<c:if test="${memberInfo.pr == null}">
-								<p class="pr">안녕하세요 ${memberInfo.nickname}의 블로그입니다.</p>
-							</c:if>
-							<c:if test="${memberInfo.pr != null}">
-								<p class="pr">${memberInfo.pr}</p>
-							</c:if>
-						</div>
-						<div id="button_box">
-			            	<button onclick="location.href='../../post/${sessionScope.id}/add'" id="postsadd">글쓰기</button>
-							<button onclick="location.href='../../manage/${sessionScope.id}/'" id="manage">관리</button>
-						</div>
+			
+			<div class="body-footer">
+				<div class="profile">
+					<div id="profileImg">
+						<img src="/upload/files/${memberInfo.profileImg}">
+					</div>
+					<div>
+						<p id="nickname"><b>${memberInfo.nickname}</b></p>
+						<c:if test="${memberInfo.pr == null}">
+							<p class="pr">안녕하세요 ${memberInfo.nickname}의 블로그입니다.</p>
+						</c:if>
+						<c:if test="${memberInfo.pr != null}">
+							<p class="pr">${memberInfo.pr}</p>
+						</c:if>
+					</div>
+					<div id="button_box">
+		            	<button onclick="location.href='../../post/${sessionScope.id}/add'" id="postsadd">글쓰기</button>
+						<button onclick="location.href='../../manage/${sessionScope.id}/'" id="manage">관리</button>
 					</div>
 				</div>
-				<div class="col-3">
-					<div class="categorys">
-						<div id="tagID"> 
-							<p>카테고리 전체보기</p>
-						</div>
-    						<c:if test="${clist.size() < 1}">
-								<li class="list-group-item">
-									<p>등록된 카테고리가 없습니다.</p>
-								</li>
-							</c:if>
-							<div class="cate">
-							<c:forEach var="citem" items="${clist}">
-								<ul>
-									<li>${citem.cname}</li>
-								</ul>
-							<div class="pcate">
-								<c:forEach var="item" items="${pclist}">
-									<c:if test="${citem.cid== item.cid}">
-										<ul>
-											<li>${item.pcname}</li>
-										</ul>
-									</c:if>
+			
+				<div class="categorys">
+					<div id="tagID"> 
+						<p>카테고리 전체보기</p>
+					</div>
+    				<c:if test="${list.size() < 1}">
+						<li class="list-group-item">
+							<p>등록된 카테고리가 없습니다.</p>
+						</li>
+					</c:if>
+					 <div class="cate">
+								<c:forEach var="citem" items="${clist}">
+									<ul>
+										<li>${citem.cname}</li>
+									</ul>
+									<div class="pcate">
+									<c:forEach var="item" items="${pclist}">
+											<ul>
+												<li>${item.pcname}</li>
+											</ul>
+									</c:forEach>
+									</div>
 								</c:forEach>
 							</div>
-							</c:forEach>
-							</div>
 						</div>
-					</div>
-				</div>
-				<div class="col-3">
+					
+				
 					<div class="newpost">
 						<p id="name"><b>최신글</b></p>
 							<c:forEach var="item" items="${udtlist}">
@@ -437,15 +436,17 @@ height: 100px;
 								<hr id="b_post_hr">
 							</c:forEach>
 					</div>
-				</div>
-				<div class="col-3">
+				
+
+
 					<div class="calendar">
+						<jsp:include page="/WEB-INF/views/calendar/main.jsp" ></jsp:include>
 					</div>
-				</div>
+					</div>
+					
 			</div>
 				<a href="logout">로그아웃</a>
 				<a href="../../">메인화면으로</a>
 			</div>
-		</div>
 </body>
 </html>

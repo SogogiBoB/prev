@@ -5,7 +5,8 @@
 <mapper namespace="category">
 
 	<select id="list" resultType="Category">
-		SELECT * FROM category
+		SELECT category. *, percategory.pcid, percategory.pcname FROM category
+		JOIN percategory on category.cid=percategory.cid
 	</select>
 	
 	<insert id="add">

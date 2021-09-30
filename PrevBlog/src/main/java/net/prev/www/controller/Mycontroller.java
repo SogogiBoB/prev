@@ -55,6 +55,7 @@ public class Mycontroller {
 	public String index(@PathVariable String id, Model model) {
 		Member memberInfo = memberService.item(id);
 		List<Post> list = postService.EList(id);
+		List<Post> udtlist = postService.utdList(id);
 		List<perCategory> pclist = pcateService.list(id);
 		List<Category> clist = categoryService.list();
 		
@@ -62,6 +63,7 @@ public class Mycontroller {
 		model.addAttribute("list", list);
 		model.addAttribute("pclist", pclist);
 		model.addAttribute("clist", clist);
+		model.addAttribute("udtlist", udtlist);
 		
 		return path+"index";
 	}

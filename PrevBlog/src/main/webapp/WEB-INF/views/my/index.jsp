@@ -31,6 +31,32 @@ height: 100px;
     padding: 0;
     font-family: "Noto+Sans+KR";
 }
+#b-h-hr{
+	padding: 2px;
+	color: #333333;
+    width: 1060px;
+    margin-left: 62px;
+    margin-top: 23px;
+    margin-bottom: 40px;
+}
+#b-p-hr{
+	color: #333333;
+    width: 1060px;
+    margin-left: 62px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+#b-f-hr{
+    border:2px;
+    color: #333333;
+    width: 1060px;
+    margin-left: 62px;
+    margin-top: 23px;
+}
+#b_post_hr{
+	width: 210px;
+	margin: 0 10px 10px 10px;
+}
 .container-fluid{
     width: 1920px;
     height: 2125px;
@@ -95,12 +121,6 @@ height: 100px;
     color: #4f4f4f;
 }
 .body-box hr{
-    border:2px;
-    color: #333333;
-    width: 1060px;
-    margin-left: 62px;
-    margin-top: 23px;
-    margin-bottom: 40px;
 }
 .body-body{
     margin-left: 62px;
@@ -115,6 +135,22 @@ height: 100px;
 	height: 260px;
 	table-layout: fixed;  
 }
+.card-img, .card-img-bottom, .card-img-top {
+    width: 200px;
+    height: 200px;
+    margin-top: 10px;
+    margin-left: 9px;
+}
+.row>* {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x)/ 2);
+    padding-left: calc(var(--bs-gutter-x)/ 2);
+    margin-top: var(--bs-gutter-y);
+    padding-bottom: 40px;
+}
+
 .body-card{
 	margin-bottom:10px ; 
 }
@@ -125,11 +161,6 @@ height: 100px;
 	 width: 1060px;
 	 height: 413px;
 	 margin: 0 auto;
-}
-#b-f-hr{
-	margin: 0 auto;
-	padding: 1px;
-	
 }
  .profile, .categorys, .newpost, .calendar{ 
 	width: 240px;
@@ -147,15 +178,14 @@ height: 100px;
 #profileImg img{
 	width: 180px;
  	height: 180px; 
+ 	border: solid 1px #c5c8c9;
 }
 #nickname{
-	margin:10px;
 	text-align: center;
 	font-size: 14px;
 	color: #4f4f4f;
 }
 .pr{
-	vertical-align: top;
 	text-align: center;
 	font-size: 10px;
 	color: #797979;
@@ -184,10 +214,43 @@ height: 100px;
 }
 .newpost{
 	width: 240px;
-	height: 260px;
+	height: auto;
 	margin-top: 40px;
 	vertical-align: top;
 }
+#name{
+	margin-left: 10px; 
+	margin-top: 30px;
+	margin-bottom: 30px;
+	color: #4f4f4f;
+}
+	.post_box{
+		width: 230px;
+		height: 55px; 
+		margin: 15px 0 0 10px ;
+	}
+	.post_box img{
+		width: 45px;
+		height: 45px;
+		border: solid 1px #c5c8c9;
+	}
+	.post_box p{
+		font-size: 12px;
+		vertical-align:top;
+		margin-left: 10px;
+	}
+	.post_box small{
+		font-size: 10px;
+		float: right;
+		margin-right: 20px;
+		margin-top: 30px;
+	}
+	.post_box img, .post_box p, .post_box small{
+		display: inline-block;
+	}
+	.post_content{
+		display: inline-block;
+	}
  .calendar{
 	width: 240px;
 	height: 260px;
@@ -200,6 +263,13 @@ height: 100px;
 	$(function(){
 		$("#button").click(function(){
 		})
+		
+		$("#tagID").click(function(){
+			$(".cate").toggle();
+		}); 
+		$(".cate").click(function(){
+			$(".pcate").toggle();
+		});
 	});
 </script>
 </head>
@@ -256,7 +326,7 @@ height: 100px;
 					<b>최신</b>
 				</div>
 			</div>
-			<hr style="padding: 1px">
+			<hr id="b-h-hr">
 			<div class="body-body row">
 				<c:forEach var="item" items="${list}">
 					<div class="body-card col">
@@ -278,7 +348,7 @@ height: 100px;
 					</div>
 				</c:forEach>
 			</div>
-			<hr>
+			<hr id="b-p-hr">
 			<!-- 페이지네이션  -->
 			<!-- <div id="pager">
 			<nav aria-label="Page navigation example">
@@ -301,7 +371,7 @@ height: 100px;
 			</div> -->
 			<hr id="b-f-hr">
 			<div class="body-footer row">
-				<div class="col">
+				<div class="col-3">
 					<div class="profile">
 						<div id="profileImg">
 							<img src="/upload/files/${memberInfo.profileImg}">
@@ -321,52 +391,59 @@ height: 100px;
 						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col-3">
 					<div class="categorys">
-						<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample"> 
-						
-						</a>
-						</a>
-						<nav>
-							<ul class="list-group list-group-flush">
-								<li><a href="">카테고리 전체보기</a><li>
+						<div id="tagID"> 
+							<p>카테고리 전체보기</p>
+						</div>
+    						<c:if test="${clist.size() < 1}">
+								<li class="list-group-item">
+									<p>등록된 카테고리가 없습니다.</p>
+								</li>
+							</c:if>
+							<div class="cate">
+							<c:forEach var="citem" items="${clist}">
 								<ul>
-									<li>
-										<c:if test="${clist.size() < 1}">
-											<li class="list-group-item">
-												<p>등록된 카테고리가 없습니다.</p>
-											</li>
-										</c:if>
-										<c:forEach var="citem" items="${clist}">
-											<li>${citem.cname}</li>
-												<c:forEach var="item" items="${pclist}">
-													<c:if test="${citem.cid== item.cid}">
-														<ul>
-															<li>${item.pcname}</li>
-														</ul>
-													</c:if>
-												</c:forEach>
-										</c:forEach>
-									</li>
+									<li>${citem.cname}</li>
 								</ul>
-							</ul>
-						</nav>
+							<div class="pcate">
+								<c:forEach var="item" items="${pclist}">
+									<c:if test="${citem.cid== item.cid}">
+										<ul>
+											<li>${item.pcname}</li>
+										</ul>
+									</c:if>
+								</c:forEach>
+							</div>
+							</c:forEach>
+							</div>
+						</div>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col-3">
 					<div class="newpost">
+						<p id="name"><b>최신글</b></p>
+							<c:forEach var="item" items="${udtlist}">
+							<div class="post_box">
+								<c:if test="${item.thumbnail != null}">
+									<img src="${item.thumbnail}">
+								</c:if>
+								<c:if test="${item.thumbnail == null}">
+									<img src="/images/no_image.gif">
+								</c:if>
+									<p>${item.title}</p>
+									<small class="text-muted">조회 ${item.viewcount} · <fmt:formatDate value="${item.regdate}" pattern="YYYY.MM.dd" /></small>
+									</div>
+								<hr id="b_post_hr">
+							</c:forEach>
 					</div>
 				</div>
-				<div class="col">
+				<div class="col-3">
 					<div class="calendar">
 					</div>
 				</div>
 			</div>
-				
-				
-					<a href="logout">로그아웃</a>
-					
-				
+				<a href="logout">로그아웃</a>
 				<a href="../../">메인화면으로</a>
 			</div>
 		</div>

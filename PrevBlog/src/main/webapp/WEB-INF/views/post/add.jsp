@@ -110,7 +110,7 @@ $(function() {
 			<div class="row">
 				<div class="col-4"></div>
 					<div class="col-6 float-right">
-					<button type="button" class="add-button btn btn-primary col-2 float-right">등록</button>
+					<button type="submit" class="add-button btn btn-primary col-2 float-right">등록</button>
 				</div>
 			</div>
 		</form>

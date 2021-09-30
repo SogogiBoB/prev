@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import net.prev.www.model.Category;
 import net.prev.www.model.Member;
 import net.prev.www.model.Post;
 import net.prev.www.model.Reply;
@@ -54,9 +55,13 @@ public class Mycontroller {
 	public String index(@PathVariable String id, Model model) {
 		Member memberInfo = memberService.item(id);
 		List<Post> list = postService.EList(id);
+		List<perCategory> pclist = pcateService.list(id);
+		List<Category> clist = categoryService.list();
 		
 		model.addAttribute("memberInfo", memberInfo);
 		model.addAttribute("list", list);
+		model.addAttribute("pclist", pclist);
+		model.addAttribute("clist", clist);
 		
 		return path+"index";
 	}

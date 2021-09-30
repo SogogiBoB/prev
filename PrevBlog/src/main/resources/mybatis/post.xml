@@ -6,7 +6,7 @@
 
 	<select id="utdList" resultType="Post">
 	<![CDATA[
-		select pid, title, sub.id, thumbnail, regdate, member.profileImg from 
+		select pid, title, sub.id, thumbnail, regdate, member.profile_img from 
 		(select * from post order by regdate desc) sub
 		join member on sub.id=member.id
 		where ROWNUM <= 3
@@ -15,7 +15,7 @@
 	
 	<select id="EList" resultType="Post">
 		<![CDATA[
-			SELECT pid, title, sub.id, thumbnail, regdate, member.profileImg FROM 
+			SELECT pid, title, sub.id, thumbnail, regdate, member.profile_img FROM 
 			(SELECT * FROM post ORDER BY pid) sub
 			JOIN member ON sub.id=member.id
 			WHERE ROWNUM <=8

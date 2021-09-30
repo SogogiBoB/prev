@@ -436,14 +436,11 @@ height: 100px;
 								<hr id="b_post_hr">
 							</c:forEach>
 					</div>
-				
-
 
 					<div class="calendar">
 						<jsp:include page="/WEB-INF/views/calendar/main.jsp" ></jsp:include>
 					</div>
 					</div>
-					
 			</div>
 				<a href="logout">로그아웃</a>
 				<a href="../../">메인화면으로</a>

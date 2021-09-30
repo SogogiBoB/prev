@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="category">
+
+	<select id="list" resultType="Category">
+		SELECT category. *, percategory.pcid, percategory.pcname FROM category
+		JOIN percategory on category.cid=percategory.cid
+	</select>
+	
+	<insert id="add">
+		INSERT INTO category VALUES (CATEGORY_SEQ.nextval, #{cname})
+	</insert>
+	
+	<select id="categoryList" resultType="Category">
+		SELECT * FROM category WHERE id=#{id}
+	</select>
+
+</mapper>

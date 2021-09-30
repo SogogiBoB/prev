@@ -1,0 +1,316 @@
+@charset "UTF-8";
+#thumbnail {
+width: 100px;
+height: 100px;
+}
+p {
+	margin: 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Noto+Sans+KR";
+}
+.container-fluid {
+    width: 1920px;
+}
+#header {
+    width: 1100px;
+    margin: 0 auto;
+}
+#header #logo {
+    margin-top: 20px;
+}
+#header #button {
+    width: 55px;
+    height: 25px;
+    border: 1px solid #e4e4e4;
+    background: none;
+    font-size: 12px;
+    margin-left: 978px;
+    text-align: center;
+    line-height: 25px;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+#header #logo,#button {
+    display: inline-block;
+}
+#header #roundProfile {
+	display: inline-block;
+	margin-left: 905px;
+}
+#header #roundProfile img {
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+#header #roundProfile a {
+	font-size: 14px;
+	margin-left: 30px;
+}
+section {
+    width: 1100px;
+    height: 630px;
+    margin: 0 auto;
+    margin-top: 55px;
+}
+#main_image {
+    width: 1100px;
+    height: 280px;
+    margin-top: 40px;
+}
+.carousel-inner {
+    width: 1100px;
+    height: 280px;
+    background-position: top;
+}
+#slogan h4 {
+    font-size: 36px;
+}
+#slogan h3 {
+	line-height: 40px;
+    font-size: 46px;
+}
+#login_box_1 {
+	width: 505px;
+	height: 175px;
+	margin-left: 50px;
+	margin-top: 30px;
+	display: inline-block;
+	border-right: 1px solid black;
+}
+#login_box_2 {
+	width: 1100px;
+	height: 175px;
+	margin-top: 30px;
+}
+#login2_text {
+	padding-top: 40px;
+	margin: 0 auto;
+	width: 310px;
+}
+#login2_button {
+	width: 200px;
+	margin: 0 auto;
+}
+#blog_login {
+	width: 200px;
+	height: 40px;
+	background: #202020;
+	font-weight: 700;
+	color: #fff;
+	margin-top: 16px;
+	border: 0;
+}
+#upper_content {
+	border-bottom: 1px solid #e4e4e4;
+	margin-bottom: 60px;
+}
+#memberProfile {
+	background: red;
+	width: 90px;
+	height: 90px;
+}
+#login_box_1 img{
+	margin-top: -60px;
+	width: 90px;
+	height: 90px;
+	display: inline-block;
+}
+#profileInfo {
+	margin-top: 20px;
+	margin-left: 20px;
+	display: inline-block;
+}
+#profileInfo h3 {
+	font-size: 22px;
+	font-weight: 400;
+}
+#profileInfo h5 {
+	font-size: 16px;
+	font-weight: 700;
+}
+#profileInfo p {
+	font-size: 12px;
+}
+#button_box {
+	margin-left: 115px;
+}
+#my_blog, #post_add {
+	background: none;
+	border: 1px solid black;
+	width: 120px;
+	height: 35px;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: 700;
+}
+#up_to_date {
+	width: 1100px;
+	height: 470px;
+	margin: 0 auto;
+	margin-bottom: 60px;
+}
+#up_to_date h2 {
+	font-size: 24px;
+	font-weight: bold;
+}
+.card_box .card {
+	width: 345px;
+	height: 420px;
+	cursor: pointer;
+	margin-top: 10px;
+	display: inline-block;
+}
+.card_body {
+	padding-top: 30px;
+}
+.img_section {
+	margin-left: 26px;
+}
+.card_img_top {
+	height: 250px;
+	width: 290px;
+	object-fit: cover;
+}
+.card_text {
+	padding-left: 26px;
+}
+.card_box .card:nth-child(2) {
+	margin-right: 27px;
+	margin-left: 26px;
+}
+.profile_section_in_card {
+	margin-top: 15px;
+}
+.profileImg_in_card{
+	margin-left: 26px;
+}
+.profileImg_in_card img {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+.profileImg_in_card, .user_in_card, .regdate_in_card {
+	display: inline-block;
+}
+.user_in_card, .regdate_in_card {
+	padding-left: 15px;
+	color: #ccc;
+	font-size: 15px;
+}
+#popular {
+	width: 1100px;
+	margin: 0 auto;
+	padding-bottom: 70px;
+}
+#popular h2 {
+	font-size: 24px;
+	font-weight: bold;
+}
+#popular_info {
+	font-size: 16px;
+	font-weight: 520;
+}
+.cname_box {
+	margin-top: 20px;
+}
+.cname_box h3 {
+	font-size: 22px;
+	font-weight: 550;
+}
+#line_under_cname {
+	width: 45px;
+	height: 4px;
+	background: #ccc;
+	margin-top: -12px;
+}
+.pop_card_box .card {
+	width: 345px;
+	height: 420px;
+	cursor: pointer;
+	margin-top: 20px;
+	display: inline-block;
+}
+.pop_card_box .card:nth-child(3) {
+	margin-right: 27px;
+	margin-left: 26px;
+}
+#how_about_this {
+	width: 100%;
+	height: 610px;
+	background: #5f5151;
+	margin-top: 110px;
+}
+#how_info {
+	width: 1100px;
+	margin: 0 auto;
+	padding-top: 100px;
+    padding-bottom: 20px;
+}
+#how_info h3 {
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+}
+#how_info p {
+	font-size: 16px;
+	color: #fff;
+}
+.how_profile{ 
+    width: 240px;
+    height: 320px;
+    border: solid 2px #eaeaea;
+    border-radius: 3px;
+    background: #fff;
+    display: inline-block;
+}
+.how_profile:nth-child(2), .how_profile:nth-child(3), .how_profile:nth-child(4)  {
+	margin-left: 15px;
+}
+#how_profileImg{
+    width: 120px;
+    height: 120px;
+    margin: 0 auto;
+    margin-top: 45px;
+}
+#how_profileImg img{
+    width: 120px;
+    height: 120px; 
+}
+#how_nickname{
+    margin: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #4f4f4f;
+}
+.how_pr{
+    vertical-align: top;
+    text-align: center;
+    font-size: 10px;
+    color: #797979;
+}
+#how_button_box {
+    width: 85px;
+    margin: 0 auto;
+}
+#go_to_blog {
+	background: #c5c8c9;
+   	width: 90px;
+   	height: 35px;
+   	background: #202020;
+	font-weight: 400;
+	font-size: 12px;
+	color: #fff;
+	border: 0;
+}
+#how_inner_box {
+	width: 1024px;
+	margin: 0 auto;
+}
+

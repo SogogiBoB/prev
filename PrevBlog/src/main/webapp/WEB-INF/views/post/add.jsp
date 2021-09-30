@@ -56,8 +56,7 @@ $(function() {
 	});
 	
 	$("#submit").click(function() {
-		let item = $(".note-editing-area img").filter(":first").attr("src");
-		
+		let item = $(".note-editable img").filter(":first").attr("src");
 		$("#thumbnail input").val(item);
 	});
 });
@@ -101,7 +100,7 @@ $(function() {
 			<div class="row">
 				<div class="col-2"></div>
 				<div class="col-8">
-					<textarea id="summernote" class="form-control" rows="15" name="content" cols="80" placeholder="내용을 입력해주세요" ></textarea>
+					<textarea id="summernote" class="form-control" rows="15" name="content" cols="80"></textarea>
 				</div>
 			</div>
 				<div id="thumbnail">
@@ -110,7 +109,7 @@ $(function() {
 			<div class="row">
 				<div class="col-4"></div>
 					<div class="col-6 float-right">
-					<button type="submit" class="add-button btn btn-primary col-2 float-right">등록</button>
+					<button id="submit" class="add-button btn btn-primary col-2 float-right">등록</button>
 				</div>
 			</div>
 		</form>

@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <link rel="icon" href="data:,">
 <title></title>
+<link href="/css/main.css" rel="stylesheet" />
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
@@ -15,214 +16,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
-<style>
-#thumbnail {
-width: 100px;
-height: 100px;
-}
-p {
-	margin: 0;
-}
-* {
-    margin: 0;
-    padding: 0;
-    font-family: "Noto+Sans+KR";
-}
-.container-fluid {
-    width: 1920px;
-}
-#header {
-    width: 100%;
-}
-#header #logo {
-    margin-top: 20px;
-    margin-left:  400px;
-}
-#header #button {
-    width: 55px;
-    height: 25px;
-    border: 1px solid #e4e4e4;
-    background: none;
-    font-size: 12px;
-    margin-left: 978px;
-    text-align: center;
-    line-height: 25px;
-    cursor: pointer;
-}
-a {
-    text-decoration: none;
-    color: black;
-}
-#header #logo,#button {
-    display: inline-block;
-}
-#header #roundProfile {
-	display: inline-block;
-	margin-left: 905px;
-}
-#header #roundProfile img {
-	width: 35px;
-	height: 35px;
-	border-radius: 50%;
-	cursor: pointer;
-}
-#header #roundProfile a {
-	font-size: 14px;
-	margin-left: 30px;
-}
-section {
-    width: 1100px;
-    height: 630px;
-    margin: 0 auto;
-    margin-top: 55px;
-}
-#main_image {
-    width: 1100px;
-    height: 280px;
-    margin-top: 40px;
-    background: cyan;
-}
-.carousel-inner {
-    width: 1100px;
-    height: 280px;
-    background-position: top;
-}
-#slogan {
-}
-#slogan h4 {
-    font-size: 36px;
-}
-#slogan h3 {
-	line-height: 25px;
-    font-size: 46px;
-}
-#login_box_1 {
-	width: 505px;
-	height: 175px;
-	margin-left: 50px;
-	margin-top: 30px;
-	display: inline-block;
-	border-right: 1px solid black;
-}
-#login_box_2 {
-	width: 1100px;
-	height: 175px;
-	margin-top: 30px;
-}
-#login2_text {
-	padding-top: 40px;
-	margin: 0 auto;
-	width: 310px;
-}
-#login2_button {
-	width: 200px;
-	margin: 0 auto;
-}
-#blog_login {
-	width: 200px;
-	height: 40px;
-	background: #202020;
-	font-weight: 700;
-	color: #fff;
-	margin-top: 16px;
-}
-#upper_content {
-	border-bottom: 1px solid #e4e4e4;
-}
-#memberProfile {
-	background: red;
-	width: 90px;
-	height: 90px;
-}
-#login_box_1 img{
-	margin-top: -60px;
-	width: 90px;
-	height: 90px;
-	display: inline-block;
-}
-#profileInfo {
-	margin-top: 20px;
-	margin-left: 20px;
-	display: inline-block;
-}
-#profileInfo h3 {
-	font-size: 22px;
-	font-weight: 400;
-}
-#profileInfo h5 {
-	font-size: 16px;
-	font-weight: 700;
-}
-#profileInfo p {
-	font-size: 12px;
-}
-#button_box {
-	margin-left: 115px;
-}
-#my_blog, #post_add {
-	background: none;
-	border: 1px solid black;
-	width: 120px;
-	height: 35px;
-	display: inline-block;
-	font-size: 14px;
-	font-weight: 700;
-}
-#up_to_date {
-	width: 1100px;
-	margin: 0 auto;
-	padding-top: 60px;
-}
-#up_to_date h2 {
-	font-size: 24px;
-	font-weight: bold;
-}
-.card {
-	display: inline-block;
-	width: 345px;
-	height: 415px;
-	cursor: pointer;
-	margin-top: 20px;
-	padding: 0;
-}
-.card-body {
-	padding-top: 30px;
-}
-#img_section {
-	margin-left: 26px;
-}
-.card-img-top {
-	height: 250px;
-	width: 290px;
-	object-fit: cover;
-}
-.card-text {
-	padding-left: 10px;
-}
-.card:nth-child(2) {
-	margin-right: 27px;
-	margin-left: 26px;
-}
-#profile_section_in_card {
-	margin-top: 15px;
-}
-#profileImg_in_card{
-	margin-left: 26px;
-}
-#profileImg_in_card img {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
-}
-#profileImg_in_card, #user_in_card, #regdate_in_card {
-	display: inline-block;
-}
-#user_in_card, #regdate_in_card {
-	padding-left: 15px;
-	color: #ccc;
-	font-size: 15px;
-}
-</style>
 <script>
 $(function() {
 	$("#button").click(function() {
@@ -305,114 +98,148 @@ $(function() {
         
         <div id="up_to_date">
 			<h2>최신글</h2>
-			<div id="card_box">
-			<c:forEach var="item" items="${list}">
-				<div class="card" data-pid="${item.pid}">
-					<div class="card-body">
-						<p class="card-text">${item.title}</p>
-					</div>
-					<div id="img_section">
-						<c:if test="${item.thumbnail != null}">
-							<img src="${item.thumbnail}" class="card-img-top">
-						</c:if>
-						<c:if test="${item.thumbnail == null}">
-							<img src="/images/no_image.png" class="card-img-top">
-						</c:if>
-					</div>
-					<div id="profile_section_in_card">
-						<div id="profileImg_in_card">
-							<img src="/upload/files/${item.profileImg}">
+			<div class="card_box">
+				<c:forEach var="item" items="${list}">
+					<div class="card" data-pid="${item.pid}">
+						<div class="card_body">
+							<p class="card_text">${item.title}</p>
 						</div>
-						<div id="user_in_card">
-							<p>${item.id}</p>
+						<div class="img_section">
+							<c:if test="${item.thumbnail != null}">
+								<img src="${item.thumbnail}" class="card_img_top">
+							</c:if>
+							<c:if test="${item.thumbnail == null}">
+								<img src="/images/no_image.gif" class="card_img_top">
+							</c:if>
 						</div>
-						<div id="regdate_in_card">
-							<p><fmt:formatDate value="${item.regdate}" pattern="yyyy.MM.dd"/></p>
+						<div class="profile_section_in_card">
+							<div class="profileImg_in_card">
+								<img src="/upload/files/${item.profileImg}">
+							</div>
+							<div class="user_in_card">
+								<p>${item.id}</p>
+							</div>
+							<div class="regdate_in_card">
+								<p><fmt:formatDate value="${item.regdate}" pattern="yyyy.MM.dd"/></p>
+							</div>
 						</div>
 					</div>
-				</div>
-			</c:forEach>
+				</c:forEach>
 			</div>
 		</div>
-	
-	<div>
-		<h2>인기글1</h2>
-		<table>
-			<thead>
-				<tr>
-					<td>글번호</td>
-					<td>제목</td>
-					<td>썸네일</td>
-					<td>작성일</td>
-					<td>작성자</td>
-					<td>조회수</td>
-					<td>카테고리명</td>
-				</tr>
-			</thead>
-			<tbody>
+		
+		<div id="popular">
+			<h2>인기글</h2>
+			<p id="popular_info">다양한 카테고리의 인기글을 만나보세요.</p>
+			<div class="pop_card_box">
+				<div class="cname_box">
+					<h3>여행</h3>
+					<div id="line_under_cname"></div>
+				</div>
 				<c:forEach var="result" items="${result}">
 					<c:if test="${result.cname=='여행'}">
-						<tr>
-							<td>${result.pid}</td>
-							<td><a href="${result.pid}">${result.title}</a></td>
-							<td>
+						<div class="card" data-pid="${result.pid}">
+							<div class="card_body">
+								<p class="card_text">${result.title}</p>
+							</div>
+							<div class="img_section">
 								<c:if test="${result.thumbnail != null}">
-									<img id="thumbnail" src="${result.thumbnail}">
+									<img src="${result.thumbnail}" class="card_img_top">
 								</c:if>
 								<c:if test="${result.thumbnail == null}">
-									<img id="thumbnail" src="/images/no_image.png">
+									<img src="/images/no_image.gif" class="card_img_top">
 								</c:if>
-							</td>
-							<td><fmt:formatDate value="${result.regdate}" pattern="yyyy.MM.dd."></fmt:formatDate></td>
-							<td>${result.id}</td>
-							<td>${result.viewcount}</td>
-							<td>${result.cname}</td>
-						</tr>
+							</div>
+							<div class="profile_section_in_card">
+								<div class="profileImg_in_card">
+									<img src="/upload/files/${result.profileImg}">
+								</div>
+								<div class="user_in_card">
+									<p>${result.id}</p>
+								</div>
+								<div class="regdate_in_card">
+									<p><fmt:formatDate value="${result.regdate}" pattern="yyyy.MM.dd"/></p>
+								</div>
+							</div>
+						</div>
 					</c:if>
 				</c:forEach>
-			</tbody>
-		</table>
-		<button>더보기</button>
-	</div>
-	<div>
-		<h2>인기글2</h2>
-		<table>
-			<thead>
-				<tr>
-					<td>글번호</td>
-					<td>제목</td>
-					<td>썸네일</td>
-					<td>작성일</td>
-					<td>작성자</td>
-					<td>조회수</td>
-					<td>카테고리명</td>
-				</tr>
-			</thead>
-			<tbody>
+			</div>
+			
+			<div class="pop_card_box">
+				<div class="cname_box">
+					<h3>음악</h3>
+					<div id="line_under_cname"></div>
+				</div>
 				<c:forEach var="result" items="${result}">
 					<c:if test="${result.cname=='음악'}">
-						<tr>
-							<td>${result.pid}</td>
-							<td><a href="${result.pid}">${result.title}</a></td>
-							<td>
+						<div class="card" data-pid="${result.pid}">
+							<div class="card_body">
+								<p class="card_text">${result.title}</p>
+							</div>
+							<div class="img_section">
 								<c:if test="${result.thumbnail != null}">
-									<img id="thumbnail" src="${result.thumbnail}">
+									<img src="${result.thumbnail}" class="card_img_top">
 								</c:if>
 								<c:if test="${result.thumbnail == null}">
-									<img id="thumbnail" src="/images/no_image.png">
+									<img src="/images/no_image.gif" class="card_img_top">
 								</c:if>
-							</td>
-							<td><fmt:formatDate value="${result.regdate}" pattern="yyyy.MM.dd."></fmt:formatDate></td>
-							<td>${result.id}</td>
-							<td>${result.viewcount}</td>
-							<td>${result.cname}</td>
-						</tr>
+							</div>
+							<div class="profile_section_in_card">
+								<div class="profileImg_in_card">
+									<img src="/upload/files/${result.profileImg}">
+								</div>
+								<div class="user_in_card">
+									<p>${result.id}</p>
+								</div>
+								<div class="regdate_in_card">
+									<p><fmt:formatDate value="${result.regdate}" pattern="yyyy.MM.dd"/></p>
+								</div>
+							</div>
+						</div>
 					</c:if>
 				</c:forEach>
-			</tbody>
-		</table>
-		<button>더보기</button>
-	</div>
+			</div>
+		</div>
+		
+		<div id="how_about_this">
+			<div id="how_info">
+				<h3>이 블로그 어때요?</h3>
+				<p>친구가 되어서 새로운 소식을 만나보세요.</p>
+			</div>
+			<div id="how_inner_box">
+			<c:forEach var="memberInfo" items="${memberList}">
+			<div class="how_profile">
+				<c:if test="${memberInfo.profileImg!=null}">
+	                <div id="how_profileImg">
+	                	<img src="/upload/files/${memberInfo.profileImg}">
+	                </div>
+                </c:if>
+                <c:if test="${memberInfo.profileImg==null}">
+	                <div id="how_profileImg">
+	                	<img src="/images/no_profile.png">
+	                </div>
+                </c:if>
+                <div>
+                    <p id="how_nickname"><b>${memberInfo.nickname}</b></p>
+                    <c:if test="${memberInfo.pr == null}">
+                    	<p class="how_pr">안녕하세요 ${memberInfo.nickname}의 블로그입니다.</p>
+                    </c:if>
+                    <c:if test="${memberInfo.pr != null}">
+                        <p class="how_pr">${memberInfo.pr}</p>
+                    </c:if>
+                </div>
+                <div id="how_button_box">
+                    <button onclick="location.href='../../my/${memberInfo.id}'" id="go_to_blog">블로그 가기</button>
+            	</div>
+        	</div>
+        	</c:forEach>
+        	</div>
+		</div>
+		
+		<footer>
+			
+		</footer>
     </div>
 </body>
 </html>

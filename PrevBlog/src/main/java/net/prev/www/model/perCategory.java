@@ -5,6 +5,15 @@ public class perCategory {
 	private String pcname;
 	private String id;
 	private int cid;
+	private String cname;
+
+	public String getCname() {
+		return cname;
+	}
+
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
 
 	public int getPcid() {
 		return pcid;

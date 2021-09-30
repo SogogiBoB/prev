@@ -25,5 +25,4 @@ public interface PostService {
 	List<Post> EList(String id);
 
 	List<Post> utdList(String id);
-
 }

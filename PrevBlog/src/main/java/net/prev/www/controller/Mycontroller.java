@@ -54,6 +54,7 @@ public class Mycontroller {
 	@RequestMapping({"/","index"})
 	public String index(@PathVariable String id, Model model) {
 		Member memberInfo = memberService.item(id);
+		
 		List<Post> list = postService.EList(id);
 		List<Post> udtlist = postService.utdList(id);
 		List<perCategory> pclist = pcateService.list(id);
@@ -68,7 +69,7 @@ public class Mycontroller {
 		return path+"index";
 	}
 	
-	@RequestMapping("/{pid}")
+	@RequestMapping("/{pid}/showDetail")
 	public String showDetail(@PathVariable int pid, Model model, HttpSession session) {
 		Post item = postService.postsItem(pid);
 				

@@ -13,7 +13,28 @@
 	width: 1100px;
 	margin: 0 auto;
 }
+.header #logo, #line, #header-menu{
+    margin-top: 14px;
+    margin-left:50px;
+    text-decoration: none;
 
+}
+.header div{
+    display: inline-block;
+}
+#logo{
+    margin-right: 10px;
+    font-size:16px ;
+    text-decoration: none;
+    color: white;
+}
+ .header-menu p,.header-menu a{
+    font-size:14px ;
+    margin-left: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #4f4f4f;
+}
 .box {
 	width: 1000px;
 	height: auto;
@@ -71,7 +92,6 @@
 	width: 850px;
 	height: auto;
 	margin: 0 auto;
-	background-color: fuchsia;
 }
 
 #reply_list {
@@ -149,7 +169,15 @@
 </head>
 <body>
 	<div class="header">
-		<a id="home" href="../../"><b>Prev</b></a>
+		<div id="logo">
+			<a id="home" href="/"><b>PREV</b></a>
+	    </div>
+	    <div class="line">
+	    	|
+	    </div>
+	    <div class="header-menu">
+	    	<p><a href="../">내 블로그</a></p>
+	    </div>
 	</div>
 	<div class="box">
 		<p id="nickname">
@@ -159,56 +187,44 @@
 		<p id="title">${item.title}</p>
 		<p id="percategory">${item.pcname}</p>
 		<div class="content-box">
-		<hr id="hr2">
+			<hr id="hr2">
 			<div id="content">${item.content}</div>
-				<div style="text-align: right;"><fmt:formatDate value="${item.regdate}" pattern="yyyy년 MM월 dd일" />  |  조회수 ${item.viewcount}</div>
-	<hr id="hr3">
-	</div>
-	<div class="reply_box">
-		<div class="mb-3">
-			<div>
-				<form method="post" action="${item.pid}/insert">
-					<div class="form-floating">
-  						<textarea name="content" class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
-  						<label for="floatingTextarea2">댓글을 입력하세요.</label>
-					</div>
-					<button type="submit" class="reply-button btn btn-primary btn-sm">댓글등록</button>
-				</form>
-			</div>
- 			 
+			<div style="text-align: right;"><fmt:formatDate value="${item.regdate}" pattern="yyyy년 MM월 dd일" />  |  조회수 ${item.viewcount}</div>
+			<hr id="hr3">
 		</div>
-					
-					<div id="reply_list">
-					  <a href="#" class="list-group-item list-group-item-action">
-					    <div class="d-flex w-100 justify-content-between">
-					      <h5 class="mb-1">List group item heading</h5>
-					      <small class="text-muted">3 days ago</small>
-					    </div>
-					    <p class="mb-1">Some placeholder content in a paragraph.</p>
-					    <small class="text-muted">And some muted small print.</small>
-					  </a>
-						<c:if test="${replyList.size() < 1}">
-							<div>
-								<p>노댓글</p>
-							</div>
-						</c:if>
-						<c:forEach var="reply" items="${replyList}">
-							<div data-rid="${reply.rid}" class="list-group-item list-group-item-action">
-								<h5 class="content mb-1">${reply.content}</h5>
-								<small class="id text-muted">${reply.id}</small>
-								<small class="regdate text-muted">
-									<fmt:formatDate value="${reply.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
-								</small>
-								<c:if test="${sessionScope.member.id==reply.id}">
-									<button class="update">변경</button>
-									<button class="delete">삭제</button>
-								</c:if>
-							</div>
-						</c:forEach>
+		<div class="reply_box">
+			<div class="mb-3">
+				<div>
+					<form method="post" action="${item.pid}/insert">
+						<div class="form-floating">
+  							<textarea name="content" class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+  							<label for="floatingTextarea2">댓글을 입력하세요.</label>
+						</div>
+						<button type="submit" class="reply-button btn btn-primary btn-sm">댓글등록</button>
+					</form>
 				</div>
+			</div>		
+			<div id="reply_list">
+				<c:if test="${replyList.size() < 1}">
+					<div>
+						<p>노댓글</p>
+					</div>
+				</c:if>
+				<c:forEach var="reply" items="${replyList}">
+					<div data-rid="${reply.rid}" class="list-group-item list-group-item-action">
+						<h5 class="content mb-1">${reply.content}</h5>
+						<small class="id text-muted">${reply.id}</small>
+						<small class="regdate text-muted">
+							<fmt:formatDate value="${reply.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
+						</small>
+						<c:if test="${sessionScope.member.id==reply.id}">
+							<button class="update">변경</button>
+							<button class="delete">삭제</button>
+						</c:if>
+					</div>
+				</c:forEach>
+			</div>
 		</div>
-			<a href="../">이전</a>
-		
 	</div>
 	<!--변경 모달  -->
 	<div class="modal fade" id="updateModal" tabindex="-1"

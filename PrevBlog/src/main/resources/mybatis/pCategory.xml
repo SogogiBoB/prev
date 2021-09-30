@@ -9,7 +9,8 @@
 	</insert>
 	
 	<select id="categoryList" resultType="perCategory">
-		SELECT * FROM percategory WHERE id = #{id}
+		SELECT percategory.*, category.cname FROM percategory
+		JOIN category on percategory.cid = category.cid
 	</select>
 	
 	<select id="item" resultType="perCategory">

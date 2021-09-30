@@ -74,5 +74,8 @@
 		SET viewcount = #{viewcount}
 		WHERE pid=#{pid}
 	</update>
-
+	 
+	 <select id="pid" resultType="Post">
+	 	SELECT * FROM post
+	 </select>
 </mapper>

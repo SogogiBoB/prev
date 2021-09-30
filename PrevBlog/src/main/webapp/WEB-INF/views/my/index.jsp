@@ -57,6 +57,11 @@ height: 100px;
 	width: 210px;
 	margin: 0 10px 10px 10px;
 }
+h5{
+	white-space: nowrap;
+	overflow: hidden; 
+	text-overflow: ellipsis;
+}
 .container-fluid{
     width: 1920px;
     height: 2125px;
@@ -66,15 +71,18 @@ height: 100px;
     width: 100%;
 }
 .header #logo, #line, #header-menu{
-    margin-top: 14px;
+    margin-top: 20px;
 }
 .header div{
     display: inline-block;
 }
 #logo{
     margin-right: 10px;
+    font-size:16px ;
+    text-decoration: none;
+    color: white;
 }
-.header-menu p,.header-menu a{
+ .header-menu p,.header-menu a{
     font-size:12px ;
     margin-right: 10px;
     cursor: pointer;
@@ -85,7 +93,9 @@ height: 100px;
     margin-left:430px ;
 }
 #header2{
-    margin-left:705px ;
+	float: right;
+	margin-right: 390px;
+	margin-top: 20px;
 
 }
 .line {
@@ -132,7 +142,7 @@ height: 100px;
 	display: inline-block;
 	padding: 10px 10px;
 	width: 240px;
-	height: 260px;
+	height: 345px;
 	table-layout: fixed;  
 }
 .card-img, .card-img-bottom, .card-img-top {
@@ -140,6 +150,7 @@ height: 100px;
     height: 200px;
     margin-top: 10px;
     margin-left: 9px;
+    table-layout: fixed; 
 }
 .row>* {
     flex-shrink: 0;
@@ -209,10 +220,26 @@ height: 100px;
 }
 .categorys{
  	width: 240px;
-	height: 100px;
+	height: auto;
 	vertical-align: top;
 	margin-top: 40px;
 	margin-left: 25px;
+}
+#tagID{
+	margin-top: 30px;
+	margin-left: 20px;
+	font-weight: 600;
+	color: #4f4f4f;
+}
+.cate{
+	margin-left: 40px;
+	font-weight: 400;
+	color: #4f4f4f;
+}
+.pcate{
+	margin-left: 40px;
+	font-weight: 200;
+	color: #4f4f4f;
 }
 .newpost{
 	width: 240px;
@@ -225,12 +252,14 @@ height: 100px;
 	margin-left: 10px; 
 	margin-top: 30px;
 	margin-bottom: 30px;
+	font-weight:600;
 	color: #4f4f4f;
 }
 	.post_box{
 		width: 230px;
 		height: 55px; 
 		margin: 15px 0 0 10px ;
+		cursor: pointer;
 	}
 	.post_box img{
 		width: 45px;
@@ -241,12 +270,18 @@ height: 100px;
 		font-size: 12px;
 		vertical-align:top;
 		margin-left: 10px;
+		
+		width:50px;
+		white-space: nowrap;
+		overflow: hidden; 
+		text-overflow: ellipsis;
 	}
 	.post_box small{
 		font-size: 10px;
 		float: right;
 		margin-right: 20px;
 		margin-top: 30px;
+		
 	}
 	.post_box img, .post_box p, .post_box small{
 		display: inline-block;
@@ -260,18 +295,37 @@ height: 100px;
 	margin: 40px auto;
 	float: right;
 }
-
+.cate, .pcate{
+	display: none;
+	
+}
 </style>
 <script>
 	$(function(){
 		$("#button").click(function(){
 		})
 		
-		$("#tagID").click(function(){
-			$(".cate").toggle();
+		$("#tagID").on("click",function(){
+			if($(".cate").css("display")=="none"){
+				$(".cate").show();
+			}else{
+				$(".cate").hide();
+			}
 		}); 
-		$(".cate").click(function(){
-			$(".pcate").toggle();
+		$(".cate").on("click",function(){
+			if($(".pcate").css("display")=="none"){
+				$(".pcate").show();
+			}else{
+				$(".pcate").hide();
+			}
+			});
+		$(".card").click(function() {
+			let pid = $(this).data("pid");
+			location.href="/my/${sessionScope.id}/"+pid+"/showDetail";
+		});
+		$(".post_box").click(function() {
+			let pid = $(this).data("pid");
+			location.href="/my/${sessionScope.id}/"+pid+"/showDetail";
 		});
 	});
 </script>
@@ -281,7 +335,7 @@ height: 100px;
 		<div class="header">
 	            <div id="header1">
 	                <div id="logo">
-	                    <img src="/images/PrevLogo_03.png">
+	                    <p><b>PREV</b></p>
 	                </div>
 	                <div class="line">
 	                    |
@@ -292,7 +346,7 @@ height: 100px;
 	            </div>
 	            <div id="header2">
 	                <div class="header-menu">
-	                    <p>닉네임</p>
+	                    <p>${memberInfo.nickname}님</p>
 	                </div>
 	                <div class="line">
 	                    |
@@ -310,7 +364,7 @@ height: 100px;
 	                    |
 	                </div>
 	                <div class="header-menu">
-	                    <p>친구</p>
+	                    <p><a href="logout">로그아웃</a></p>
 	                </div>
 	            </div>
 	        </div>
@@ -331,21 +385,21 @@ height: 100px;
 			</div>
 			<hr id="b-h-hr">
 			<div class="body-body row">
-				<c:forEach var="item" items="${list}">
+				<c:forEach var="list" items="${list}">
 					<div class="body-card col">
-						<div class="card h-100">
-							<c:if test="${item.thumbnail != null}">
-								<img src="${item.thumbnail}" class="card-img-top">
+						<div class="card" data-pid="${list.pid}">
+							<c:if test="${list.thumbnail != null}">
+								<img src="${list.thumbnail}" class="card-img-top">
 							</c:if>
-							<c:if test="${item.thumbnail == null}">
+							<c:if test="${list.thumbnail == null}">
 								<img src="/images/no_image.gif" class="card-img-top">
 							</c:if>
 							<div class="card-body">
-								<h5 class="card-title">${item.title}</h5>
+								<h5 class="card-title">${list.title}</h5>
 							</div>
 							<div class="card-footer">
-								<small class="text-muted">조회 ${item.viewcount} · <fmt:formatDate
-										value="${item.regdate}" pattern="YYYY.MM.dd" /></small>
+								<small class="text-muted">조회 ${list.viewcount} · <fmt:formatDate
+										value="${list.regdate}" pattern="YYYY.MM.dd" /></small>
 							</div>
 						</div>
 					</div>
@@ -399,31 +453,23 @@ height: 100px;
 						<p>카테고리 전체보기</p>
 					</div>
     				<c:if test="${list.size() < 1}">
-						<li class="list-group-item">
+						<li>
 							<p>등록된 카테고리가 없습니다.</p>
 						</li>
 					</c:if>
-					 <div class="cate">
-								<c:forEach var="citem" items="${clist}">
-									<ul>
-										<li>${citem.cname}</li>
-									</ul>
-									<div class="pcate">
-									<c:forEach var="item" items="${pclist}">
-											<ul>
-												<li>${item.pcname}</li>
-											</ul>
-									</c:forEach>
-									</div>
-								</c:forEach>
-							</div>
+					<c:forEach var="item" items="${pclist}">
+						<div>
+							<c:if test="${item.cid !=null}"> 
+								<p class="cate" data-pcid="${item.pcid}">-<b>${item.cname}</b></p>
+								<p class="pcate">${item.pcname}</p>
+							</c:if>
 						</div>
-					
-				
+					</c:forEach>
+				</div>
 					<div class="newpost">
 						<p id="name"><b>최신글</b></p>
 							<c:forEach var="item" items="${udtlist}">
-							<div class="post_box">
+							<div class="post_box" data-pid="${item.pid}">
 								<c:if test="${item.thumbnail != null}">
 									<img src="${item.thumbnail}">
 								</c:if>
@@ -438,7 +484,7 @@ height: 100px;
 					</div>
 
 					<div class="calendar">
-						<jsp:include page="/WEB-INF/views/calendar/main.jsp" ></jsp:include>
+				
 					</div>
 					</div>
 			</div>

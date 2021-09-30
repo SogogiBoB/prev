@@ -70,6 +70,11 @@ public class PostDaoImpl implements PostDao {
 		return sql.selectList("post.EList");
 	}
 
+	@Override
+	public List<Post> utdList(String id) {
+		return sql.selectList("post.utdList");
+	}
+
 	
 
 	

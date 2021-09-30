@@ -76,5 +76,10 @@ public class PostServiceImpl implements PostService {
 		return dao.EList(id);
 	}
 
+	@Override
+	public List<Post> utdList(String id) {
+		return dao.utdList(id);
+	}
+
 
 }

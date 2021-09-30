@@ -29,9 +29,10 @@
 	
 	<select id="allList" resultType="Post">
 		select post.*, percategory.pcid, percategory.cid, 
-		category.cid as cid, category.cname as cname from post
+		category.cid as cid, category.cname as cname, member.profile_img from post
 		join percategory on post.pcid = percategory.pcid
 		join category on percategory.cid = category.cid
+		join member on post.id=member.id
 		<![CDATA[
 		where post.viewcount >= 80
 		]]>

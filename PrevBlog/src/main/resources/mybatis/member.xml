@@ -5,6 +5,9 @@
 <mapper namespace="member">
 	<select id="list" resultType="Member">
 		SELECT * FROM member
+		<![CDATA[
+			WHERE ROWNUM <=4
+		]]>
 	</select>
 
 	<!-- <select id="list" resultType="Post">

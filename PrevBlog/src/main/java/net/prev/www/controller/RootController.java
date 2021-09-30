@@ -43,6 +43,7 @@ public class RootController {
 		
 		model.addAttribute("list", list);
 		model.addAttribute("result", allList);
+		model.addAttribute("memberList", memberList);
 		
 		return "index";
 	}

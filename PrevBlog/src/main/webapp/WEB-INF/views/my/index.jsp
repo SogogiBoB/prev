@@ -466,30 +466,24 @@ h5{
 						</div>
 					</c:forEach>
 				</div>
-					<div class="newpost">
-						<p id="name"><b>최신글</b></p>
-							<c:forEach var="item" items="${udtlist}">
-							<div class="post_box" data-pid="${item.pid}">
-								<c:if test="${item.thumbnail != null}">
-									<img src="${item.thumbnail}">
-								</c:if>
-								<c:if test="${item.thumbnail == null}">
-									<img src="/images/no_image.gif">
-								</c:if>
-									<p>${item.title}</p>
-									<small class="text-muted">조회 ${item.viewcount} · <fmt:formatDate value="${item.regdate}" pattern="YYYY.MM.dd" /></small>
-									</div>
-								<hr id="b_post_hr">
-							</c:forEach>
-					</div>
-
-					<div class="calendar">
-				
-					</div>
-					</div>
-			</div>
-				<a href="logout">로그아웃</a>
-				<a href="../../">메인화면으로</a>
-			</div>
+				<div class="newpost">
+					<p id="name"><b>최신글</b></p>
+						<c:forEach var="item" items="${udtlist}">
+						<div class="post_box" data-pid="${item.pid}">
+							<c:if test="${item.thumbnail != null}">
+								<img src="${item.thumbnail}">
+							</c:if>
+							<c:if test="${item.thumbnail == null}">
+								<img src="/images/no_image.gif">
+							</c:if>
+								<p>${item.title}</p>
+								<small class="text-muted">조회 ${item.viewcount} · <fmt:formatDate value="${item.regdate}" pattern="YYYY.MM.dd" /></small>
+								</div>
+							<hr id="b_post_hr">
+						</c:forEach>
+		</div>
+		<div class="calendar">
+		</div>
+	</div>
 </body>
 </html>

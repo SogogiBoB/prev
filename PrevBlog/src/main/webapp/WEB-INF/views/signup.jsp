@@ -95,7 +95,6 @@ function checkId_Async() {
    };
    
    xhr.send();
-   console.log("결과 1: " + xhr.responseText);
 }
 
 function changeId() {

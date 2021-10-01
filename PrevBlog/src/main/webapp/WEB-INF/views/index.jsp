@@ -74,6 +74,7 @@ $(function() {
 	                    </div>
 	                </div>
 	            </div>
+	            <div id="member_info_section" class="row">
 	            <c:if test="${sessionScope.member != null}">
 		            <div id="login_box_1">
 		            	<c:choose>
@@ -87,13 +88,33 @@ $(function() {
 			            <div id="profileInfo">
 				           	<h3>${sessionScope.member.nickname}</h3>
 				           	<h5>${sessionScope.member.pr}</h5>
-				           	<p>내 글 0 | 댓글 0</p>
+				           	<p>내 글 0 &nbsp·&nbsp 댓글 0</p>
 			            </div>
 			            <div id="button_box">
 			            	<button onclick="location.href='my/${sessionScope.id}/'" id="my_blog">내블로그</button>
 							<button onclick="location.href='post/${sessionScope.id}/add'" id="post_add">글쓰기</button>
 						</div>
 		            </div>
+		            <div id="mini_profile_section">
+		            	<h3>이웃추천</h3>
+						<c:forEach var="memberInfo" items="${memberList}">
+							<div class="mini_image_section">
+								<c:if test="${memberInfo.profileImg!=null}">
+					                <div id="mini_image">
+					                	<img src="/upload/files/${memberInfo.profileImg}">
+					                </div>
+				                </c:if>
+				                <c:if test="${memberInfo.profileImg==null}">
+					                <div id="mini_image">
+					                	<img src="/images/no_profile.png">
+					                </div>
+				                </c:if>
+				                <div id="mini_info">
+				                    <p id="mini_nickname">${memberInfo.nickname}</p>
+				                </div>
+				        	</div>
+			        	</c:forEach>
+        			</div>
 	            </c:if>
 	            <c:if test="${sessionScope.member == null}">
 		            <div id="login_box_2">
@@ -105,13 +126,14 @@ $(function() {
 			            </div>
 		            </div>
 	            </c:if>
+        		</div>
 	        </section>
         </div>
         
         <div id="up_to_date">
 			<h2>최신글</h2>
 			<div class="card_box">
-				<c:forEach var="item" items="${list}">
+				<c:forEach var="item" items="${lessThree}">
 					<div class="card" data-pid="${item.pid}">
 						<div class="card_body">
 							<p class="card_text">${item.title}</p>
@@ -126,7 +148,12 @@ $(function() {
 						</div>
 						<div class="profile_section_in_card">
 							<div class="profileImg_in_card">
-								<img src="/upload/files/${item.profileImg}">
+								<c:if test="${item.profileImg != null}">
+		            				<img src="/upload/files/${item.profileImg}">
+		            			</c:if>
+		            			<c:if test="${item.profileImg == null}">
+		            				<img src="/images/no_profile.png">
+		            			</c:if>
 							</div>
 							<div class="user_in_card">
 								<p>${item.id}</p>
@@ -164,7 +191,12 @@ $(function() {
 							</div>
 							<div class="profile_section_in_card">
 								<div class="profileImg_in_card">
-									<img src="/upload/files/${result.profileImg}">
+									<c:if test="${result.profileImg != null}">
+		            					<img src="/upload/files/${result.profileImg}">
+		            				</c:if>
+		            				<c:if test="${result.profileImg == null}">
+		            					<img src="/images/no_profile.png">
+		            				</c:if>
 								</div>
 								<div class="user_in_card">
 									<p>${result.id}</p>
@@ -199,7 +231,12 @@ $(function() {
 							</div>
 							<div class="profile_section_in_card">
 								<div class="profileImg_in_card">
-									<img src="/upload/files/${result.profileImg}">
+									<c:if test="${result.profileImg != null}">
+		            					<img src="/upload/files/${result.profileImg}">
+		            				</c:if>
+		            				<c:if test="${result.profileImg == null}">
+		            					<img src="/images/no_profile.png">
+		            				</c:if>
 								</div>
 								<div class="user_in_card">
 									<p>${result.id}</p>
@@ -220,37 +257,37 @@ $(function() {
 				<p>친구가 되어서 새로운 소식을 만나보세요.</p>
 			</div>
 			<div id="how_inner_box">
-			<c:forEach var="memberInfo" items="${memberList}">
-			<div class="how_profile">
-				<c:if test="${memberInfo.profileImg!=null}">
-	                <div id="how_profileImg">
-	                	<img src="/upload/files/${memberInfo.profileImg}">
-	                </div>
-                </c:if>
-                <c:if test="${memberInfo.profileImg==null}">
-	                <div id="how_profileImg">
-	                	<img src="/images/no_profile.png">
-	                </div>
-                </c:if>
-                <div>
-                    <p id="how_nickname"><b>${memberInfo.nickname}</b></p>
-                    <c:if test="${memberInfo.pr == null}">
-                    	<p class="how_pr">안녕하세요 ${memberInfo.nickname}의 블로그입니다.</p>
-                    </c:if>
-                    <c:if test="${memberInfo.pr != null}">
-                        <p class="how_pr">${memberInfo.pr}</p>
-                    </c:if>
-                </div>
-                <div id="how_button_box">
-                    <button onclick="location.href='../../my/${memberInfo.id}'" id="go_to_blog">블로그 가기</button>
-            	</div>
-        	</div>
-        	</c:forEach>
+				<c:forEach var="memberInfo" items="${memberList}">
+					<div class="how_profile">
+						<c:if test="${memberInfo.profileImg!=null}">
+			                <div id="how_profileImg">
+			                	<img src="/upload/files/${memberInfo.profileImg}">
+			                </div>
+		                </c:if>
+		                <c:if test="${memberInfo.profileImg==null}">
+			                <div id="how_profileImg">
+			                	<img src="/images/no_profile.png">
+			                </div>
+		                </c:if>
+		                <div>
+		                    <p id="how_nickname"><b>${memberInfo.nickname}</b></p>
+		                    <c:if test="${memberInfo.pr == null}">
+		                    	<p class="how_pr">안녕하세요 ${memberInfo.nickname}의 블로그입니다.</p>
+		                    </c:if>
+		                    <c:if test="${memberInfo.pr != null}">
+		                        <p class="how_pr">${memberInfo.pr}</p>
+		                    </c:if>
+		                </div>
+		                <div id="how_button_box">
+		                    <button onclick="location.href='../../my/${memberInfo.id}'" id="go_to_blog">블로그 가기</button>
+		            	</div>
+		        	</div>
+	        	</c:forEach>
         	</div>
 		</div>
 		
-		<footer>
-			
+		<footer id="footer">
+			Copyright ©2021 PREV All Rights Reserved.
 		</footer>
     </div>
 </body>

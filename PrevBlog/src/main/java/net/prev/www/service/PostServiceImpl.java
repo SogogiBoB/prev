@@ -1,5 +1,6 @@
 package net.prev.www.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -58,7 +59,12 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public List<Post> utdList() {
-		return dao.utdList();
+		List<Post> lessThree = new ArrayList<Post>();
+		List<Post> allList = dao.utdList(); 
+ 		for(int i=0; i<3; i++) {
+ 			lessThree.add(i, allList.get(i));
+ 		}
+		return lessThree;
 	}
 
 	@Override
@@ -67,7 +73,7 @@ public class PostServiceImpl implements PostService {
 	}
 
  	@Override
-	public List<Post> allList() { 		
+	public List<Post> allList() {
 		return dao.allList();
 	}
 
@@ -78,7 +84,17 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public List<Post> utdList(String id) {
-		return dao.utdList(id);
+		List<Post> lessThree = new ArrayList<Post>();
+		List<Post> allList = dao.utdList(id); 
+ 		for(int i=0; i<3; i++) {
+ 			lessThree.add(i, allList.get(i));
+ 		}
+		return lessThree;
+	}
+
+	@Override
+	public void delete(Post item) {
+		dao.delete(item);
 	}
 
 }

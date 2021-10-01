@@ -80,17 +80,15 @@ section {
 	width: 505px;
 	height: 175px;
 	margin-left: 50px;
-	margin-top: 30px;
 	display: inline-block;
 	border-right: 1px solid black;
 }
 #login_box_2 {
 	width: 1100px;
 	height: 175px;
-	margin-top: 30px;
 }
 #login2_text {
-	padding-top: 40px;
+	padding-top: 30px;
 	margin: 0 auto;
 	width: 310px;
 }
@@ -313,4 +311,57 @@ section {
 	width: 1024px;
 	margin: 0 auto;
 }
-
+#footer {
+	margin-top: 150px;
+	color: #fff;
+	height: 100px;
+	width: 100%;
+	background: black;
+	text-align: center;
+	line-height: 100px;
+	font-size: 12px;
+	font-weight: 500;
+	opacity: 80%;
+}
+#mini_profile_section {
+	margin-left: 30px;
+	width: 505px;
+	height: 175px;
+	display: inline-block;
+}
+#mini_profile_section h3 {
+	margin-top: 20px;
+	padding-left: 20px;
+	font-size: 16px;
+	font-weight: bold;
+}
+.mini_image_section{
+	margin-top: 20px;
+	margin-left: 30px;
+	width: 80px;
+	height: 100px;
+	display: inline-block;
+}
+#mini_image {
+	width: 50px;
+	height: 50px;
+}
+#mini_image img{
+	margin-left: 16px;
+	width: 50px;
+	height: 50px;
+}
+#member_info_section {
+	margin-top : 30px;
+}
+#member_info_section.row {
+	margin: 30px 0 0 0;
+}
+#mini_image, #mini_info {
+	text-align: center;
+}
+#mini_info p {
+	padding-top: 10px;
+	font-weight: 300;
+	font-size: 14px;
+}

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.multipart.MultipartFile;
 
 import net.prev.www.model.Category;
@@ -97,6 +98,17 @@ public class ManageController {
 	@PostMapping("/posts/update")
 	public String postsUpdate(Post item) {
 		postService.postsUpdate(item);
+		
+		return "redirect:../posts";
+	}
+	
+	@RequestMapping("/posts/delete")
+	public String delete(int pid, @SessionAttribute String id) {
+		Post item = new Post();
+		item.setId(id);
+		item.setPid(pid);
+		
+		postService.delete(item);
 		
 		return "redirect:../posts";
 	}

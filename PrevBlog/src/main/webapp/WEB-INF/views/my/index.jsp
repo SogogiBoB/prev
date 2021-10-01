@@ -65,7 +65,7 @@ h5{
 .container-fluid{
     width: 1920px;
     height: 2125px;
-    background-color:#797979;
+    background-color: #97c8e2;
 }
 .header{
     width: 100%;
@@ -143,7 +143,8 @@ h5{
 	padding: 10px 10px;
 	width: 240px;
 	height: 345px;
-	table-layout: fixed;  
+	table-layout: fixed;
+	cursor: pointer;
 }
 .card-img, .card-img-bottom, .card-img-top {
     width: 200px;
@@ -155,7 +156,7 @@ h5{
 .row>* {
     flex-shrink: 0;
     width: 100%;
-    max-width: 100%;
+    max-width: 100%; 
     padding-right: calc(var(--bs-gutter-x)/ 2);
     padding-left: calc(var(--bs-gutter-x)/ 2);
     margin-top: var(--bs-gutter-y);
@@ -298,6 +299,18 @@ h5{
 .cate, .pcate{
 	display: none;
 	
+}
+#footer {
+	margin-top: 150px;
+	color: #fff;
+	height: 100px;
+	width: 100%;
+	background: black;
+	text-align: center;
+	line-height: 100px;
+	font-size: 12px;
+	font-weight: 500;
+	opacity: 80%;
 }
 </style>
 <script>

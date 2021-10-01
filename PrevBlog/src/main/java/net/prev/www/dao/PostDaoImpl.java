@@ -75,5 +75,10 @@ public class PostDaoImpl implements PostDao {
 		return sql.selectList("post.utdList");
 	}
 
+	@Override
+	public void delete(Post item) {
+		sql.delete("post.delete", item);
+	}
+
 	
 }

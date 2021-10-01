@@ -30,4 +30,6 @@ public interface PostDao {
 
 	List<Post> utdList(String id);
 
+	void delete(Post item);
+
 }

@@ -38,11 +38,11 @@ public class RootController {
 	@RequestMapping("/")
 	public String index(Model model) {
 		List<Member> memberList = memberService.list();
-		List<Post> list = postService.utdList();
-		List<Post> allList = postService.allList();
+		List<Post> lessThree = postService.utdList(); //ìµœì‹ ê¸€ ë¦¬ìŠ¤íŠ¸ (ì¼ë¶€)
+		List<Post> list = postService.allList(); //ì¸ê¸°ê¸€ ë¦¬ìŠ¤íŠ¸ (ì „ì²´)
 		
-		model.addAttribute("list", list);
-		model.addAttribute("result", allList);
+		model.addAttribute("result", list);
+		model.addAttribute("lessThree", lessThree);
 		model.addAttribute("memberList", memberList);
 		
 		return "index";
@@ -109,7 +109,7 @@ public class RootController {
 		model.addAttribute("item", item);
 		model.addAttribute("replyList", list);
 		
-		System.out.println("±Û ³»¿ë ºÒ·¯¿Â ÈÄ Ä«¿îÆ®´Â" + item.getViewcount());
+		System.out.println("ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ò·ï¿½ï¿½ï¿½ ï¿½ï¿½ Ä«ï¿½ï¿½Æ®ï¿½ï¿½" + item.getViewcount());
 		
 		return "showDetail";
 	}

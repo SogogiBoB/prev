@@ -92,6 +92,7 @@
 	width: 850px;
 	height: auto;
 	margin: 0 auto;
+	padding-bottom: 60px;
 }
 
 #reply_list {
@@ -207,7 +208,7 @@
 			<div id="reply_list">
 				<c:if test="${replyList.size() < 1}">
 					<div>
-						<p>노댓글</p>
+						<p>등록된 댓글이 없습니다.</p>
 					</div>
 				</c:if>
 				<c:forEach var="reply" items="${replyList}">
@@ -218,8 +219,8 @@
 							<fmt:formatDate value="${reply.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
 						</small>
 						<c:if test="${sessionScope.member.id==reply.id}">
-							<button class="update">변경</button>
-							<button class="delete">삭제</button>
+							<button class="update btn btn-outline-secondary btn-sm">변경</button>
+							<button class="delete btn btn-outline-danger btn-sm">삭제</button>
 						</c:if>
 					</div>
 				</c:forEach>
@@ -232,7 +233,7 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="updateModalLabel">설문지 등록</h5>
+					<h5 class="modal-title" id="updateModalLabel">댓글 수정</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">

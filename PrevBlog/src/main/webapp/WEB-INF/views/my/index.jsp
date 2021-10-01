@@ -314,9 +314,9 @@ h5{
 		}); 
 		$(".cate").on("click",function(){
 			if($(".pcate").css("display")=="none"){
-				$(".pcate").show();
+				$(this).siblings().show();
 			}else{
-				$(".pcate").hide();
+				$(this).siblings().hide();
 			}
 			});
 		$(".card").click(function() {
@@ -431,7 +431,12 @@ h5{
 			<div class="body-footer">
 				<div class="profile">
 					<div id="profileImg">
-						<img src="/upload/files/${memberInfo.profileImg}">
+						<c:if test="${memberInfo.profileImg != null}">
+							<img src="/upload/files/${memberInfo.profileImg}">
+						</c:if>
+						<c:if test="${memberInfo.profileImg == null}">
+							<img src="/images/no_profile.png">
+						</c:if>
 					</div>
 					<div>
 						<p id="nickname"><b>${memberInfo.nickname}</b></p>
@@ -460,7 +465,7 @@ h5{
 					<c:forEach var="item" items="${pclist}">
 						<div>
 							<c:if test="${item.cid !=null}"> 
-								<p class="cate" data-pcid="${item.pcid}">-<b>${item.cname}</b></p>
+								<p class="cate" data-pcname="${item.pcname}">-<b>${item.cname}</b></p>
 								<p class="pcate">${item.pcname}</p>
 							</c:if>
 						</div>

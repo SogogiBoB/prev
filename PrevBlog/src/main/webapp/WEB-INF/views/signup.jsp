@@ -121,7 +121,7 @@ function goBack() {
 		                  <input type="text" name="id" onchange="changeId()">
 		               </div>
 		               <div class="mb-3">
-		               		<button onclick="checkId_Async()" class="btn btn-outline-secondary btn-sm">중복확인</button>
+		               		<div onclick="checkId_Async()" class="btn btn-outline-secondary btn-sm">중복확인</div>
 		               </div>
 		               <div class="row mb-3">
 		                  <label class="mb-1 text-muted fs-6">이름</label>

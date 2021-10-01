@@ -43,7 +43,12 @@ $(function() {
 	            </div>
 		            <c:if test="${sessionScope.id != null}">
 		            <div id="roundProfile">
-		            	<img src="/upload/files/${sessionScope.member.profileImg}">
+		            	<c:if test="${sessionScope.member.profileImg != null}">
+		            		<img src="/upload/files/${sessionScope.member.profileImg}">
+		            	</c:if>
+		            	<c:if test="${sessionScope.member.profileImg == null}">
+		            		<img src="/images/no_profile.png">
+		            	</c:if>
 						<a href="logout">로그아웃</a>
 					</div>
 					</c:if>
@@ -71,7 +76,14 @@ $(function() {
 	            </div>
 	            <c:if test="${sessionScope.member != null}">
 		            <div id="login_box_1">
-			            <img src="/upload/files/${sessionScope.member.profileImg}">
+		            	<c:choose>
+			            	<c:when test="${sessionScope.member.profileImg != null}">
+				            	<img src="/upload/files/${sessionScope.member.profileImg}">
+				           	</c:when>
+				           	<c:otherwise>
+				           		<img src="/images/no_profile.png">
+				           	</c:otherwise>
+			           	</c:choose>
 			            <div id="profileInfo">
 				           	<h3>${sessionScope.member.nickname}</h3>
 				           	<h5>${sessionScope.member.pr}</h5>

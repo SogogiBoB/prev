@@ -138,5 +138,11 @@ public class Post {
 	}
 	
 	
-
+	@Override
+	public String toString() {
+		return "Post [pid=" + pid + ", title=" + title + ", content=" + content + ", regdate=" + regdate + ", id=" + id
+				+ ", cid=" + cid + ", cname=" + cname + ", pcid=" + pcid + ", pcname=" + pcname + ", profileImg="
+				+ profileImg + ", nickname=" + nickname + ", viewcount=" + viewcount + ", thumbnail=" + thumbnail
+				+ ", fileUpload=" + fileUpload + "]";
+	}
 }

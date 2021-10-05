@@ -55,17 +55,24 @@ public class Mycontroller {
 	public String index(@PathVariable String id, Model model) {
 		Member memberInfo = memberService.item(id);
 		
+<<<<<<< HEAD
+		System.out.println(id);
+		
 		List<Post> list = postService.EList(id);
+=======
+		List<Post> Elist = postService.EList(id);
+>>>>>>> 4e24c5051c792f33a41b43bbb41f2d1a22f9d22e
 		List<Post> udtlist = postService.utdList(id);
 		List<perCategory> pclist = pcateService.list(id);
 		List<Category> clist = categoryService.list();
 		
 		model.addAttribute("memberInfo", memberInfo);
-		model.addAttribute("list", list);
+		model.addAttribute("Elist", Elist);
 		model.addAttribute("pclist", pclist);
 		model.addAttribute("clist", clist);
 		model.addAttribute("udtlist", udtlist);
 		
+		System.out.println(Elist.toString().toString());
 		return path+"index";
 	}
 	

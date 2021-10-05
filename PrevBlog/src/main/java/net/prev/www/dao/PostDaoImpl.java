@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import net.prev.www.model.Post;
+import net.prev.www.util.Pager;
 
 @Repository
 public class PostDaoImpl implements PostDao {
@@ -61,18 +62,18 @@ public class PostDaoImpl implements PostDao {
 	}
 
 	@Override
-	public List<Post> allList() {
-		return sql.selectList("post.allList");
+	public List<Post> allList(Pager pager) {
+		return sql.selectList("post.allList", pager);
 	}
 
 	@Override
 	public List<Post> EList(String id) {
-		return sql.selectList("post.EList");
+		return sql.selectList("post.EList", id);
 	}
 
 	@Override
 	public List<Post> utdList(String id) {
-		return sql.selectList("post.utdList");
+		return sql.selectList("post.utdList",id);
 	}
 
 	@Override

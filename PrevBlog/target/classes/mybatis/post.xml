@@ -11,12 +11,18 @@
 	</select>
 	
 	<select id="EList" resultType="Post">
+<<<<<<< HEAD
 		<![CDATA[
 			SELECT pid, title, sub.id, thumbnail, regdate, member.profile_img FROM 
 			(SELECT * FROM post ORDER BY pid desc) sub
 			JOIN member ON sub.id=member.id
-			WHERE ROWNUM <=8
+			WHERE ROWNUM <=8 and sub.id=#{id}
 		]]>
+		
+=======
+			SELECT * FROM post 	
+			WHERE id=#{id}
+>>>>>>> 4e24c5051c792f33a41b43bbb41f2d1a22f9d22e
 	</select>
 
 	<select id="list" resultType="Post">

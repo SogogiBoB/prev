@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import net.prev.www.dao.PostDao;
 import net.prev.www.model.Post;
+import net.prev.www.util.Pager;
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -73,12 +74,14 @@ public class PostServiceImpl implements PostService {
 	}
 
  	@Override
-	public List<Post> allList() {
-		return dao.allList();
+	public List<Post> allList(Pager pager) {
+		return dao.allList(pager);
 	}
 
 	@Override
 	public List<Post> EList(String id) {
+		System.out.println(id);
+		
 		return dao.EList(id);
 	}
 

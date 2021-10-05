@@ -3,6 +3,7 @@ package net.prev.www.service;
 import java.util.List;
 
 import net.prev.www.model.Post;
+import net.prev.www.util.Pager;
 
 public interface PostService {
 
@@ -20,7 +21,7 @@ public interface PostService {
 
 	Post updateItem(int pid);
 
-	List<Post> allList();
+	List<Post> allList(Pager pager);
 
 	List<Post> EList(String id);
 

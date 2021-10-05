@@ -398,26 +398,28 @@ h5{
 			</div>
 			<hr id="b-h-hr">
 			<div class="body-body row">
-				<c:forEach var="list" items="${list}">
+				<c:forEach var="Elist" items="${Elist}">
 					<div class="body-card col">
-						<div class="card" data-pid="${list.pid}">
-							<c:if test="${list.thumbnail != null}">
-								<img src="${list.thumbnail}" class="card-img-top">
+						<div class="card" data-pid="${Elist.pid}">
+							<c:if test="${Elist.thumbnail != null}">
+								<img src="${Elist.thumbnail}" class="card-img-top">
 							</c:if>
-							<c:if test="${list.thumbnail == null}">
+							<c:if test="${Elist.thumbnail == null}">
 								<img src="/images/no_image.gif" class="card-img-top">
 							</c:if>
 							<div class="card-body">
-								<h5 class="card-title">${list.title}</h5>
+								<h5 class="card-title">${Elist.title}</h5>
 							</div>
 							<div class="card-footer">
-								<small class="text-muted">조회 ${list.viewcount} · <fmt:formatDate
-										value="${list.regdate}" pattern="YYYY.MM.dd" /></small>
+								<small class="text-muted">조회 ${Elist.viewcount} · <fmt:formatDate value="${Elist.regdate}" pattern="YYYY.MM.dd" /></small>
 							</div>
+							<p hidden="${Elist.id}"></p>
 						</div>
 					</div>
 				</c:forEach>
 			</div>
+			</div>
+			
 			<hr id="b-p-hr">
 			<!-- 페이지네이션  -->
 			<!-- <div id="pager">
@@ -503,5 +505,7 @@ h5{
 		<div class="calendar">
 		</div>
 	</div>
+	</div>
+
 </body>
 </html>

@@ -21,11 +21,10 @@ calendar.render();
 </script>
 <style>
 #calendar {
-width: 100%;
-}
-.fc .fc-toolbar-title {
-    font-size: 20px;
-    margin: 0;
+width: 95%;
+  height: 90%;  
+margin:0 auto;
+margin-top: 20px;
 }
 </style>
 <title></title>

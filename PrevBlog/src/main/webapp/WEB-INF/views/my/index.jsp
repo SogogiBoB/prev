@@ -64,7 +64,7 @@ h5{
 }
 .container-fluid{
     width: 1920px;
-    height: 2125px;
+    height: 100%;
     background-color: #97c8e2;
 }
 .header{
@@ -110,9 +110,9 @@ h5{
 }
 .body-box{
     width: 1184px;
-    height: 1690px;
+    height: 2000px;
     background-color: white;
-    margin-left:368px ;
+    margin:0 auto ;
     margin-top: 75px;
 }
 .body-header div{
@@ -130,8 +130,7 @@ h5{
     font-size: 16px;
     color: #4f4f4f;
 }
-.body-box hr{
-}
+
 .body-body{
     margin-left: 62px;
     width: 1060px;
@@ -224,7 +223,7 @@ h5{
 	height: auto;
 	vertical-align: top;
 	margin-top: 40px;
-	margin-left: 25px;
+	margin-left: 35px;
 }
 #tagID{
 	margin-top: 30px;
@@ -242,12 +241,18 @@ h5{
 	font-weight: 200;
 	color: #4f4f4f;
 }
+.calendar{
+	width: 500px;
+	height: 480px;
+	margin-top: 40px;
+	margin-left:30px;
+	float: right;
+}
 .newpost{
 	width: 240px;
 	height: auto;
 	margin-top: 40px;
 	vertical-align: top;
-	margin-left: 25px;
 }
 #name{
 	margin-left: 10px; 
@@ -290,27 +295,27 @@ h5{
 	.post_content{
 		display: inline-block;
 	}
- .calendar{
-	width: 240px;
-	height: 260px;
-	margin: 40px auto;
-	float: right;
-}
+ 
 .cate, .pcate{
 	display: none;
 	
 }
 #footer {
-	margin-top: 150px;
 	color: #fff;
 	height: 100px;
-	width: 100%;
+	width: 1184px;
 	background: black;
 	text-align: center;
 	line-height: 100px;
 	font-size: 12px;
 	font-weight: 500;
 	opacity: 80%;
+	margin: 0 auto;
+    bottom: 0;
+}
+.pagination{
+	margin-left: 500px
+;
 }
 </style>
 <script>
@@ -345,46 +350,53 @@ h5{
 </head>
 <body>
 	<div class="container-fluid">
+	
+		<!-- 최상단 헤더 메뉴-->
 		<div class="header">
-	            <div id="header1">
-	                <div id="logo">
-	                    <p><b>PREV</b></p>
-	                </div>
-	                <div class="line">
-	                    |
-	                </div>
-	                <div class="header-menu">
-	                    <p><a href="/">블로그</a></p>
-	                </div>
+	    	<div id="header1">
+		        <div id="logo">
+	                <p><b>PREV</b></p>
+                </div>
+                <div class="line">
+	            	|
 	            </div>
-	            <div id="header2">
-	                <div class="header-menu">
-	                    <p>${memberInfo.nickname}님</p>
-	                </div>
-	                <div class="line">
-	                    |
-	                </div>
-	                <div class="header-menu">
-	                    <p>최신</p>
-	                </div>
-	                <div class="line">
-	                    |
-	                </div>
-	                <div class="header-menu">
-	                    <p>인기</p>
-	                </div>
-	                <div class="line">
-	                    |
-	                </div>
-	                <div class="header-menu">
-	                    <p><a href="logout">로그아웃</a></p>
-	                </div>
+	            <div class="header-menu">
+	            	<p><a href="/">블로그</a></p>
 	            </div>
 	        </div>
-	        <div class="section">
-            	<h3><b>${memberInfo.nickname}의 블로그입니다.</b></h3>
-        	</div>
+	        <div id="header2">
+	        	<div class="header-menu">
+	            	<p>${memberInfo.nickname}님</p>
+	            </div>
+	            <div class="line">
+	            	|
+	            </div>
+	            <div class="header-menu">
+	            	<p>최신</p>
+	            </div>
+	            <div class="line">
+	            	|
+	            </div>
+	            <div class="header-menu">
+	            	<p>인기</p>
+	            </div>
+	            <div class="line">
+	            	|
+	            </div>
+	            <div class="header-menu">
+	            	<p><a href="logout">로그아웃</a></p>
+	            </div>
+	        </div>
+		</div>
+		
+		<!-- 닉네임님의 블로그입니다 -->
+	    <div class="section">
+        	<h3><b>${memberInfo.nickname}의 블로그입니다.</b></h3>
+        </div>
+        
+        <!-- 중단  -->
 		<div class="body-box">
+			<!-- 중단 메뉴(홈, 최신글) -->
 			<div class="body-header">
 				<div id="home">
 					<b><a href="/">홈</a></b>
@@ -397,53 +409,69 @@ h5{
 				</div>
 			</div>
 			<hr id="b-h-hr">
-			<div class="body-body row">
-				<c:forEach var="Elist" items="${Elist}">
-					<div class="body-card col">
-						<div class="card" data-pid="${Elist.pid}">
-							<c:if test="${Elist.thumbnail != null}">
-								<img src="${Elist.thumbnail}" class="card-img-top">
-							</c:if>
-							<c:if test="${Elist.thumbnail == null}">
-								<img src="/images/no_image.gif" class="card-img-top">
-							</c:if>
-							<div class="card-body">
-								<h5 class="card-title">${Elist.title}</h5>
+			<!-- 중단 내 글 카드 -->
+				<div class="body-body row">
+					<c:forEach var="Elist" items="${Elist}">
+						<div class="body-card col">
+							<div class="card" data-pid="${Elist.pid}">
+								<c:if test="${Elist.thumbnail != null}">
+									<img src="${Elist.thumbnail}" class="card-img-top">
+								</c:if>
+								<c:if test="${Elist.thumbnail == null}">
+									<img src="/images/no_image.gif" class="card-img-top">
+								</c:if>
+								<div class="card-body">
+									<h5 class="card-title">${Elist.title}</h5>
+								</div>
+								<div class="card-footer">
+									<small class="text-muted">조회 ${Elist.viewcount} · <fmt:formatDate value="${Elist.regdate}" pattern="YYYY.MM.dd" /></small>
+								</div>
+								<p hidden="${Elist.id}"></p>
 							</div>
-							<div class="card-footer">
-								<small class="text-muted">조회 ${Elist.viewcount} · <fmt:formatDate value="${Elist.regdate}" pattern="YYYY.MM.dd" /></small>
-							</div>
-							<p hidden="${Elist.id}"></p>
 						</div>
-					</div>
-				</c:forEach>
-			</div>
-			</div>
-			
-			<hr id="b-p-hr">
-			<!-- 페이지네이션  -->
-			<!-- <div id="pager">
-			<nav aria-label="Page navigation example">
-			  <ul class="pagination">
-			    <li class="page-item">
-			      <a class="page-link" href="#" aria-label="Previous">
-			        <span aria-hidden="true">&laquo;</span>
-			      </a>
-			    </li>
-			    <li class="page-item"><a class="page-link" href="#">1</a></li>
-			    <li class="page-item"><a class="page-link" href="#">2</a></li>
-			    <li class="page-item"><a class="page-link" href="#">3</a></li>
-			    <li class="page-item">
-			      <a class="page-link" href="#" aria-label="Next">
-			        <span aria-hidden="true">&raquo;</span>
-			      </a>
-			    </li>
-			  </ul>
-			</nav>
-			</div> -->
+					</c:forEach>
+				</div>
+				
+				<hr id="b-p-hr">
+				<!-- 페이지네이션 -->
+				<nav aria-label="Page navigation example">
+				  <ul class="pagination">
+				    <li class="page-item">
+				      <a class="page-link" href="?page=1" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				        <span class="sr-only">처음</span>
+				      </a>
+				    </li>
+				    <li class="page-item">
+				    	<a class="page-link" href="?page=${pager.prev}" aria-label="Previous">
+				    		<span aria-hidden="true">&laquo;</span>
+				       	 <span class="sr-only">이전</span>
+				    	</a>
+				    </li>
+				    <c:forEach var="postPage" items="${pager.list}">
+				    	<li class="page-item">
+							<a class="page-link" href="?page=${postPage}">${postPage}</a>
+						</li>
+					</c:forEach>
+					<li>
+				      <a class="page-link" href="?page=${pager.next}" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				        <span class="sr-only">다음</span>
+				      </a>
+				    </li>
+				    <li>
+				    	<a class="page-link" href="?page=${pager.last}" aria-label="Next">
+				    		<span aria-hidden="true">&raquo;</span>
+				    		<span class="sr-only">마지막</span>
+				    	</a>
+				    </li>
+				  </ul>
+				</nav>
 			<hr id="b-f-hr">
-			
+				
+			<!-- 하단 -->
 			<div class="body-footer">
+				<!-- 하단 프로필 카드 -->
 				<div class="profile">
 					<div id="profileImg">
 						<c:if test="${memberInfo.profileImg != null}">
@@ -463,16 +491,16 @@ h5{
 						</c:if>
 					</div>
 					<div id="button_box">
-		            	<button onclick="location.href='../../post/${sessionScope.id}/add'" id="postsadd">글쓰기</button>
+			           	<button onclick="location.href='../../post/${sessionScope.id}/add'" id="postsadd">글쓰기</button>
 						<button onclick="location.href='../../manage/${sessionScope.id}/'" id="manage">관리</button>
 					</div>
 				</div>
-			
+				<!-- 하단 카테고리 토글 -->
 				<div class="categorys">
 					<div id="tagID"> 
 						<p>카테고리 전체보기</p>
 					</div>
-    				<c:if test="${list.size() < 1}">
+	    			<c:if test="${list.size() < 1}">
 						<li>
 							<p>등록된 카테고리가 없습니다.</p>
 						</li>
@@ -486,9 +514,14 @@ h5{
 						</div>
 					</c:forEach>
 				</div>
+				<!-- 하단 캘린더 -->
+				<div class="calendar">
+					<jsp:include page="/WEB-INF/views/calendar/main.jsp" ></jsp:include>
+				</div>
+				<!-- 하단 최신글 -->
 				<div class="newpost">
 					<p id="name"><b>최신글</b></p>
-						<c:forEach var="item" items="${udtlist}">
+					<c:forEach var="item" items="${udtlist}">
 						<div class="post_box" data-pid="${item.pid}">
 							<c:if test="${item.thumbnail != null}">
 								<img src="${item.thumbnail}">
@@ -496,16 +529,17 @@ h5{
 							<c:if test="${item.thumbnail == null}">
 								<img src="/images/no_image.gif">
 							</c:if>
-								<p>${item.title}</p>
-								<small class="text-muted">조회 ${item.viewcount} · <fmt:formatDate value="${item.regdate}" pattern="YYYY.MM.dd" /></small>
-								</div>
-							<hr id="b_post_hr">
-						</c:forEach>
+							<p>${item.title}</p>
+							<small class="text-muted">조회 ${item.viewcount} · <fmt:formatDate value="${item.regdate}" pattern="YYYY.MM.dd" /></small>
+						</div>
+						<hr id="b_post_hr">
+					</c:forEach>
+				</div>
+			</div>
 		</div>
-		<div class="calendar">
-		</div>
+		<footer id="footer">
+			Copyright ©2021 PREV All Rights Reserved.
+		</footer>
 	</div>
-	</div>
-
 </body>
 </html>

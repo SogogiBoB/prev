@@ -10,4 +10,6 @@ public interface CategoryService {
 
 	void add(Category item);
 
+	List<Category> ajaxList();
+
 }

@@ -75,14 +75,10 @@ public class PostServiceImpl implements PostService {
 
  	@Override
 	public List<Post> allList(Pager pager) {
+ 		int total = dao.total(pager);
+ 		
+ 		pager.setTotal((float)total);
 		return dao.allList(pager);
-	}
-
-	@Override
-	public List<Post> EList(String id) {
-		System.out.println(id);
-		
-		return dao.EList(id);
 	}
 
 	@Override
@@ -98,6 +94,14 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public void delete(Post item) {
 		dao.delete(item);
+	}
+
+	@Override
+	public List<Post> EList(Pager pager) {
+		int total = dao.total(pager);
+		
+		pager.setTotal((float) total);
+		return dao.EList(pager);
 	}
 
 }

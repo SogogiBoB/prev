@@ -10,4 +10,6 @@ public interface CategoryDao {
 
 	void add(Category item);
 
+	List<Category> ajaxList();
+
 }

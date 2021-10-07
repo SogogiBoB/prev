@@ -10,12 +10,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import net.prev.www.model.Category;
 import net.prev.www.model.Member;
 import net.prev.www.model.Post;
 import net.prev.www.model.Reply;
+import net.prev.www.service.CategoryService;
 import net.prev.www.service.MemberService;
 import net.prev.www.service.PostService;
 import net.prev.www.service.ReplyService;
@@ -35,20 +38,30 @@ public class RootController {
 	
 	@Autowired
 	MemberService memberService;
+	
+	@Autowired
+	CategoryService categoryService;
 
 	@RequestMapping("/")
-	public String index(Model model, Pager pager) {
-		List<Member> memberList = memberService.list();
-		List<Post> lessThree = postService.utdList(); //최신글 리스트
-		List<Post> list = postService.allList(pager); //인기글 리스트
-		
-		model.addAttribute("memberList", memberList);
-		model.addAttribute("result", list);
-		model.addAttribute("lessThree", lessThree);
-		
-		return "index";
-	}
-	
+	   public String index(Model model, Pager pager) {
+	      List<Member> memberList = memberService.list();
+	      List<Post> lessThree = postService.utdList(); //최신글 리스트
+	      List<Post> list = postService.allList(pager); //인기글 리스트
+	      List<Category> clist = categoryService.ajaxList();
+
+	      model.addAttribute("memberList", memberList);
+	      model.addAttribute("result", list);
+	      model.addAttribute("clist", clist);
+	      model.addAttribute("lessThree", lessThree);
+	      
+	      return "index";
+	   }
+	   
+	   @PostMapping("/ajax_list")
+	   @ResponseBody
+	   public List<Post> postList(@RequestBody Pager pager) {
+	      return postService.allList(pager);
+	   }
 	
 	@GetMapping("/signup")
 	public String signup() {
@@ -110,7 +123,7 @@ public class RootController {
 		model.addAttribute("item", item);
 		model.addAttribute("replyList", list);
 		
-		System.out.println("占쏙옙 占쏙옙占쏙옙 占쌀뤄옙占쏙옙 占쏙옙 카占쏙옙트占쏙옙" + item.getViewcount());
+		System.out.println("�� ���� �ҷ��� �� ī��Ʈ��" + item.getViewcount());
 		
 		return "showDetail";
 	}

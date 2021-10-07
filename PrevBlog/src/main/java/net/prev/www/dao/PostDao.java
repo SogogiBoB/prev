@@ -27,10 +27,12 @@ public interface PostDao {
 
 	List<Post> allList(Pager pager);
 
-	List<Post> EList(String id);
+	List<Post> EList(Pager pager);
 
 	List<Post> utdList(String id);
 
 	void delete(Post item);
+
+	int total(Pager pager);
 
 }

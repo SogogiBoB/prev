@@ -16,5 +16,9 @@
 	<select id="categoryList" resultType="Category">
 		SELECT * FROM category WHERE id=#{id}
 	</select>
+	
+	<select id="ajaxList" resultType="Category">
+      SELECT * from category
+   </select>
 
 </mapper>

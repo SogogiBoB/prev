@@ -11,35 +11,41 @@
 	</select>
 	
 	<select id="EList" resultType="Post">
-<<<<<<< HEAD
-		<![CDATA[
-			SELECT pid, title, sub.id, thumbnail, regdate, member.profile_img FROM 
-			(SELECT * FROM post ORDER BY pid desc) sub
-			JOIN member ON sub.id=member.id
-			WHERE ROWNUM <=8 and sub.id=#{id}
-		]]>
-		
-=======
-			SELECT * FROM post 	
-			WHERE id=#{id}
->>>>>>> 4e24c5051c792f33a41b43bbb41f2d1a22f9d22e
+		select subsub.* from 
+		(SELECT ROWNUM rnum, sub.* from
+   		(select post.* FROM post WHERE id=#{id} ORDER BY post.regdate desc)sub
+		)subsub   
+    	<![CDATA[
+    	WHERE rnum >=((#{page}-1)*#{perPage}+1) AND rnum <= (#{page}*#{perPage})
+    	]]>
 	</select>
 
+	<select id="total" resultType="Integer">
+		SELECT COUNT(*)
+		FROM post
+	</select>
+	
 	<select id="list" resultType="Post">
 		SELECT post.*, percategory.pcname pcname FROM post JOIN percategory ON post.pcid = percategory.pcid 
 		WHERE post.id=#{id}
 	</select>
 	
 	<select id="allList" resultType="Post">
-		select post.*, percategory.pcid, percategory.cid, 
-		category.cid as cid, category.cname as cname, member.profile_img from post
-		join percategory on post.pcid = percategory.pcid
-		join category on percategory.cid = category.cid
-		join member on post.id=member.id
-		<![CDATA[
-		where post.viewcount >= 80
-		]]>
-	</select>
+      select * from(
+      select ROWNUM rnum,sub2.* from (
+          select sub.*, member.profile_img from ( 
+              select post.*,category.cid as cid, category.cname as cname from post 
+              join percategory on post.pcid = percategory.pcid
+              join category on percategory.cid = category.cid
+              <if test="cname != null and cname != ''">
+               where cname = #{cname}
+            </if>
+              ) sub
+          join member on sub.id=member.id) sub2)
+      <![CDATA[
+      WHERE rnum >= ((#{page} - 1) * #{perPage} + 1) AND rnum <= (#{page} * #{perPage})
+      ]]>
+   </select>
 	
 	<insert id="add">
 		INSERT INTO post VALUES (POST_SEQ.nextval, #{title}, #{content}, default, #{id}, #{pcid}, default, #{thumbnail})

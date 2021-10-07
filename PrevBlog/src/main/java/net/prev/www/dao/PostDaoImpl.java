@@ -67,8 +67,9 @@ public class PostDaoImpl implements PostDao {
 	}
 
 	@Override
-	public List<Post> EList(String id) {
-		return sql.selectList("post.EList", id);
+	public List<Post> EList(Pager pager) {
+		
+		return sql.selectList("post.EList", pager);
 	}
 
 	@Override
@@ -79,6 +80,11 @@ public class PostDaoImpl implements PostDao {
 	@Override
 	public void delete(Post item) {
 		sql.delete("post.delete", item);
+	}
+
+	@Override
+	public int total(Pager pager) {
+		return sql.selectOne("post.total",pager);
 	}
 
 	

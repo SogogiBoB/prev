@@ -24,4 +24,9 @@ public class CategoryDaoImpl implements CategoryDao {
 		sql.insert("category.add", item);
 	}
 
+	@Override
+	public List<Category> ajaxList() {
+		return sql.selectList("category.ajaxList");
+	}
+
 }

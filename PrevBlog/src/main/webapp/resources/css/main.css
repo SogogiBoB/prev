@@ -4,7 +4,7 @@ width: 100px;
 height: 100px;
 }
 p {
-	margin: 0;
+   margin: 0;
 }
 * {
     margin: 0;
@@ -40,18 +40,18 @@ p {
     display: inline-block;
 }
 #header #roundProfile {
-	display: inline-block;
-	margin-left: 905px;
+   display: inline-block;
+   margin-left: 905px;
 }
 #header #roundProfile img {
-	width: 35px;
-	height: 35px;
-	border-radius: 50%;
-	cursor: pointer;
+   width: 35px;
+   height: 35px;
+   border-radius: 50%;
+   cursor: pointer;
 }
 #header #roundProfile a {
-	font-size: 14px;
-	margin-left: 30px;
+   font-size: 14px;
+   margin-left: 30px;
 }
 section {
     width: 1100px;
@@ -73,192 +73,193 @@ section {
     font-size: 36px;
 }
 #slogan h3 {
-	line-height: 40px;
+   line-height: 40px;
     font-size: 46px;
 }
 #login_box_1 {
-	width: 505px;
-	height: 175px;
-	margin-left: 50px;
-	display: inline-block;
-	border-right: 1px solid black;
+   width: 505px;
+   height: 175px;
+   margin-left: 50px;
+   display: inline-block;
+   border-right: 1px solid black;
 }
 #login_box_2 {
-	width: 1100px;
-	height: 175px;
+   width: 1100px;
+   height: 175px;
 }
 #login2_text {
-	padding-top: 30px;
-	margin: 0 auto;
-	width: 310px;
+   padding-top: 30px;
+   margin: 0 auto;
+   width: 310px;
 }
 #login2_button {
-	width: 200px;
-	margin: 0 auto;
+   width: 200px;
+   margin: 0 auto;
 }
 #blog_login {
-	width: 200px;
-	height: 40px;
-	background: #202020;
-	font-weight: 700;
-	color: #fff;
-	margin-top: 16px;
-	border: 0;
+   width: 200px;
+   height: 40px;
+   background: #202020;
+   font-weight: 700;
+   color: #fff;
+   margin-top: 16px;
+   border: 0;
 }
 #upper_content {
-	border-bottom: 1px solid #e4e4e4;
-	margin-bottom: 60px;
+   border-bottom: 1px solid #e4e4e4;
+   margin-bottom: 60px;
 }
 #memberProfile {
-	background: red;
-	width: 90px;
-	height: 90px;
+   background: red;
+   width: 90px;
+   height: 90px;
 }
 #login_box_1 img{
-	margin-top: -60px;
-	width: 90px;
-	height: 90px;
-	display: inline-block;
+   margin-top: -60px;
+   width: 90px;
+   height: 90px;
+   display: inline-block;
 }
 #profileInfo {
-	margin-top: 20px;
-	margin-left: 20px;
-	display: inline-block;
+   margin-top: 20px;
+   margin-left: 20px;
+   display: inline-block;
 }
 #profileInfo h3 {
-	font-size: 22px;
-	font-weight: 400;
+   font-size: 22px;
+   font-weight: 400;
 }
 #profileInfo h5 {
-	font-size: 16px;
-	font-weight: 700;
+   font-size: 16px;
+   font-weight: 700;
 }
 #profileInfo p {
-	font-size: 12px;
+   font-size: 12px;
 }
 #button_box {
-	margin-left: 115px;
+   margin-left: 115px;
 }
 #my_blog, #post_add {
-	background: none;
-	border: 1px solid black;
-	width: 120px;
-	height: 35px;
-	display: inline-block;
-	font-size: 14px;
-	font-weight: 700;
+   background: none;
+   border: 1px solid black;
+   width: 120px;
+   height: 35px;
+   display: inline-block;
+   font-size: 14px;
+   font-weight: 700;
 }
 #up_to_date {
-	width: 1100px;
-	height: 470px;
-	margin: 0 auto;
-	margin-bottom: 60px;
+   width: 1100px;
+   height: 470px;
+   margin: 0 auto;
+   margin-bottom: 60px;
 }
 #up_to_date h2 {
-	font-size: 24px;
-	font-weight: bold;
+   font-size: 24px;
+   font-weight: bold;
 }
 .card_box .card {
-	width: 345px;
-	height: 420px;
-	cursor: pointer;
-	margin-top: 10px;
-	display: inline-block;
+   width: 345px;
+   height: 420px;
+   cursor: pointer;
+   margin-top: 10px;
+   display: inline-block;
 }
 .card_body {
-	padding-top: 30px;
+   padding-top: 30px;
 }
 .img_section {
-	margin-left: 26px;
+   margin-left: 26px;
 }
 .card_img_top {
-	height: 250px;
-	width: 290px;
-	object-fit: cover;
+   height: 250px;
+   width: 290px;
+   object-fit: cover;
 }
 .card_text {
-	padding-left: 26px;
+   padding-left: 26px;
 }
 .card_box .card:nth-child(2) {
-	margin-right: 27px;
-	margin-left: 26px;
+   margin-right: 27px;
+   margin-left: 26px;
 }
 .profile_section_in_card {
-	margin-top: 15px;
+   margin-top: 15px;
 }
 .profileImg_in_card{
-	margin-left: 26px;
+   margin-left: 26px;
 }
 .profileImg_in_card img {
-	width: 60px;
-	height: 60px;
-	border-radius: 50%;
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
 }
 .profileImg_in_card, .user_in_card, .regdate_in_card {
-	display: inline-block;
+   display: inline-block;
 }
 .user_in_card, .regdate_in_card {
-	padding-left: 15px;
-	color: #ccc;
-	font-size: 15px;
+   padding-left: 15px;
+   color: #ccc;
+   font-size: 15px;
 }
 #popular {
-	width: 1100px;
-	margin: 0 auto;
-	padding-bottom: 70px;
+   width: 1100px;
+   margin: 0 auto;
+   padding-bottom: 70px;
 }
 #popular h2 {
-	font-size: 24px;
-	font-weight: bold;
+   font-size: 24px;
+   font-weight: bold;
 }
 #popular_info {
-	font-size: 16px;
-	font-weight: 520;
+   font-size: 16px;
+   font-weight: 520;
 }
 .cname_box {
-	margin-top: 20px;
+   margin-top: 20px;
 }
 .cname_box h3 {
-	font-size: 22px;
-	font-weight: 550;
+   font-size: 22px;
+   font-weight: 550;
 }
 #line_under_cname {
-	width: 45px;
-	height: 4px;
-	background: #ccc;
-	margin-top: -12px;
+   width: 45px;
+   height: 4px;
+   background: #ccc;
+   margin-top: -12px;
 }
 .pop_card_box .card {
-	width: 345px;
-	height: 420px;
-	cursor: pointer;
-	margin-top: 20px;
-	display: inline-block;
+   width: 345px;
+   height: 420px;
+   cursor: pointer;
+   margin-top: 20px;
+   margin-bottom: 30px;
+   display: inline-block;
 }
 .pop_card_box .card:nth-child(3) {
-	margin-right: 27px;
-	margin-left: 26px;
+   margin-right: 27px;
+   margin-left: 26px;
 }
 #how_about_this {
-	width: 100%;
-	height: 610px;
-	background: #5f5151;
-	margin-top: 110px;
+   width: 100%;
+   height: 610px;
+   background: #5f5151;
+   margin-top: 110px;
 }
 #how_info {
-	width: 1100px;
-	margin: 0 auto;
-	padding-top: 100px;
+   width: 1100px;
+   margin: 0 auto;
+   padding-top: 100px;
     padding-bottom: 20px;
 }
 #how_info h3 {
-	font-size: 24px;
-	font-weight: bold;
-	color: #fff;
+   font-size: 24px;
+   font-weight: bold;
+   color: #fff;
 }
 #how_info p {
-	font-size: 16px;
-	color: #fff;
+   font-size: 16px;
+   color: #fff;
 }
 .how_profile{ 
     width: 240px;
@@ -269,7 +270,7 @@ section {
     display: inline-block;
 }
 .how_profile:nth-child(2), .how_profile:nth-child(3), .how_profile:nth-child(4)  {
-	margin-left: 15px;
+   margin-left: 15px;
 }
 #how_profileImg{
     width: 120px;
@@ -298,70 +299,132 @@ section {
     margin: 0 auto;
 }
 #go_to_blog {
-	background: #c5c8c9;
-   	width: 90px;
-   	height: 35px;
-   	background: #202020;
-	font-weight: 400;
-	font-size: 12px;
-	color: #fff;
-	border: 0;
+   background: #c5c8c9;
+      width: 90px;
+      height: 35px;
+      background: #202020;
+   font-weight: 400;
+   font-size: 12px;
+   color: #fff;
+   border: 0;
 }
 #how_inner_box {
-	width: 1024px;
-	margin: 0 auto;
+   width: 1024px;
+   margin: 0 auto;
 }
 #footer {
-	margin-top: 150px;
-	color: #fff;
-	height: 100px;
-	width: 100%;
-	background: black;
-	text-align: center;
-	line-height: 100px;
-	font-size: 12px;
-	font-weight: 500;
-	opacity: 80%;
+   margin-top: 150px;
+   color: #fff;
+   height: 100px;
+   width: 100%;
+   background: black;
+   text-align: center;
+   line-height: 100px;
+   font-size: 12px;
+   font-weight: 500;
+   opacity: 80%;
 }
 #mini_profile_section {
-	margin-left: 30px;
-	width: 505px;
-	height: 175px;
-	display: inline-block;
+   margin-left: 30px;
+   width: 505px;
+   height: 175px;
+   display: inline-block;
 }
 #mini_profile_section h3 {
-	margin-top: 20px;
-	padding-left: 20px;
-	font-size: 16px;
-	font-weight: bold;
+   margin-top: 20px;
+   padding-left: 20px;
+   font-size: 16px;
+   font-weight: bold;
 }
 .mini_image_section{
-	margin-top: 20px;
-	margin-left: 30px;
-	width: 80px;
-	height: 100px;
-	display: inline-block;
+   margin-top: 20px;
+   margin-left: 30px;
+   width: 80px;
+   height: 100px;
+   display: inline-block;
 }
 #mini_image {
-	width: 50px;
-	height: 50px;
+   width: 50px;
+   height: 50px;
 }
 #mini_image img{
-	margin-left: 16px;
-	width: 50px;
-	height: 50px;
+   margin-left: 16px;
+   width: 50px;
+   height: 50px;
 }
 #member_info_section {
-	margin-top : 30px;
+   margin-top : 30px;
 }
 #member_info_section.row {
-	margin: 30px 0 0 0;
+   margin: 30px 0 0 0;
 }
 #mini_image, #mini_info {
-	text-align: center;
+   text-align: center;
 }
 #mini_info p {
-	padding-top: 10px;
-	font-weight: 300;
-	font-size: 14px;
+   padding-top: 10px;
+   font-weight: 300;
+   font-size: 14px;
+}
+
+.ajax_card_group .card {
+   width: 345px;
+   height: 420px;
+   cursor: pointer;
+   margin-top: 10px;
+   display: inline-block;
+}
+.ajax_card_body {
+   padding-top: 30px;
+}
+.ajax_img_section {
+   margin-left: 26px;
+}
+.ajax_card_img_top {
+   height: 250px;
+   width: 290px;
+   object-fit: cover;
+}
+.ajax_card_text {
+   padding-left: 26px;
+}
+.ajax_card_group .card:nth-child(2) {
+   margin-right: 30px;
+   margin-left: 30px;
+}
+.ajax_profile_section_in_card {
+   margin-top: 15px;
+}
+.ajax_profileImg_in_card{
+   margin-left: 26px;
+}
+.ajax_profileImg_in_card img {
+   width: 60px;
+   height: 60px;
+   border-radius: 50%;
+}
+.ajax_profileImg_in_card, .ajax_user_in_card, .ajax_regdate_in_card {
+   display: inline-block;
+}
+.ajax_user_in_card, .ajax_regdate_in_card {
+   padding-left: 15px;
+   color: #ccc;
+   font-size: 15px;
+}
+
+ul li {
+   list-style: none;
+   display: inline-block;
+   margin: 0 30px;
+   cursor: pointer;
+}
+#load_more {
+   width: 200px;
+   height: 50px;
+   text-align: center;
+   line-height: 50px;
+   border: 1px solid black;
+   margin: 0 auto;
+   margin-top: 30px;
+   cursor: pointer;
 }

@@ -23,7 +23,7 @@ public interface PostService {
 
 	List<Post> allList(Pager pager);
 
-	List<Post> EList(String id);
+	List<Post> EList(Pager pager);
 
 	List<Post> utdList(String id);
 

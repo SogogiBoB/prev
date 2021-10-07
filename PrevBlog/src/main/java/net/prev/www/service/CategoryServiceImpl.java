@@ -24,4 +24,9 @@ public class CategoryServiceImpl implements CategoryService {
 		dao.add(item);
 	}
 
+	@Override
+	public List<Category> ajaxList() {
+		return dao.ajaxList();
+	}
+
 }

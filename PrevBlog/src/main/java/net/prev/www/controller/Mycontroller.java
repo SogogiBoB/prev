@@ -22,6 +22,7 @@ import net.prev.www.service.MemberService;
 import net.prev.www.service.PostService;
 import net.prev.www.service.ReplyService;
 import net.prev.www.service.perCategoryService;
+import net.prev.www.util.Pager;
 
 @Controller
 @RequestMapping("/my/{id}")
@@ -52,19 +53,17 @@ public class Mycontroller {
 	}
 	
 	@RequestMapping({"/","index"})
-	public String index(@PathVariable String id, Model model) {
+	public String index(@PathVariable String id, Pager pager, Model model) {
 		Member memberInfo = memberService.item(id);
 		
-<<<<<<< HEAD
-		System.out.println(id);
+		pager.setId(id);
 		
-		List<Post> list = postService.EList(id);
-=======
-		List<Post> Elist = postService.EList(id);
->>>>>>> 4e24c5051c792f33a41b43bbb41f2d1a22f9d22e
+		List<Post> Elist = postService.EList(pager);
 		List<Post> udtlist = postService.utdList(id);
 		List<perCategory> pclist = pcateService.list(id);
 		List<Category> clist = categoryService.list();
+		
+		System.out.println(Elist.size());
 		
 		model.addAttribute("memberInfo", memberInfo);
 		model.addAttribute("Elist", Elist);
@@ -72,7 +71,7 @@ public class Mycontroller {
 		model.addAttribute("clist", clist);
 		model.addAttribute("udtlist", udtlist);
 		
-		System.out.println(Elist.toString().toString());
+		System.out.println(Elist.size());
 		return path+"index";
 	}
 	

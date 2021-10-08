@@ -12,4 +12,17 @@ public interface CategoryDao {
 
 	List<Category> ajaxList();
 
+	List<Category> clist(String id);
+
+	List<Category> adminCategorys();
+
+	void adminCategorysDelete(int cid);
+
+	void adminCategoryUpdate(Category item);
+
+	void adminCategoryAdd(Category item);
+
+	
+
+	
 }

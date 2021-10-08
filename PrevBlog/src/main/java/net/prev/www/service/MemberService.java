@@ -18,4 +18,12 @@ public interface MemberService {
 
 	List<Member> list();
 
+	List<Member> adminmembers();
+
+	void adminMembersDelete(String id);
+
+	Member adminMembersItem(String id);
+
+	void adminMemberUpdate(Member item);
+
 }

@@ -21,4 +21,34 @@
       SELECT * from category
    </select>
 
+	<select id="clist" resultType="Category">
+		SELECT DISTINCT category.cname FROM percategory
+		JOIN category on percategory.cid = category.cid
+		WHERE id=#{id}
+	</select>
+	
+	<select id="adminCategorys" resultType="Category">
+		SELECT * FROM category
+		ORDER BY cid 
+	</select>
+	
+	<delete id="adminCategorysDelete">
+		DELETE FROM category
+		WHERE cid=#{cid}
+	</delete>
+	
+	<update id="adminCategoryUpdate">
+		UPDATE category SET cname=#{cname}
+		WHERE cid=#{cid}
+	</update>
+	
+	<select id="adminMembersItem" resultType="Member">
+		SELECT * FROM member
+		WHERE id=#{id}
+	</select>
+	
+	<insert id="adminCategoryAdd">
+		INSERT INTO category
+		VALUES (CATEGORY_SEQ.nextval ,#{cname})
+	</insert>
 </mapper>

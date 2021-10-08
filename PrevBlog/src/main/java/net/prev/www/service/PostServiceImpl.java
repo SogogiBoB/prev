@@ -61,10 +61,14 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public List<Post> utdList() {
 		List<Post> lessThree = new ArrayList<Post>();
-		List<Post> allList = dao.utdList(); 
- 		for(int i=0; i<3; i++) {
- 			lessThree.add(i, allList.get(i));
- 		}
+		List<Post> allList = dao.utdList();
+		if(allList.size()>=3) {
+	 		for(int i=0; i<3; i++) {
+	 			lessThree.add(i, allList.get(i));
+	 		}
+		} else {
+			return allList;
+		}
 		return lessThree;
 	}
 
@@ -102,6 +106,16 @@ public class PostServiceImpl implements PostService {
 		
 		pager.setTotal((float) total);
 		return dao.EList(pager);
+	}
+
+	@Override
+	public List<Post> postList() {
+		return dao.postList();
+	}
+
+	@Override
+	public void adminPostsDelete(int pid) {
+		dao.adminPostsDelete(pid);
 	}
 
 }

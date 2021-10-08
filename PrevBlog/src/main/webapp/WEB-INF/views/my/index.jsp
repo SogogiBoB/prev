@@ -298,7 +298,16 @@ h5{
  
 .cate, .pcate{
 	display: none;
-	
+} 
+.cate{
+	margin-left: 40px;
+	font-size:16px;
+	font-weight: 600;
+}
+.pcate{
+	margin-left:60px;
+	font-size:14px;
+	font-weight: 300;
 }
 #footer {
 	color: #fff;
@@ -321,22 +330,17 @@ h5{
 <script>
 	$(function(){
 		$("#button").click(function(){
-		})
+		});
 		
 		$("#tagID").on("click",function(){
-			if($(".cate").css("display")=="none"){
-				$(".cate").show();
-			}else{
-				$(".cate").hide();
-			}
+			$(".cate").toggle();
 		}); 
-		$(".cate").on("click",function(){
-			if($(".pcate").css("display")=="none"){
-				$(this).siblings().show();
-			}else{
-				$(this).siblings().hide();
-			}
-			});
+		$(".cate").on("click", function(){
+			let item = $(this).data("cate");
+			
+			$("div [data-cateName ='"+item+"']").children().toggle();
+			
+		});
 		$(".card").click(function() {
 			let pid = $(this).data("pid");
 			location.href="/my/${sessionScope.id}/"+pid+"/showDetail";
@@ -500,20 +504,25 @@ h5{
 					<div id="tagID"> 
 						<p>카테고리 전체보기</p>
 					</div>
-	    			<c:if test="${list.size() < 1}">
-						<li>
-							<p>등록된 카테고리가 없습니다.</p>
-						</li>
-					</c:if>
-					<c:forEach var="item" items="${pclist}">
-						<div>
-							<c:if test="${item.cid !=null}"> 
-								<p class="cate" data-pcname="${item.pcname}">-<b>${item.cname}</b></p>
-								<p class="pcate">${item.pcname}</p>
-							</c:if>
-						</div>
-					</c:forEach>
+					<div>
+		    			<c:if test="${pclist.size() < 1}">
+							<li>
+								<p class="cate">등록된 카테고리가 없습니다.</p>
+							</li>
+						</c:if>
+						<c:forEach var="item" items="${clist}">
+							<p class="cate" data-cate="${item.cname}">${item.cname}</p>
+							<div data-cateName="${item.cname}">
+								<c:forEach var="pcitem" items="${pclist}">
+									<c:if test="${item.cname == pcitem.cname}">
+										<p class="pcate">${pcitem.pcname}</p>
+									</c:if>
+								</c:forEach>
+							</div>
+						</c:forEach>
+					</div>
 				</div>
+				
 				<!-- 하단 캘린더 -->
 				<div class="calendar">
 					<jsp:include page="/WEB-INF/views/calendar/main.jsp" ></jsp:include>

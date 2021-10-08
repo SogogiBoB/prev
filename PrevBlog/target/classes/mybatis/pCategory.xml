@@ -11,6 +11,7 @@
 	<select id="categoryList" resultType="perCategory">
 		SELECT percategory.*, category.cname FROM percategory
 		JOIN category on percategory.cid = category.cid
+		WHERE id=#{id}
 	</select>
 	
 	<select id="item" resultType="perCategory">

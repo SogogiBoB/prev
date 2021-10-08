@@ -29,4 +29,30 @@ public class CategoryDaoImpl implements CategoryDao {
 		return sql.selectList("category.ajaxList");
 	}
 
+	@Override
+	public List<Category> clist(String id) {
+		return sql.selectList("category.clist", id);
+	}
+
+	@Override
+	public List<Category> adminCategorys() {
+		return sql.selectList("category.adminCategorys");
+	}
+
+	@Override
+	public void adminCategorysDelete(int cid) {
+		sql.delete("category.adminCategorysDelete", cid);
+	}
+
+	@Override
+	public void adminCategoryUpdate(Category item) {
+		sql.update("category.adminCategoryUpdate", item);
+	}
+
+	@Override
+	public void adminCategoryAdd(Category item) {
+		sql.insert("category.adminCategoryAdd", item);
+	}
+
+	
 }

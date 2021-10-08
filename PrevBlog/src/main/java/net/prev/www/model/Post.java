@@ -2,13 +2,19 @@ package net.prev.www.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Post {
 
 	private int pid;
 	private String title;
 	private String content;
+	
+	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="yyyy-MM-dd", timezone="Asia/Seoul")
 	private Date regdate;
 	private String id;
 	private int cid;

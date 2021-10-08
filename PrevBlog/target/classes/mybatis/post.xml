@@ -91,4 +91,13 @@
 	 <select id="pid" resultType="Post">
 	 	SELECT * FROM post
 	 </select>
+	 
+	 <select id="postList" resultType="Post">
+	 	SELECT * FROM post
+	 </select>
+	 
+	 <delete id="adminPostsDelete">
+	 	DELETE FROM post
+	 	WHERE pid=#{pid}
+	 </delete>
 </mapper>

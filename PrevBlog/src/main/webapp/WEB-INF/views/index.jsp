@@ -325,39 +325,44 @@ $(function() {
         
         <div id="up_to_date">
          <h2>최신글</h2>
-         <div class="card_box">
-            <c:forEach var="item" items="${lessThree}">
-               <div class="card" data-pid="${item.pid}">
-                  <div class="card_body">
-                     <p class="card_text">${item.title}</p>
-                  </div>
-                  <div class="img_section">
-                     <c:if test="${item.thumbnail != null}">
-                        <img src="${item.thumbnail}" class="card_img_top">
-                     </c:if>
-                     <c:if test="${item.thumbnail == null}">
-                        <img src="/images/no_image.gif" class="card_img_top">
-                     </c:if>
-                  </div>
-                  <div class="profile_section_in_card">
-                     <div class="profileImg_in_card">
-                        <c:if test="${item.profileImg != null}">
-                              <img src="/upload/files/${item.profileImg}">
-                           </c:if>
-                           <c:if test="${item.profileImg == null}">
-                              <img src="/images/no_profile.png">
-                           </c:if>
-                     </div>
-                     <div class="user_in_card">
-                        <p>${item.id}</p>
-                     </div>
-                     <div class="regdate_in_card">
-                        <p><fmt:formatDate value="${item.regdate}" pattern="yyyy.MM.dd"/></p>
-                     </div>
-                  </div>
-               </div>
-            </c:forEach>
-         </div>
+         <c:if test="${lessThree.size() == null }">
+         	아무것도 없다.
+         </c:if>
+         <c:if test="${lessThree.size() != null }">
+	         <div class="card_box">
+	            <c:forEach var="item" items="${lessThree}">
+	               <div class="card" data-pid="${item.pid}">
+	                  <div class="card_body">
+	                     <p class="card_text">${item.title}</p>
+	                  </div>
+	                  <div class="img_section">
+	                     <c:if test="${item.thumbnail != null}">
+	                        <img src="${item.thumbnail}" class="card_img_top">
+	                     </c:if>
+	                     <c:if test="${item.thumbnail == null}">
+	                        <img src="/images/no_image.gif" class="card_img_top">
+	                     </c:if>
+	                  </div>
+	                  <div class="profile_section_in_card">
+	                     <div class="profileImg_in_card">
+	                        <c:if test="${item.profileImg != null}">
+	                              <img src="/upload/files/${item.profileImg}">
+	                           </c:if>
+	                           <c:if test="${item.profileImg == null}">
+	                              <img src="/images/no_profile.png">
+	                           </c:if>
+	                     </div>
+	                     <div class="user_in_card">
+	                        <p>${item.id}</p>
+	                     </div>
+	                     <div class="regdate_in_card">
+	                        <p><fmt:formatDate value="${item.regdate}" pattern="yyyy.MM.dd"/></p>
+	                     </div>
+	                  </div>
+	               </div>
+	            </c:forEach>
+	         </div>
+         </c:if>
       </div>
       
       <div id="popular">

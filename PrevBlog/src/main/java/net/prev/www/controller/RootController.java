@@ -48,11 +48,13 @@ public class RootController {
 	      List<Post> lessThree = postService.utdList(); //최신글 리스트
 	      List<Post> list = postService.allList(pager); //인기글 리스트
 	      List<Category> clist = categoryService.ajaxList();
+	      
+	      System.out.println(lessThree.size());
 
 	      model.addAttribute("memberList", memberList);
+	      model.addAttribute("lessThree", lessThree);
 	      model.addAttribute("result", list);
 	      model.addAttribute("clist", clist);
-	      model.addAttribute("lessThree", lessThree);
 	      
 	      return "index";
 	   }
@@ -100,8 +102,13 @@ public class RootController {
 			if(id.equals( item.getId()) && pw.equals(item.getPw()) ) {
 				session.setAttribute("member", member);
 				session.setAttribute("id", id);
+				
+				if(id.equals("admin")) {
+					
+					return "/admin/index";
+				}
 				return "redirect:.";
-			}
+			}   
 			return "redirect:login";
 		}
 		return "redirect:login";

@@ -40,4 +40,17 @@
 			WHERE id=#{id}
 		</if>
 	</update>
+	
+	<select id="adminmembers" resultType="Member">
+		SELECT * FROM member
+	</select>
+	
+	<delete id="adminMembersDelete">
+		DELETE FROM member 
+		WHERE id=#{id}
+	</delete>
+	<update id="adminMemberUpdate">
+		UPDATE member SET profile_img=#{profileImg},id=#{id}, pw=#{pw}, nickname=#{nickname}, email=#{email}, pr=#{pr}
+		WHERE id=#{id}
+	</update>
 </mapper>

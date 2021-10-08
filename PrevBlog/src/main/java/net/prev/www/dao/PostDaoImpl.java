@@ -1,6 +1,5 @@
 package net.prev.www.dao;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -85,6 +84,16 @@ public class PostDaoImpl implements PostDao {
 	@Override
 	public int total(Pager pager) {
 		return sql.selectOne("post.total",pager);
+	}
+
+	@Override
+	public List<Post> postList() {
+		return sql.selectList("post.postList");
+	}
+
+	@Override
+	public void adminPostsDelete(int pid) {
+		sql.delete("post.adminPostsDelete", pid);
 	}
 
 	

@@ -35,4 +35,8 @@ public interface PostDao {
 
 	int total(Pager pager);
 
+	List<Post> postList();
+
+	void adminPostsDelete(int pid);
+
 }

@@ -43,4 +43,24 @@ public class MemberDaoImpl implements MemberDao {
 	public List<Member> list() {
 		return sql.selectList("member.list");
 	}
+
+	@Override
+	public List<Member> adminmembers() {
+		return sql.selectList("member.adminmembers");
+	}
+
+	@Override
+	public void adminMembersDelete(String id) {
+		sql.delete("member.adminMembersDelete", id);
+	}
+
+	@Override
+	public Member adminMembersItem(String id) {
+		return sql.selectOne("member.adminMembersItem",id);
+	}
+
+	@Override
+	public void adminMemberUpdate(Member item) {
+		sql.update("member.adminMemberUpdate",item);
+	}
 }

@@ -61,7 +61,7 @@ public class Mycontroller {
 		List<Post> Elist = postService.EList(pager);
 		List<Post> udtlist = postService.utdList(id);
 		List<perCategory> pclist = pcateService.list(id);
-		List<Category> clist = categoryService.list();
+		List<Category> clist = categoryService.clist(id);
 		
 		System.out.println(Elist.size());
 		
@@ -71,6 +71,7 @@ public class Mycontroller {
 		model.addAttribute("clist", clist);
 		model.addAttribute("udtlist", udtlist);
 		
+		System.out.println(clist.size());
 		System.out.println(Elist.size());
 		return path+"index";
 	}

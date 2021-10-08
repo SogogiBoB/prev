@@ -28,4 +28,8 @@ public interface PostService {
 	List<Post> utdList(String id);
 
 	void delete(Post item);
+
+	List<Post> postList();
+
+	void adminPostsDelete(int pid);
 }

@@ -29,4 +29,31 @@ public class CategoryServiceImpl implements CategoryService {
 		return dao.ajaxList();
 	}
 
+	@Override
+	public List<Category> clist(String id) {
+		return dao.clist(id);
+	}
+
+	@Override
+	public List<Category> adminCategorys() {
+		return dao.adminCategorys();
+	}
+
+	@Override
+	public void adminCategorysDelete(int cid) {
+		dao.adminCategorysDelete(cid);
+	}
+
+	@Override
+	public void adminCategoryUpdate(Category item) {
+		dao.adminCategoryUpdate(item);
+	}
+
+	@Override
+	public void adminCategoryAdd(Category item) {
+		dao.adminCategoryAdd(item);
+	}
+
+	
+
 }

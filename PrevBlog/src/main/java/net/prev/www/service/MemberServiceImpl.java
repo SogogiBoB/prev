@@ -48,4 +48,24 @@ public class MemberServiceImpl implements MemberService {
 		return dao.list();
 	}
 
+	@Override
+	public List<Member> adminmembers() {
+		return dao.adminmembers();
+	}
+
+	@Override
+	public void adminMembersDelete(String id) {
+		dao.adminMembersDelete(id);
+	}
+
+	@Override
+	public Member adminMembersItem(String id) {
+		return dao.adminMembersItem(id);
+	}
+
+	@Override
+	public void adminMemberUpdate(Member item) {
+		dao.adminMemberUpdate(item);
+	}
+
 }

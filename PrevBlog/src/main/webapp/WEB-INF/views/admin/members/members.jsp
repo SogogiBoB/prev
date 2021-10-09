@@ -32,7 +32,7 @@
 					</c:if>
 					<c:forEach var="item" items="${members}">
 						<tr>
-							<td><img src="/upload/files/${item.profileImg}" ></td>
+							<td><img src="/upload/files/${item.profileImg}"></td>
 							<td>${item.id}</td>
 							<td>${item.pw}</td>
 							<td>${item.name}</td>
@@ -46,11 +46,8 @@
 			</table>
 		</div>
 		<div>
-			<a href="add">등록</a>
-		</div>
-		<div>
 			<a href="..">처음으로</a>
 		</div>
 	</div>
-</body>
+	</body>
 </html>

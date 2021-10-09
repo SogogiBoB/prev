@@ -26,4 +26,5 @@ public interface MemberService {
 
 	void adminMemberUpdate(Member item);
 
+
 }

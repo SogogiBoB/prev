@@ -32,4 +32,8 @@ public interface PostService {
 	List<Post> postList();
 
 	void adminPostsDelete(int pid);
+
+	List<Post> adminPostList();
+
+	void adminPostsUpdate(Post item);
 }

@@ -96,5 +96,15 @@ public class PostDaoImpl implements PostDao {
 		sql.delete("post.adminPostsDelete", pid);
 	}
 
+	@Override
+	public List<Post> adminPostList() {
+		return sql.selectList("post.adminPostList");
+	}
+
+	@Override
+	public void adminPostsUpdate(Post item) {
+		sql.update("post.adminPostsUpdate", item);
+	}
+
 	
 }

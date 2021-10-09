@@ -118,4 +118,14 @@ public class PostServiceImpl implements PostService {
 		dao.adminPostsDelete(pid);
 	}
 
+	@Override
+	public List<Post> adminPostList() {
+		return dao.adminPostList();
+	}
+
+	@Override
+	public void adminPostsUpdate(Post item) {
+		dao.adminPostsUpdate(item);
+	}
+
 }

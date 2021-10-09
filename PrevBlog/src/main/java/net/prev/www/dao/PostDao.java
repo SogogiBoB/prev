@@ -39,4 +39,8 @@ public interface PostDao {
 
 	void adminPostsDelete(int pid);
 
+	List<Post> adminPostList();
+
+	void adminPostsUpdate(Post item);
+
 }

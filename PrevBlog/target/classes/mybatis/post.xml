@@ -100,4 +100,15 @@
 	 	DELETE FROM post
 	 	WHERE pid=#{pid}
 	 </delete>
+	 
+	 <select id="adminPostList" resultType="Post">
+	 	SELECT post.*, percategory.pcname FROM post
+	 	JOIN percategory on post.pcid = percategory.pcid
+	 </select>
+	 
+	 <update id="adminPostsUpdate">
+	 	UPDATE post
+		SET title=#{title},id=#{id}
+		WHERE pid=#{pid}
+	 </update>	 
 </mapper>

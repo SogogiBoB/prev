@@ -2,11 +2,14 @@ package net.prev.www.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,6 +22,7 @@ import net.prev.www.model.Post;
 import net.prev.www.service.CategoryService;
 import net.prev.www.service.MemberService;
 import net.prev.www.service.PostService;
+import net.prev.www.util.Uploader;
 
 @Controller
 @RequestMapping("/admin")
@@ -60,16 +64,28 @@ public class AdminController {
 	@GetMapping("/mUpdate")
 	public String mUpdate(Model model, String id) {
 	
-		Member memberItem = memberService.adminMembersItem(id);
+		Member memberItem = memberService.item(id);
 		
 		model.addAttribute("memberItem", memberItem);
 		
-		return memberpath+"mUpdate";
+		return memberpath+"profileUpdate";
 	}
+	
 	@PostMapping("/mUpdate")
-	public String mUpdate(Member item) {
+	public String profileUpdate(Member item, HttpSession session) {
+		Member mitem = memberService.item(item.getId());
+		
+		if(Uploader.upload(item.getFileUpload())) {
+			String newName = Uploader.newFileName(item.getFileUpload());
+			
+			item.setProfileImg(newName);
+			
+		} else 
+			item.setProfileImg(mitem.getProfileImg());
+		
 		
 		memberService.adminMemberUpdate(item);
+		session.setAttribute("item", item);
 		
 		return "redirect:members";
 	}
@@ -110,7 +126,7 @@ public class AdminController {
 // 글관리
 	@RequestMapping("/posts")
 	public String postsList(Model model) {
-		List<Post> posts = postService.postList();
+		List<Post> posts = postService.adminPostList();
 		
 		model.addAttribute("posts", posts);
 		
@@ -123,4 +139,11 @@ public class AdminController {
 		
 		return "redirect:posts";
 	}
+	@ResponseBody
+	@PatchMapping("/pUpdate")
+	public Post adminPUpdate(@RequestBody Post item) {
+		postService.adminPostsUpdate(item);
+		return item;
+	}
+	
 }

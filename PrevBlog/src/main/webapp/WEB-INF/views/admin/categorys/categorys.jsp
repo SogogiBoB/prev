@@ -12,6 +12,21 @@ a {
 text-decoration : none;
 color: black;
 }
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Noto+Sans+KR";
+}
+table {text-align: center; margin-top: 40px;}
+div h2 { 
+	font-size: 36px; 
+	font-weight: 500;
+	text-align: center; 
+}
+#table_box {
+	width: 50%;
+	margin: 0 auto;
+}
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -72,10 +87,10 @@ color: black;
 </script>
 </head>
 <body>
-	<div>
-		<h3>카테고리 관리</h3>
-		<div>
-			<table class="table table-hover" border="1">
+	<div class="container">
+		<h2>카테고리 관리</h2>
+		<div id="table_box">
+			<table class="table table-hover">
 				<thead>
 					<tr class="table-light">
 						<th>번호</th>
@@ -93,18 +108,18 @@ color: black;
 						<tr data-cid="${item.cid}">
 							<td class="cid">${item.cid}</td>
 							<td class="cname">${item.cname}</td>
-							<td><a href="cDelete?cid=${item.cid}" class="btn">삭제</a><p class="cUpdate btn">변경</p></td>
+							<td>
+								<a href="cDelete?cid=${item.cid}" class="btn btn-sm btn-danger">삭제</a>
+								<div class="cUpdate btn btn-sm btn-secondary">변경</div>
+							</td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
+			<div class="cAdd btn btn-outline-primary">등록</div>
+			<a href="./" class="btn btn-outline-primary">이전</a>
 		</div>
-		<div>
-			<p class="cAdd btn">등록</p>
-		</div>
-		<div>
-			<a href="./">이전</a>
-		</div>
+		
 	</div>
 	<!--변경 모달  -->
 	<div class="modal fade" id="updateModal" tabindex="-1"

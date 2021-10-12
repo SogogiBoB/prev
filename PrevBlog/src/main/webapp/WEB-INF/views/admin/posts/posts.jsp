@@ -13,6 +13,13 @@ a {
 text-decoration : none;
 color: black;
 }
+* {
+	margin: 0;
+	padding: 0;
+	font-family: "Noto+Sans+KR";
+}
+table {text-align: center; margin-top: 40px;}
+div h1 { font-size: 36px; font-weight: 500; text-align: center;}
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -53,14 +60,13 @@ color: black;
 			});
 		});
 	});
-		
 </script>
 </head>
 <body>
-	<div>
-		<h3>글관리</h3>
+	<div class="container-fluid">
+		<h1>글관리</h1>
 		<div>
-			<table class="table table-hover" border="1">
+			<table class="table table-hover">
 				<thead>
 					<tr class="table-light">
 						<th>번호</th>
@@ -80,18 +86,20 @@ color: black;
 					<c:forEach var="item" items="${posts}">
 						<tr>
 							<td class="pid">${item.pid}</td>
-							<td class="title"><a href="showDetail?pid=${item.pid}">${item.title}</a></td>
+							<td class="title">${item.title}</td>
 							<td class="regdate"><fmt:formatDate value="${item.regdate}" pattern="yyyy년 MM월 dd일 HH:mm"/></td>
 							<td class="id">${item.id}</td>
 							<td class="pcname">${item.pcname}</td>
-							<td><a href="pDelete?pid=${item.pid}" class="btn">삭제</a><p class="pUpdate btn">변경</p></td>
+							<td>
+								<a href="pDelete?pid=${item.pid}" class="btn btn-sm btn-danger">삭제</a>
+								<div class="pUpdate btn btn-sm btn-secondary">변경</div></td>
 						</tr>
 					</c:forEach>
 				</tbody>
 			</table>
 		</div>
 		<div>
-			<a href="./">이전</a>
+			<a href="./" class="btn btn-outline-primary">이전</a>
 		</div>
 	</div>
 		<!--변경 모달  -->

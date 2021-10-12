@@ -45,7 +45,7 @@ public class AdminController {
 	public String index() {	
 		return path+"index";
 	}
-//	회원관리
+//	�쉶�썝愿�由�
 	@RequestMapping("/members")
 	public String membersList(Model model) {
 		List<Member> members = memberService.adminmembers();
@@ -90,7 +90,7 @@ public class AdminController {
 		return "redirect:members";
 	}
 	
-//	카테고리관리
+//	移댄뀒怨좊━愿�由�
 	@RequestMapping("/categorys")
 	public String categorysList(Model model) {
 		List<Category> categorys = categoryService.adminCategorys();
@@ -123,7 +123,7 @@ public class AdminController {
 		
 		return item;
 	}
-// 글관리
+// 湲�愿�由�
 	@RequestMapping("/posts")
 	public String postsList(Model model) {
 		List<Post> posts = postService.adminPostList();
@@ -144,6 +144,13 @@ public class AdminController {
 	public Post adminPUpdate(@RequestBody Post item) {
 		postService.adminPostsUpdate(item);
 		return item;
+	}
+	
+	@GetMapping("/logout")
+	public String logout(HttpSession session) {
+		session.invalidate();
+		
+		return "redirect:..";
 	}
 	
 }

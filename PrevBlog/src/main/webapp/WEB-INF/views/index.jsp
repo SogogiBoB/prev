@@ -48,8 +48,15 @@ $(function() {
       let liName = $(this).data("cname");
       pager.cname = liName;
       pager.page = 1;
-      console.log(pager.cname);
-      console.log(pager.page);
+      
+      let li_under_bar = $("<div>").addClass("li_down_bar");
+      
+      $("#popular .li_down_bar").remove();
+      if (liName != null && liName !='') {
+      	$("#popular [data-cname='"+liName+"']").append(li_under_bar);
+      } else {
+    	$("#popular li:nth-child(1)").append(li_under_bar);
+      }
       
       $.ajax("/ajax_list", {
          method: "POST",
@@ -101,9 +108,8 @@ $(function() {
                
                cardGroup.append(card);
             });
-            
+
             let load_more = $("<div>").attr("id", "load_more").text("더보기");
-            
             $("#popular_content").append(load_more);
          }
       });
@@ -178,6 +184,9 @@ $(function() {
       contentType: "application/json",
       success: function(data) {
          console.log(data);
+         
+         let li_under_bar = $("<div>").addClass("li_down_bar");
+         $(".category_list li:nth-child(1)").append(li_under_bar);
          
          let cardGroup = $("<div>").addClass("ajax_card_group");
          $("#popular_content").append(cardGroup);
@@ -368,16 +377,16 @@ $(function() {
       <div id="popular">
          <h2>인기글</h2>
          <p id="popular_info">다양한 카테고리의 인기글을 만나보세요.</p>
-         <ul class="category_list">
-            <li>전체</li>
-            <c:forEach var="item" items="${clist}">
-               <li data-cname="${item.cname}">${item.cname}</li>
-            </c:forEach>
-         </ul>
-         
+         <div id="c_clist_div">
+	         <ul class="category_list">
+	            <li>전체</li>
+	            <c:forEach var="item" items="${clist}">
+	               <li data-cname="${item.cname}">${item.cname}</li>
+	            </c:forEach>
+	         </ul>
+         </div>
          <div id="popular_content">
-            
-            
+			
          </div>
          
       </div>
@@ -410,7 +419,7 @@ $(function() {
                           </c:if>
                       </div>
                       <div id="how_button_box">
-                          <button onclick="location.href='../../my/${memberInfo.id}'" id="go_to_blog">블로그 가기</button>
+                          <button onclick="location.href='../../my/${memberInfo.id}/'" id="go_to_blog">블로그 가기</button>
                      </div>
                  </div>
               </c:forEach>

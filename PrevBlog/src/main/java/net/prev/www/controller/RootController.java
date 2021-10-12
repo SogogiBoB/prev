@@ -45,8 +45,8 @@ public class RootController {
 	@RequestMapping("/")
 	   public String index(Model model, Pager pager) {
 	      List<Member> memberList = memberService.list();
-	      List<Post> lessThree = postService.utdList(); //최신글 리스트
-	      List<Post> list = postService.allList(pager); //인기글 리스트
+	      List<Post> lessThree = postService.utdList(); //理쒖떊湲� 由ъ뒪�듃
+	      List<Post> list = postService.allList(pager); //�씤湲곌� 由ъ뒪�듃
 	      List<Category> clist = categoryService.ajaxList();
 	      
 	      System.out.println(lessThree.size());
@@ -105,7 +105,7 @@ public class RootController {
 				
 				if(id.equals("admin")) {
 					
-					return "/admin/index";
+					return "redirect:/admin/";
 				}
 				return "redirect:.";
 			}   
@@ -129,8 +129,6 @@ public class RootController {
 		
 		model.addAttribute("item", item);
 		model.addAttribute("replyList", list);
-		
-		System.out.println("�� ���� �ҷ��� �� ī��Ʈ��" + item.getViewcount());
 		
 		return "showDetail";
 	}

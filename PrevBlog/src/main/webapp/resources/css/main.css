@@ -249,7 +249,7 @@ section {
 #how_info {
    width: 1100px;
    margin: 0 auto;
-   padding-top: 100px;
+   padding-top: 80px;
     padding-bottom: 20px;
 }
 #how_info h3 {
@@ -412,11 +412,28 @@ section {
    font-size: 15px;
 }
 
-ul li {
+.category_list li {
    list-style: none;
    display: inline-block;
-   margin: 0 30px;
+   margin: 0 12px;
    cursor: pointer;
+   width: auto;
+   height: 40px;
+   text-align: center;
+   line-height: 40px;
+   font-size: 18px;
+}
+.category_list {
+	padding: 0;
+}
+#c_clist_div {
+	margin: 0 auto;
+}
+.li_down_bar {
+	width: auto;
+	border-bottom: 4px solid #ef685e;
+	opacity: 60%;
+	margin-top: -10px;
 }
 #load_more {
    width: 200px;

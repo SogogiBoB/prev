@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
 
+import net.prev.www.model.Member;
 import net.prev.www.model.Post;
 import net.prev.www.model.perCategory;
 import net.prev.www.service.CategoryService;
@@ -58,7 +59,7 @@ public class PostController {
 	
 	@PostMapping("/add")
 	public String add(Post item, @PathVariable String id, List<MultipartFile> files) {
-		
+
 		item.setId(id);
 		service.add(item);
 		

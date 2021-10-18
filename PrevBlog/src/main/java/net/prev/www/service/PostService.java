@@ -36,4 +36,5 @@ public interface PostService {
 	List<Post> adminPostList();
 
 	void adminPostsUpdate(Post item);
+
 }

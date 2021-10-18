@@ -24,7 +24,7 @@
 		SELECT COUNT(*)
 		FROM post
 	</select>
-	
+
 	<select id="list" resultType="Post">
 		SELECT post.*, percategory.pcname pcname FROM post JOIN percategory ON post.pcid = percategory.pcid 
 		WHERE post.id=#{id}

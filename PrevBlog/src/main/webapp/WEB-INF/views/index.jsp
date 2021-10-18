@@ -290,7 +290,7 @@ $(function() {
                      <div id="profileInfo">
                           <h3>${sessionScope.member.nickname}</h3>
                           <h5>${sessionScope.member.pr}</h5>
-                          <p>내 글 0 &nbsp·&nbsp 댓글 0</p>
+                          <p>내 글 ${sessionScope.member.myTotal} &nbsp·&nbsp 댓글 0</p>
                      </div>
                      <div id="button_box">
                         <button onclick="location.href='my/${sessionScope.id}/'" id="my_blog">내블로그</button>

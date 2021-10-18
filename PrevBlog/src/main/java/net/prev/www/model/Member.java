@@ -10,8 +10,19 @@ public class Member {
 	private String email;
 	private String pr;
 	private String profileImg;
+	private int myTotal;
 	
 	private MultipartFile fileUpload;
+	
+	
+
+	public int getMyTotal() {
+		return myTotal;
+	}
+
+	public void setMyTotal(int myTotal) {
+		this.myTotal = myTotal;
+	}
 
 	public MultipartFile getFileUpload() {
 		return fileUpload;

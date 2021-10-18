@@ -48,8 +48,6 @@ public class RootController {
 	      List<Post> lessThree = postService.utdList(); //理쒖떊湲� 由ъ뒪�듃
 	      List<Post> list = postService.allList(pager); //�씤湲곌� 由ъ뒪�듃
 	      List<Category> clist = categoryService.ajaxList();
-	      
-	      System.out.println(lessThree.size());
 
 	      model.addAttribute("memberList", memberList);
 	      model.addAttribute("lessThree", lessThree);

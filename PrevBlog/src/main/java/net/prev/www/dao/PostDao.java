@@ -43,4 +43,5 @@ public interface PostDao {
 
 	void adminPostsUpdate(Post item);
 
+
 }

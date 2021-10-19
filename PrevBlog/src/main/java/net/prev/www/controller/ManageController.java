@@ -128,7 +128,7 @@ public class ManageController {
 		List<Category> list = cateService.list();
 		
 		model.addAttribute("list", list);
-		
+
 		return path + "categorys/categorysAdd";
 	}
 	
@@ -137,7 +137,6 @@ public class ManageController {
 		item.setId(id);
 		
 		perCateService.add(item);
-		
 		return "redirect:../manageCategorys";
 	}
 	
@@ -154,6 +153,13 @@ public class ManageController {
 	@PostMapping("/manageCategorys/update")
 	public String catesUpdate(perCategory item) {
 		perCateService.categorysUpdate(item);
+		
+		return "redirect:../manageCategorys";
+	}
+	
+	@RequestMapping("manageCategorys/delete")
+	public String delete(int pcid) {
+		perCateService.delete(pcid);
 		
 		return "redirect:../manageCategorys";
 	}

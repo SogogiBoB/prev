@@ -12,7 +12,9 @@
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 <style>
 a {
 text-decoration : none;
@@ -104,7 +106,7 @@ h5{
 }
 .section h3{
     font-size: 45px;
-    margin-left:430px ;
+    margin-left:430px ;	
     color: white;
     margin-top: 135px;
 }
@@ -323,9 +325,9 @@ h5{
     bottom: 0;
 }
 .pagination{
-	margin-left: 500px
-;
-}
+	margin:0 auto;
+	justify-content: center; 
+	}
 </style>
 <script>
 	$(function(){
@@ -438,14 +440,8 @@ h5{
 				
 				<hr id="b-p-hr">
 				<!-- 페이지네이션 -->
-				<nav aria-label="Page navigation example">
+				<nav class="page" aria-label="Page navigation example">
 				  <ul class="pagination">
-				    <li class="page-item">
-				      <a class="page-link" href="?page=1" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				        <span class="sr-only">처음</span>
-				      </a>
-				    </li>
 				    <li class="page-item">
 				    	<a class="page-link" href="?page=${pager.prev}" aria-label="Previous">
 				    		<span aria-hidden="true">&laquo;</span>
@@ -462,12 +458,6 @@ h5{
 				        <span aria-hidden="true">&raquo;</span>
 				        <span class="sr-only">다음</span>
 				      </a>
-				    </li>
-				    <li>
-				    	<a class="page-link" href="?page=${pager.last}" aria-label="Next">
-				    		<span aria-hidden="true">&raquo;</span>
-				    		<span class="sr-only">마지막</span>
-				    	</a>
 				    </li>
 				  </ul>
 				</nav>

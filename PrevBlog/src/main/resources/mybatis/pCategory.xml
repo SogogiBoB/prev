@@ -21,4 +21,9 @@
 	<update id="update">
 		UPDATE percategory SET pcname=#{pcname} WHERE pcid=#{pcid}
 	</update>
+	
+	<delete id="delete">
+		DELETE FROM perCategory
+		WHERE pcid=#{pcid}
+	</delete>
 </mapper>

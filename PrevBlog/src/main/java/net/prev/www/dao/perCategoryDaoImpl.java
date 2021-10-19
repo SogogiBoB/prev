@@ -34,4 +34,9 @@ public class perCategoryDaoImpl implements perCategoryDao {
 		sql.update("pCategory.update", item);
 	}
 
+	@Override
+	public void delete(int pcid) {
+		sql.delete("pCategory.delete", pcid);
+	}
+
 }

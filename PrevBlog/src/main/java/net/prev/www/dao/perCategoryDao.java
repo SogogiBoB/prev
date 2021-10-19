@@ -14,4 +14,6 @@ public interface perCategoryDao {
 
 	void categorysUpdate(perCategory item);
 
+	void delete(int pcid);
+
 }

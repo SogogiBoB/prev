@@ -13,5 +13,7 @@ public interface perCategoryService {
 	perCategory item(int pcid);
 
 	void categorysUpdate(perCategory item);
+
+	void delete(int pcid);
 	
 }

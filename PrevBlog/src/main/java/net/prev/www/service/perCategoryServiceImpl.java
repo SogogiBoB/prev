@@ -34,4 +34,9 @@ public class perCategoryServiceImpl implements perCategoryService {
 		pdao.categorysUpdate(item);
 	}
 
+	@Override
+	public void delete(int pcid) {
+		pdao.delete(pcid);
+	}
+
 }

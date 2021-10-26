@@ -3,6 +3,7 @@ package net.prev.www.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -28,7 +29,8 @@ public class ReplyController {
 	}
 	
 	@PostMapping("/add")
-	public String add(Reply item) {
+	public String add(@PathVariable int pid, Reply item) {
+		item.setPid(pid);
 		service.add(item);
 		
 		return "redirect:/";

@@ -22,6 +22,15 @@ public class PostDaoImpl implements PostDao {
 
 	@Override
 	public void add(Post item) {
+		System.out.println(item.getPid());
+		System.out.println(item.getTitle());
+		System.out.println(item.getContent());
+		System.out.println(item.getRegdate());		
+		System.out.println(item.getId());
+		System.out.println(item.getPcid());
+		System.out.println(item.getViewcount());
+		System.out.println(item.getThumbnail());
+		
 		sql.insert("post.add", item);
 	}
 

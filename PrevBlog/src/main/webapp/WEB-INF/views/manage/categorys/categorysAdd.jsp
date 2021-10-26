@@ -51,7 +51,6 @@ h3{
 </style>
 </head>
 <body>
-
 	<div class="cate">
 	<h3>개인 카테고리 등록</h3>
 		<form method="post">
@@ -70,7 +69,7 @@ h3{
 		</form>
 	</div>
 	<div class="back">
-		<a href="../../">처음으로</a>
+		<a href="../../" class="btn btn-sm btn-outline-secondary mt-2">처음으로</a>
 	</div>
 </body>
 </html>

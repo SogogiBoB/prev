@@ -32,6 +32,7 @@ public class PostServiceImpl implements PostService {
 
 	@Override
 	public void postAdd(Post item) {
+		
 		dao.postAdd(item);
 	}
 
@@ -41,8 +42,7 @@ public class PostServiceImpl implements PostService {
 		Post item = dao.searchCount(pid);
 		
 		int count = item.getViewcount();
-		
-		System.out.println("ī��Ʈ��" + count);
+		System.out.println(count);
 		
 		item.setPid(pid);
 		item.setViewcount(count+1);
@@ -88,10 +88,13 @@ public class PostServiceImpl implements PostService {
 	@Override
 	public List<Post> utdList(String id) {
 		List<Post> lessThree = new ArrayList<Post>();
-		List<Post> allList = dao.utdList(id); 
- 		for(int i=0; i<3; i++) {
- 			lessThree.add(i, allList.get(i));
- 		}
+		List<Post> allList = dao.utdList(id);
+		if(allList.size()>=3) {
+	 		for(int i=0; i<3; i++) {
+	 			lessThree.add(i, allList.get(i));
+	 		}
+	 		return lessThree;
+		}
 		return lessThree;
 	}
 

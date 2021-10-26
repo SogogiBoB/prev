@@ -30,12 +30,17 @@ $(function() {
 	});
 });
 </script>
+<style>
+.form-select {
+	width: 200px;
+}
+</style>
 </head>
 <body>
-	<div>
+	<div class="container">
 		<form method="post">
-			<div>
-				<select name="pcid" >
+			<div class="row mx-1 my-2">
+				<select name="pcid" class="form-select">
 					<option value="" selected="selected">카테고리</option>
 					<c:forEach var="tem" items="${pcateList}">
 						<option value="${tem.pcid}" ${tem.pcid==item.pcid?'selected':''}>${tem.pcname}</option>
@@ -43,21 +48,23 @@ $(function() {
 				</select>
 			</div>
 			<div>
-				<label>제목</label>
-				<input type="text" name="title" value="${item.title}">
+				<label class="form-label">제목</label>
+				<input class="form-control mb-2" type="text" name="title" value="${item.title}">
 			</div>
 			<div>
-				<label>내용</label>
+				<label class="form-label">내용</label>
 				<textarea id="summernote" rows="15" name="content" cols="80">${item.content}</textarea>
 			</div>
 			<div id="thumbnail">
 				<input type="hidden" name="thumbnail" value="">
 			</div>
-			<button id="submit">등록</button>
+			<button id="submit" class="btn btn-sm btn-primary my-2">등록</button>
 		</form>
+		
+		<div>
+			<a href="../" class="btn btn-sm btn-secondary">처음으로</a>
+		</div>
 	</div>
-	<div>
-		<a href="../../">처음으로</a>
-	</div>
+	
 </body>
 </html>

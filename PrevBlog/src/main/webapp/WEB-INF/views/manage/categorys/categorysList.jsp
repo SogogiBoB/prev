@@ -75,7 +75,7 @@ h3{
 			</table>
 				<div class="bodyfoot">
 					<a  class="bodyfoot-a btn btn-primary btn-sm" href="manageCategorys/add">등록</a>
-					<a  class="bodyfoot-a btn btn-link btn-sm" href="./">이전</a>
+					<a  class="bodyfoot-a btn btn-outline-secondary btn-sm" href="./">이전</a>
 				</div>	
 		</div>
 		

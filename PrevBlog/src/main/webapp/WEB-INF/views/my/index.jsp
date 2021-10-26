@@ -65,12 +65,13 @@ h5{
 	text-overflow: ellipsis;
 }
 .container-fluid{
-    width: 1920px;
+    width: 100%;
     height: 100%;
     background-color: #97c8e2;
 }
 .header{
-    width: 100%;
+    width: 1184px;
+    margin: 0 auto;
 }
 .header #logo, #line, #header-menu{
     margin-top: 20px;
@@ -92,11 +93,10 @@ h5{
     color: white;
 }
 #header1{
-    margin-left:430px ;
+    float: left;
 }
 #header2{
 	float: right;
-	margin-right: 390px;
 	margin-top: 20px;
 
 }
@@ -106,7 +106,6 @@ h5{
 }
 .section h3{
     font-size: 45px;
-    margin-left:430px ;	
     color: white;
     margin-top: 135px;
 }
@@ -393,12 +392,14 @@ h5{
 	            	<p><a href="logout">로그아웃</a></p>
 	            </div>
 	        </div>
+	        
+	        <div class="section">
+        		<h3><b>${memberInfo.nickname}의 블로그입니다.</b></h3>
+        	</div>
 		</div>
 		
 		<!-- 닉네임님의 블로그입니다 -->
-	    <div class="section">
-        	<h3><b>${memberInfo.nickname}의 블로그입니다.</b></h3>
-        </div>
+	    
         
         <!-- 중단  -->
 		<div class="body-box">

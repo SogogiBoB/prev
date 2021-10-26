@@ -51,7 +51,6 @@ h3{
 </style>
 </head>
 <body>
-
 	<div class="cate">
 	<h3>개인 카테고리 등록</h3>
 		<form method="post">
@@ -66,11 +65,11 @@ h3{
 			<div class="pcname">
 				<input type="text" name="pcname" placeholder="개인 카테고리명">
 			</div>
-			<p class="btn btn-primary btn-sm">등록</p>
+			<button class="btn btn-primary btn-sm">등록</button>
 		</form>
 	</div>
 	<div class="back">
-		<a href="../../">처음으로</a>
+		<a href="../../" class="btn btn-sm btn-outline-secondary mt-2">처음으로</a>
 	</div>
 </body>
 </html>

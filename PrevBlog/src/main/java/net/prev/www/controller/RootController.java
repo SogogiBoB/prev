@@ -57,11 +57,11 @@ public class RootController {
 	      return "index";
 	   }
 	   
-	   @PostMapping("/ajax_list")
-	   @ResponseBody
-	   public List<Post> postList(@RequestBody Pager pager) {
-	      return postService.allList(pager);
-	   }
+    @PostMapping("/ajax_list")
+    @ResponseBody
+    public List<Post> postList(@RequestBody Pager pager) {
+       return postService.allList(pager);
+    }
 	
 	@GetMapping("/signup")
 	public String signup() {

@@ -40,11 +40,9 @@
 			WHERE id=#{id}
 		</if>
 	</update>
-	
 	<select id="adminmembers" resultType="Member">
 		SELECT * FROM member
 	</select>
-	
 	<delete id="adminMembersDelete">
 		DELETE FROM member 
 		WHERE id=#{id}

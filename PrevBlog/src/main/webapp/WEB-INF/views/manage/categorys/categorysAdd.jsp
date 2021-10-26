@@ -66,7 +66,7 @@ h3{
 			<div class="pcname">
 				<input type="text" name="pcname" placeholder="개인 카테고리명">
 			</div>
-			<p class="btn btn-primary btn-sm">등록</p>
+			<button class="btn btn-primary btn-sm">등록</button>
 		</form>
 	</div>
 	<div class="back">
